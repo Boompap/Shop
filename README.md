@@ -1,11 +1,15 @@
-# Maple Market Shop Site
+# Μπουγατσοπωλείο ΡΙΖΟΣ
 
-A simple static advertising website for a neighborhood shop.
+Static advertising website for Μπουγατσοπωλείο ΡΙΖΟΣ in Άγιος Στέφανος.
 
-## GitHub Pages
+Live site:
 
-This repo is ready to serve from GitHub Pages using the root of the `main` branch.
+https://boompap.github.io/Shop/
 
-Expected Pages URL after enabling Pages:
+Highlights:
 
-`https://boompap.github.io/Shop/`
+- Greek-first landing page
+- English language toggle
+- Google Maps location CTA
+- Facebook and business-listing links
+- 24-hour shop information
