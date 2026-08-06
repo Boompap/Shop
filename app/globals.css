@@ -228,76 +228,40 @@ a {
   color: var(--coffee);
 }
 
-.shopVisual {
+.photoHero {
+  position: relative;
   overflow: hidden;
   border: 1px solid #dfc494;
   border-radius: 8px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 247, 232, 0.9)),
-    repeating-linear-gradient(90deg, rgba(185, 115, 42, 0.08) 0 18px, transparent 18px 36px);
+  background: var(--coffee);
   box-shadow: 0 24px 70px rgba(75, 43, 16, 0.18);
 }
 
-.visualTop {
-  display: grid;
-  min-height: 100px;
-  place-items: center;
-  border-bottom: 8px solid var(--honey);
-  background: repeating-linear-gradient(
-    90deg,
-    var(--cinnamon) 0 46px,
-    #fff2d9 46px 92px
-  );
-}
-
-.visualTop span {
-  border-radius: 999px;
-  background: var(--coffee);
-  color: var(--honey);
-  padding: 10px 28px;
-  font-size: 1.35rem;
-  font-weight: 950;
-}
-
-.pastryStack {
-  position: relative;
-  min-height: 245px;
-  margin: 0 24px;
-}
-
-.pastry {
-  position: absolute;
+.mainPhoto {
   display: block;
-  border: 1px solid rgba(130, 77, 25, 0.18);
-  border-radius: 56% 44% 48% 52%;
-  background:
-    radial-gradient(circle at 35% 35%, rgba(255, 247, 219, 0.9), transparent 23%),
-    linear-gradient(135deg, #f9dc95, #c9822c 62%, #8e4b17);
-  box-shadow: 0 18px 35px rgba(88, 49, 15, 0.22);
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
-.pastryOne {
-  width: 210px;
-  height: 126px;
-  left: 32px;
-  top: 54px;
-  rotate: -11deg;
+.photoInset {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  overflow: hidden;
+  width: 34%;
+  min-width: 120px;
+  border: 4px solid rgba(255, 248, 236, 0.92);
+  border-radius: 8px;
+  background: var(--cream);
+  box-shadow: 0 16px 36px rgba(36, 24, 14, 0.25);
 }
 
-.pastryTwo {
-  width: 230px;
-  height: 136px;
-  right: 16px;
-  top: 86px;
-  rotate: 8deg;
-}
-
-.pastryThree {
-  width: 160px;
-  height: 104px;
-  left: 118px;
-  top: 24px;
-  rotate: 14deg;
+.photoInset img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .visualLabel {
@@ -306,6 +270,16 @@ a {
   background: var(--coffee);
   color: white;
   padding: 18px;
+}
+
+.photoLabel {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  margin: 0;
+  background: rgba(59, 36, 23, 0.92);
+  backdrop-filter: blur(8px);
 }
 
 .visualLabel p,
@@ -365,21 +339,69 @@ a {
 }
 
 .featureCard {
+  overflow: hidden;
   min-height: 225px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--cream);
-  padding: 26px;
+  padding: 0 0 26px;
+}
+
+.featureCard img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #f4ddbd;
 }
 
 .featureCard h3 {
-  margin: 0;
+  margin: 24px 26px 0;
   color: var(--coffee);
   font-size: 1.35rem;
 }
 
 .featureCard p {
-  margin: 16px 0 0;
+  margin: 16px 26px 0;
+}
+
+.gallerySection {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 0 clamp(18px, 4vw, 0px) 82px;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.galleryGrid figure {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.galleryGrid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.galleryGrid figure:first-child img {
+  aspect-ratio: 1 / 1.15;
+}
+
+.galleryGrid figcaption {
+  padding: 13px 14px 15px;
+  color: var(--coffee);
+  font-weight: 900;
+  text-align: center;
 }
 
 .visit {
@@ -468,7 +490,8 @@ a {
   .heroGrid,
   .visit,
   .featureGrid,
-  .linksBand {
+  .linksBand,
+  .galleryGrid {
     grid-template-columns: 1fr;
   }
 
@@ -498,15 +521,8 @@ a {
     flex: 1;
   }
 
-  .pastryStack {
-    min-height: 220px;
-  }
-
-  .pastryOne {
-    left: 6px;
-  }
-
-  .pastryTwo {
-    right: 0;
+  .photoInset {
+    width: 38%;
+    min-width: 96px;
   }
 }

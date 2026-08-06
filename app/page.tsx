@@ -12,6 +12,7 @@ const products = [
     englishTitle: "Bougatsa",
     englishText:
       "Classic bougatsa served warm and ready for any hour of the day.",
+    image: "/rizos/gallery-1.jpg",
   },
   {
     greekTitle: "Πίτες & σφολιάτες",
@@ -20,6 +21,7 @@ const products = [
     englishTitle: "Pies & croissants",
     englishText:
       "Pies, cheese pies, croissants, and savory choices for breakfast or a break.",
+    image: "/rizos/gallery-2.jpg",
   },
   {
     greekTitle: "Καφές & πρωινό",
@@ -28,6 +30,34 @@ const products = [
     englishTitle: "Coffee & breakfast",
     englishText:
       "Coffee, sweets, and everyday picks to start the day properly.",
+    image: "/rizos/gallery-3.jpg",
+  },
+];
+
+const gallery = [
+  {
+    src: "/rizos/logo.jpg",
+    alt: "Η πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ",
+    labelGreek: "Το κατάστημα",
+    labelEnglish: "The shop",
+  },
+  {
+    src: "/rizos/gallery-1.jpg",
+    alt: "Σφολιάτες στο φούρνο",
+    labelGreek: "Στο φούρνο",
+    labelEnglish: "In the oven",
+  },
+  {
+    src: "/rizos/gallery-2.jpg",
+    alt: "Ζεστές σφολιάτες σε ταψί",
+    labelGreek: "Ζεστές επιλογές",
+    labelEnglish: "Warm choices",
+  },
+  {
+    src: "/rizos/gallery-4.jpg",
+    alt: "Αλμυρή πίτα",
+    labelGreek: "Αλμυρές πίτες",
+    labelEnglish: "Savory pies",
   },
 ];
 
@@ -114,16 +144,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="shopVisual" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ">
-            <div className="visualTop">
-              <span>ΡΙΖΟΣ</span>
+          <div className="photoHero" aria-label="Φωτογραφίες από το κατάστημα">
+            <img
+              className="mainPhoto"
+              src="/rizos/hero.jpg"
+              alt="Πίτες και σφολιάτες στη βιτρίνα του Μπουγατσοπωλείου ΡΙΖΟΣ"
+            />
+            <div className="photoInset">
+              <img src="/rizos/logo.jpg" alt="Πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ" />
             </div>
-            <div className="pastryStack">
-              <span className="pastry pastryOne" />
-              <span className="pastry pastryTwo" />
-              <span className="pastry pastryThree" />
-            </div>
-            <div className="visualLabel">
+            <div className="visualLabel photoLabel">
               <p>
                 <span className="el">Σερβίρουμε όλο το 24ωρο</span>
                 <span className="en">Serving around the clock</span>
@@ -162,6 +192,7 @@ export default function Home() {
         <div className="featureGrid">
           {products.map((product) => (
             <article className="featureCard" key={product.greekTitle}>
+              <img src={product.image} alt="" />
               <h3>
                 <span className="el">{product.greekTitle}</span>
                 <span className="en">{product.englishTitle}</span>
@@ -171,6 +202,30 @@ export default function Home() {
                 <span className="en">{product.englishText}</span>
               </p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gallerySection" aria-label="Φωτογραφίες προϊόντων">
+        <div className="sectionHeader">
+          <p className="eyebrow">
+            <span className="el">Από το μαγαζί</span>
+            <span className="en">From the shop</span>
+          </p>
+          <h2>
+            <span className="el">Πραγματικές εικόνες από τα προϊόντα και τον χώρο.</span>
+            <span className="en">Real images from the products and the shop.</span>
+          </h2>
+        </div>
+        <div className="galleryGrid">
+          {gallery.map((photo) => (
+            <figure key={photo.src}>
+              <img src={photo.src} alt={photo.alt} />
+              <figcaption>
+                <span className="el">{photo.labelGreek}</span>
+                <span className="en">{photo.labelEnglish}</span>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </section>
