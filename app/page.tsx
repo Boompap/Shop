@@ -16,10 +16,10 @@ const products = [
   {
     greekTitle: "Πίτες & σφολιάτες",
     greekText:
-      "Αλμυρές επιλογές για πρωινό, διάλειμμα ή ένα γρήγορο πέρασμα από το μαγαζί.",
-    englishTitle: "Pies & pastries",
+      "Πίτες, τυρόπιτες, κρουασάν και αλμυρές επιλογές για πρωινό ή διάλειμμα.",
+    englishTitle: "Pies & croissants",
     englishText:
-      "Savory choices for breakfast, a break, or a quick stop at the shop.",
+      "Pies, cheese pies, croissants, and savory choices for breakfast or a break.",
   },
   {
     greekTitle: "Καφές & πρωινό",
