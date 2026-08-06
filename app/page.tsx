@@ -150,9 +150,6 @@ export default function Home() {
               src="/rizos/hero.jpg"
               alt="Πίτες και σφολιάτες στη βιτρίνα του Μπουγατσοπωλείου ΡΙΖΟΣ"
             />
-            <div className="photoInset">
-              <img src="/rizos/logo.jpg" alt="Πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ" />
-            </div>
             <div className="visualLabel photoLabel">
               <p>
                 <span className="el">Σερβίρουμε όλο το 24ωρο</span>
