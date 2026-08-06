@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Maple Market | Neighborhood Shop",
+  title: "Μπουγατσοπωλείο ΡΙΖΟΣ | Ανοιχτά 24 ώρες",
   description:
-    "A simple advertising site for Maple Market, a friendly local shop for essentials, gifts, and fresh finds.",
+    "Μπουγατσοπωλείο ΡΙΖΟΣ στη Λεωφ. Κρυονερίου 17, Άγιος Στέφανος, με μπουγάτσα, πίτες, καφέ και 24ωρη λειτουργία.",
   openGraph: {
-    title: "Maple Market | Neighborhood Shop",
+    title: "Μπουγατσοπωλείο ΡΙΖΟΣ",
     description:
-      "Simple goods, warm service, and useful everyday finds right around the corner.",
+      "Ζεστή μπουγάτσα, πίτες και καφές όλο το 24ωρο στη Λεωφ. Κρυονερίου 17.",
     images: ["/og.png"],
   },
   icons: {
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="el">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
