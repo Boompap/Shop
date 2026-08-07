@@ -9,14 +9,14 @@
 
 
 :root {
-  --background: #2b2118;
-  --foreground: #fff1dc;
-  --muted: #dec6ad;
-  --line: #6d4030;
-  --surface: #3a2a1d;
-  --surface-soft: #4a3525;
-  --cream: #f4dec1;
-  --cream-dark: #c8a77f;
+  --background: #f9e4bc;
+  --foreground: #2b2118;
+  --muted: #755b40;
+  --line: #d6b98c;
+  --surface: #fff0d2;
+  --surface-soft: #edd1a5;
+  --cream: #f9e4bc;
+  --cream-dark: #b88954;
   --brand-red: #8f1717;
   --brand-red-dark: #5b0d0d;
   --brand-red-soft: #c7352f;
@@ -41,8 +41,8 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(143, 23, 23, 0.18), transparent 34rem),
-    linear-gradient(180deg, #3a2a1d 0%, var(--background) 38%, #241a13 100%);
+    radial-gradient(circle at top left, rgba(143, 23, 23, 0.13), transparent 34rem),
+    linear-gradient(180deg, #fff0d2 0%, var(--background) 42%, #e9c991 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
@@ -144,11 +144,11 @@ a {
 .languageToggle {
   display: inline-flex;
   gap: 4px;
-  border: 1px solid rgba(244, 222, 193, 0.28);
+  border: 1px solid rgba(143, 23, 23, 0.18);
   border-radius: 999px;
-  background: rgba(74, 53, 37, 0.72);
+  background: rgba(255, 240, 210, 0.8);
   padding: 4px;
-  box-shadow: 0 12px 30px rgba(49, 27, 18, 0.18);
+  box-shadow: 0 12px 30px rgba(117, 91, 64, 0.18);
 }
 
 .languageToggle label {
@@ -166,11 +166,11 @@ a {
 .hero {
   overflow: hidden;
   border-radius: 8px;
-  border: 1px solid rgba(244, 222, 193, 0.18);
+  border: 1px solid rgba(143, 23, 23, 0.18);
   background:
-    linear-gradient(135deg, rgba(143, 23, 23, 0.84), rgba(74, 53, 37, 0.94) 52%),
+    linear-gradient(135deg, rgba(143, 23, 23, 0.9), rgba(82, 43, 27, 0.92) 52%),
     var(--surface);
-  box-shadow: 0 30px 80px rgba(49, 27, 18, 0.42);
+  box-shadow: 0 30px 80px rgba(117, 91, 64, 0.32);
 }
 
 .heroIntro {
@@ -215,13 +215,13 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(244, 222, 193, 0.18);
+  background: rgba(249, 228, 188, 0.42);
 }
 
 .heroPanel {
   display: grid;
   min-height: 380px;
-  background: var(--surface);
+  background: #fff0d2;
 }
 
 .productImage {
@@ -278,8 +278,8 @@ a {
 }
 
 .secondary {
-  border: 1px solid rgba(244, 222, 193, 0.32);
-  background: rgba(244, 222, 193, 0.12);
+  border: 1px solid rgba(143, 23, 23, 0.22);
+  background: rgba(255, 240, 210, 0.72);
   color: var(--foreground);
 }
 
@@ -289,16 +289,16 @@ a {
   gap: 1px;
   overflow: hidden;
   margin-top: 18px;
-  border: 1px solid rgba(244, 222, 193, 0.18);
+  border: 1px solid rgba(143, 23, 23, 0.16);
   border-radius: 8px;
-  background: rgba(244, 222, 193, 0.16);
+  background: rgba(143, 23, 23, 0.16);
 }
 
 .highlights span {
   display: grid;
   min-height: 82px;
   place-items: center;
-  background: rgba(74, 53, 37, 0.82);
+  background: rgba(255, 240, 210, 0.78);
   color: var(--foreground);
   font-weight: 950;
   text-align: center;
@@ -344,10 +344,10 @@ a {
 .featureTile,
 .supportTile {
   overflow: hidden;
-  border: 1px solid rgba(244, 222, 193, 0.22);
+  border: 1px solid rgba(143, 23, 23, 0.18);
   border-radius: 8px;
-  background: rgba(74, 53, 37, 0.72);
-  box-shadow: 0 22px 55px rgba(49, 27, 18, 0.3);
+  background: rgba(255, 240, 210, 0.78);
+  box-shadow: 0 22px 55px rgba(117, 91, 64, 0.2);
 }
 
 .featureTile {
@@ -372,7 +372,7 @@ a {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(180deg, transparent 28%, rgba(43, 33, 24, 0.22) 48%, rgba(43, 33, 24, 0.92));
+  background: linear-gradient(180deg, transparent 28%, rgba(43, 33, 24, 0.18) 48%, rgba(43, 33, 24, 0.84));
 }
 
 .featureTile div {
@@ -436,7 +436,7 @@ a {
 
 .storyBand {
   border-radius: 8px;
-  border: 1px solid rgba(244, 222, 193, 0.18);
+  border: 1px solid rgba(143, 23, 23, 0.18);
   background: linear-gradient(135deg, var(--brand-red-dark), #7d1b15);
   padding: clamp(38px, 6vw, 72px);
   text-align: center;
@@ -475,8 +475,8 @@ a {
 
 .hours {
   border-radius: 8px;
-  border: 1px solid rgba(244, 222, 193, 0.22);
-  background: rgba(74, 53, 37, 0.8);
+  border: 1px solid rgba(143, 23, 23, 0.18);
+  background: rgba(255, 240, 210, 0.78);
   color: var(--foreground);
   padding: 28px;
 }
@@ -508,9 +508,9 @@ a {
   display: grid;
   min-height: 76px;
   place-items: center;
-  border: 1px solid rgba(244, 222, 193, 0.2);
+  border: 1px solid rgba(143, 23, 23, 0.16);
   border-radius: 8px;
-  background: rgba(74, 53, 37, 0.72);
+  background: rgba(255, 240, 210, 0.78);
   color: var(--foreground);
   font-weight: 950;
   text-align: center;
@@ -519,9 +519,9 @@ a {
 .contact {
   margin-bottom: 34px;
   border-radius: 8px;
-  border: 1px solid rgba(244, 222, 193, 0.2);
+  border: 1px solid rgba(143, 23, 23, 0.18);
   background:
-    linear-gradient(135deg, rgba(143, 23, 23, 0.74), rgba(74, 53, 37, 0.96)),
+    linear-gradient(135deg, rgba(143, 23, 23, 0.86), rgba(82, 43, 27, 0.94)),
     var(--surface);
   color: #fff8ee;
   padding: clamp(32px, 6vw, 62px);
@@ -646,3 +646,4 @@ a {
   </main>
 </body>
 </html>
+
