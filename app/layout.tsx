@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     title: "Μπουγατσοπωλείο ΡΙΖΟΣ",
     description:
       "Ζεστή μπουγάτσα, πίτες και καφές όλο το 24ωρο στη Λεωφ. Κρυονερίου 17.",
-    images: ["/og.png"],
   },
   icons: {
     icon: "/favicon.svg",
@@ -35,9 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="el">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

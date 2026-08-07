@@ -7,65 +7,35 @@ const listingUrl =
 const products = [
   {
     greekTitle: "Μπουγάτσα",
-    greekText:
-      "Κλασική μπουγάτσα για κάθε ώρα της ημέρας, ζεστή και έτοιμη για το δρόμο.",
+    greekText: "Κλασική επιλογή για πρωινό, γλυκό διάλειμμα ή κάτι γρήγορο στον δρόμο.",
     englishTitle: "Bougatsa",
-    englishText:
-      "Classic bougatsa served warm and ready for any hour of the day.",
-    image: "/rizos/gallery-1.jpg",
+    englishText: "A classic choice for breakfast, a sweet break, or something quick on the go.",
   },
   {
     greekTitle: "Πίτες & σφολιάτες",
-    greekText:
-      "Πίτες, τυρόπιτες, κρουασάν και αλμυρές επιλογές για πρωινό ή διάλειμμα.",
-    englishTitle: "Pies & croissants",
-    englishText:
-      "Pies, cheese pies, croissants, and savory choices for breakfast or a break.",
-    image: "/rizos/gallery-2.jpg",
+    greekText: "Αλμυρές επιλογές για κάθε ώρα, από τυρόπιτες μέχρι καθημερινές σφολιάτες.",
+    englishTitle: "Pies & pastries",
+    englishText: "Savory choices for any hour, from cheese pies to everyday pastries.",
   },
   {
     greekTitle: "Καφές & πρωινό",
-    greekText:
-      "Καφές, γλυκά και καθημερινές επιλογές για να ξεκινήσει καλά η μέρα.",
+    greekText: "Καφές και συνοδευτικά για γρήγορη στάση πριν τη δουλειά ή στη διαδρομή.",
     englishTitle: "Coffee & breakfast",
-    englishText:
-      "Coffee, sweets, and everyday picks to start the day properly.",
-    image: "/rizos/gallery-3.jpg",
-  },
-];
-
-const gallery = [
-  {
-    src: "/rizos/logo.jpg",
-    alt: "Η πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ",
-    labelGreek: "Το κατάστημα",
-    labelEnglish: "The shop",
-  },
-  {
-    src: "/rizos/gallery-1.jpg",
-    alt: "Σφολιάτες στο φούρνο",
-    labelGreek: "Στο φούρνο",
-    labelEnglish: "In the oven",
-  },
-  {
-    src: "/rizos/gallery-2.jpg",
-    alt: "Ζεστές σφολιάτες σε ταψί",
-    labelGreek: "Ζεστές επιλογές",
-    labelEnglish: "Warm choices",
-  },
-  {
-    src: "/rizos/gallery-4.jpg",
-    alt: "Αλμυρή πίτα",
-    labelGreek: "Αλμυρές πίτες",
-    labelEnglish: "Savory pies",
+    englishText: "Coffee and breakfast picks for a quick stop before work or on the road.",
   },
 ];
 
 const highlights = [
   { greek: "Ανοιχτά 24 ώρες", english: "Open 24 hours" },
+  { greek: "Λεωφ. Κρυονερίου 17", english: "17 Kryoneriou Ave." },
   { greek: "Άγιος Στέφανος", english: "Agios Stefanos" },
-  { greek: "Παραλαβή από το κατάστημα", english: "In-store pickup" },
-  { greek: "Οικονομικές επιλογές", english: "Budget friendly" },
+  { greek: "Τηλέφωνο: 21 0814 1388", english: "Phone: 21 0814 1388" },
+];
+
+const imageSlots = [
+  { greek: "Κεντρική φωτογραφία καταστήματος", english: "Main shop photo" },
+  { greek: "Βιτρίνα προϊόντων", english: "Product display" },
+  { greek: "Καφές και πρωινό", english: "Coffee and breakfast" },
 ];
 
 export default function Home() {
@@ -80,7 +50,7 @@ export default function Home() {
       />
       <input className="languageInput" id="lang-en" name="language" type="radio" />
 
-      <section className="hero">
+      <section className="hero" id="top">
         <nav className="nav" aria-label="Main navigation">
           <a className="brand" href="#top" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ">
             <span className="brandMark">Ρ</span>
@@ -109,28 +79,24 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="heroGrid" id="top">
+        <div className="heroGrid">
           <div className="heroCopy">
             <p className="eyebrow">
-              <span className="el">Αθήνα · Ανοιχτά 24 ώρες</span>
-              <span className="en">Athens · Open 24 hours</span>
+              <span className="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span>
+              <span className="en">Agios Stefanos · open 24 hours</span>
             </p>
             <h1>
-              <span className="el">Ζεστή μπουγάτσα, καφές και πρωινό κάθε στιγμή.</span>
-              <span className="en">
-                Warm bougatsa, coffee, and breakfast at any hour.
-              </span>
+              <span className="el">Ζεστή μπουγάτσα και γρήγορο πρωινό, κάθε ώρα.</span>
+              <span className="en">Warm bougatsa and quick breakfast, any hour.</span>
             </h1>
             <p className="intro">
               <span className="el">
-                Στο Μπουγατσοπωλείο ΡΙΖΟΣ θα βρεις καθημερινές επιλογές για
-                γρήγορο πρωινό, σφολιάτες, γλυκά και καφέ, με εύκολη παραλαβή
-                από το κατάστημα.
+                Ένα καθαρό σημείο προβολής για το ΡΙΖΟΣ, με έμφαση στην τοποθεσία,
+                το 24ωρο ωράριο και τα προϊόντα που θα προστεθούν με φωτογραφίες στη συνέχεια.
               </span>
               <span className="en">
-                At RIZOS Bougatsa Shop you will find everyday choices for a
-                quick breakfast, pastries, sweets, and coffee, with easy
-                in-store pickup.
+                A clean promotional page for RIZOS, focused on location, 24-hour service,
+                and the products that will get photos added next.
               </span>
             </p>
             <div className="actions">
@@ -138,33 +104,25 @@ export default function Home() {
                 <span className="el">Δες το στον χάρτη</span>
                 <span className="en">View on map</span>
               </a>
-            <a className="button secondary" href="tel:+302108141388">
-              21 0814 1388
-            </a>
+              <a className="button secondary" href="tel:+302108141388">
+                21 0814 1388
+              </a>
             </div>
           </div>
 
-          <div className="photoHero" aria-label="Φωτογραφίες από το κατάστημα">
-            <img
-              className="mainPhoto"
-              src="/rizos/hero.jpg"
-              alt="Πίτες και σφολιάτες στη βιτρίνα του Μπουγατσοπωλείου ΡΙΖΟΣ"
-            />
-            <div className="visualLabel photoLabel">
+          <div className="heroPlaceholder" aria-label="Κενός χώρος για κεντρική φωτογραφία">
+            <div className="placeholderFrame">
+              <span className="placeholderMark">+</span>
               <p>
-                <span className="el">Σερβίρουμε όλο το 24ωρο</span>
-                <span className="en">Serving around the clock</span>
+                <span className="el">Χώρος για κεντρική φωτογραφία</span>
+                <span className="en">Space for main photo</span>
               </p>
-              <strong>
-                <span className="el">Μπουγάτσα · Πίτες · Καφές</span>
-                <span className="en">Bougatsa · Pies · Coffee</span>
-              </strong>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="strip" aria-label="Highlights">
+      <section className="highlights" aria-label="Highlights">
         {highlights.map((item) => (
           <span key={item.greek}>
             <span className="el">{item.greek}</span>
@@ -173,23 +131,23 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="section" id="products">
+      <section className="section products" id="products">
         <div className="sectionHeader">
           <p className="eyebrow">
             <span className="el">Τι θα βρεις</span>
             <span className="en">What you will find</span>
           </p>
           <h2>
-            <span className="el">Γεύσεις για πρωί, βράδυ και κάθε ενδιάμεση στάση.</span>
-            <span className="en">
-              Favorites for morning, night, and every stop in between.
-            </span>
+            <span className="el">Τα βασικά προϊόντα μπροστά, χωρίς περιττό θόρυβο.</span>
+            <span className="en">The core products up front, without visual noise.</span>
           </h2>
         </div>
         <div className="featureGrid">
-          {products.map((product) => (
+          {products.map((product, index) => (
             <article className="featureCard" key={product.greekTitle}>
-              <img src={product.image} alt="" />
+              <div className="miniSlot" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </div>
               <h3>
                 <span className="el">{product.greekTitle}</span>
                 <span className="en">{product.englishTitle}</span>
@@ -203,26 +161,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="gallerySection" aria-label="Φωτογραφίες προϊόντων">
+      <section className="section slotsSection" aria-label="Χώροι φωτογραφιών">
         <div className="sectionHeader">
           <p className="eyebrow">
-            <span className="el">Από το μαγαζί</span>
-            <span className="en">From the shop</span>
+            <span className="el">Φωτογραφίες αργότερα</span>
+            <span className="en">Photos later</span>
           </p>
           <h2>
-            <span className="el">Πραγματικές εικόνες από τα προϊόντα και τον χώρο.</span>
-            <span className="en">Real images from the products and the shop.</span>
+            <span className="el">Άφησα καθαρές θέσεις για τις εικόνες που θα διαλέξεις.</span>
+            <span className="en">I left clean spaces for the images you choose later.</span>
           </h2>
         </div>
-        <div className="galleryGrid">
-          {gallery.map((photo) => (
-            <figure key={photo.src}>
-              <img src={photo.src} alt={photo.alt} />
-              <figcaption>
-                <span className="el">{photo.labelGreek}</span>
-                <span className="en">{photo.labelEnglish}</span>
-              </figcaption>
-            </figure>
+        <div className="slotGrid">
+          {imageSlots.map((slot) => (
+            <div className="imageSlot" key={slot.greek}>
+              <span></span>
+              <p>
+                <span className="el">{slot.greek}</span>
+                <span className="en">{slot.english}</span>
+              </p>
+            </div>
           ))}
         </div>
       </section>
@@ -239,12 +197,11 @@ export default function Home() {
           </h2>
           <p>
             <span className="el">
-              Πέρασε για μπουγάτσα, πίτες και καφέ οποιαδήποτε στιγμή της
-              ημέρας. Το κατάστημα λειτουργεί 24 ώρες.
+              Πέρασε για μπουγάτσα, πίτες και καφέ οποιαδήποτε στιγμή της ημέρας.
+              Το κατάστημα λειτουργεί 24 ώρες.
             </span>
             <span className="en">
-              Stop by for bougatsa, pies, and coffee at any time of day. The
-              shop is open 24 hours.
+              Stop by for bougatsa, pies, and coffee at any time of day. The shop is open 24 hours.
             </span>
           </p>
           <a className="textLink" href={mapUrl} rel="noreferrer" target="_blank">
@@ -294,14 +251,6 @@ export default function Home() {
           <span className="el">Θες να ρωτήσεις κάτι πριν περάσεις;</span>
           <span className="en">Want to ask something before stopping by?</span>
         </h2>
-        <p>
-          <span className="el">
-            Κάλεσε το κατάστημα ή άνοιξε τον χάρτη για να έρθεις κατευθείαν.
-          </span>
-          <span className="en">
-            Call the shop or open the map to come straight over.
-          </span>
-        </p>
         <div className="actions centered">
           <a className="button primary" href="tel:+302108141388">
             21 0814 1388
