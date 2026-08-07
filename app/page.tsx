@@ -8,53 +8,53 @@ const heroSlides = [
   {
     greek: "Μπουγάτσα",
     english: "Bougatsa",
-    greekText: "Κλασική γεύση για πρωινό ή γλυκό διάλειμμα.",
-    englishText: "A classic choice for breakfast or a sweet break.",
+    greekText: "Τραγανό φύλλο και γεμάτη γεύση για πρωινό ή γλυκό διάλειμμα.",
+    englishText: "Crisp pastry and full flavor for breakfast or a sweet break.",
     image: "/rizos/bougatsa-tray.jpg",
     alt: "Ταψί με μπουγάτσες και πίτες στη βιτρίνα του ΡΙΖΟΣ",
   },
   {
-    greek: "Πίτες",
-    english: "Pies",
-    greekText: "Αλμυρές επιλογές για κάθε ώρα της ημέρας.",
-    englishText: "Savory choices for any hour of the day.",
+    greek: "Αλμυρές πίτες",
+    english: "Savory pies",
+    greekText: "Ζεστές επιλογές για κάθε ώρα της ημέρας.",
+    englishText: "Warm savory choices for any hour of the day.",
     image: "/rizos/ham-cheese-rolls.jpg",
     alt: "Αλμυρά ρολά με ζαμπόν και τυρί",
   },
   {
-    greek: "Γλυκά",
-    english: "Sweets",
-    greekText: "Γλυκιά μπουγάτσα και σοκολατένιες επιλογές.",
-    englishText: "Sweet bougatsa and chocolate choices.",
+    greek: "Γλυκές επιλογές",
+    english: "Sweet choices",
+    greekText: "Μπουγάτσα και σοκολατένιες επιλογές για κάτι πιο γλυκό.",
+    englishText: "Bougatsa and chocolate choices when you want something sweeter.",
     image: "/rizos/sweet-bougatsa.jpg",
     alt: "Γλυκιά μπουγάτσα με σοκολάτα",
   },
 ];
 
-const categories = [
+const showcase = [
   {
     greek: "Το κατάστημα",
     english: "The shop",
+    textGreek: "Η βιτρίνα του ΡΙΖΟΣ στον Άγιο Στέφανο.",
+    textEnglish: "The RIZOS storefront in Agios Stefanos.",
     image: "/rizos/shop-front.jpg",
     alt: "Πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ",
   },
   {
     greek: "Μπουγάτσα",
     english: "Bougatsa",
+    textGreek: "Κλασική, ζεστή και έτοιμη για σερβίρισμα.",
+    textEnglish: "Classic, warm, and ready to serve.",
     image: "/rizos/bougatsa-tray.jpg",
     alt: "Μπουγάτσες στη βιτρίνα",
   },
   {
     greek: "Σφολιάτες",
     english: "Pastries",
+    textGreek: "Αλμυρές επιλογές για γρήγορο πρωινό ή σνακ.",
+    textEnglish: "Savory choices for breakfast or a quick snack.",
     image: "/rizos/pastry-display.jpg",
     alt: "Σφολιάτες και αλμυρές πίτες στη βιτρίνα",
-  },
-  {
-    greek: "Γλυκές επιλογές",
-    english: "Sweet choices",
-    image: "/rizos/sweet-bougatsa.jpg",
-    alt: "Γλυκιά μπουγάτσα με σοκολάτα",
   },
 ];
 
@@ -121,12 +121,12 @@ export default function Home() {
           </h1>
           <p className="intro">
             <span className="el">
-              Μια πιο σύγχρονη παρουσία για το ΡΙΖΟΣ, με καθαρή προβολή προϊόντων,
-              24ωρο ωράριο και πραγματικές φωτογραφίες από τα προϊόντα και το κατάστημα.
+              Μια μοντέρνα σελίδα για το ΡΙΖΟΣ, με έμφαση στα προϊόντα, την τοποθεσία
+              και την καθημερινή εξυπηρέτηση στον Άγιο Στέφανο.
             </span>
             <span className="en">
-              A more modern presence for RIZOS, with clear product promotion,
-              24-hour service, and real photos from the products and the shop.
+              A modern page for RIZOS, focused on the products, the location,
+              and everyday service in Agios Stefanos.
             </span>
           </p>
         </div>
@@ -144,10 +144,6 @@ export default function Home() {
                   <span className="el">{slide.greekText}</span>
                   <span className="en">{slide.englishText}</span>
                 </p>
-                <a href="#products">
-                  <span className="el">ΠΕΡΙΣΣΟΤΕΡΑ</span>
-                  <span className="en">MORE</span>
-                </a>
               </div>
             </article>
           ))}
@@ -173,31 +169,60 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="section categorySection" id="products">
-        <div className="sectionHeader centeredText">
+      <section className="section productShowcase" id="products">
+        <div className="sectionHeader showcaseHeader">
           <p className="eyebrow">
             <span className="el">Προϊόντα</span>
             <span className="en">Products</span>
           </p>
           <h2>
-            <span className="el">Προϊόντα και εικόνες από το πραγματικό κατάστημα.</span>
-            <span className="en">Products and images from the real shop.</span>
+            <span className="el">Καθημερινές επιλογές, καθαρές εικόνες, ζεστή αίσθηση.</span>
+            <span className="en">Everyday choices, clean photos, warm presentation.</span>
           </h2>
+          <p>
+            <span className="el">
+              Η προβολή γίνεται πιο απλή και premium: μεγάλο προϊόν, μικρότερες λεπτομέρειες
+              και καθαρή ανάγνωση χωρίς βαριά μαύρα πλαίσια.
+            </span>
+            <span className="en">
+              A simpler, more premium presentation: one large product moment, smaller details,
+              and clear reading without heavy black cards.
+            </span>
+          </p>
         </div>
-        <div className="categoryGrid">
-          {categories.map((category) => (
-            <article className="categoryCard" key={category.greek}>
-              <img className="categoryImage" src={category.image} alt={category.alt} />
+
+        <div className="showcaseGrid">
+          <article className="featureTile">
+            <img src="/rizos/sweet-bougatsa.jpg" alt="Γλυκιά μπουγάτσα με σοκολάτα" />
+            <div>
+              <span className="kicker">
+                <span className="el">Γλυκό highlight</span>
+                <span className="en">Sweet highlight</span>
+              </span>
               <h3>
-                <span className="el">{category.greek}</span>
-                <span className="en">{category.english}</span>
+                <span className="el">Μπουγάτσα, σφολιάτες και γλυκές επιλογές για κάθε στιγμή.</span>
+                <span className="en">Bougatsa, pastries, and sweet choices for every moment.</span>
               </h3>
-              <a href="#contact">
-                <span className="el">ΠΕΡΙΣΣΟΤΕΡΑ</span>
-                <span className="en">MORE</span>
-              </a>
-            </article>
-          ))}
+            </div>
+          </article>
+
+          <div className="supportTiles">
+            {showcase.map((item) => (
+              <article className="supportTile" key={item.greek}>
+                <img src={item.image} alt={item.alt} />
+                <div>
+                  <h3>
+                    <span className="el">{item.greek}</span>
+                    <span className="en">{item.english}</span>
+                  </h3>
+                  <p>
+                    <span className="el">{item.textGreek}</span>
+                    <span className="en">{item.textEnglish}</span>
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
