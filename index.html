@@ -5,19 +5,513 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Μπουγατσοπωλείο ΡΙΖΟΣ | Ανοιχτά 24 ώρες</title>
   <meta name="description" content="Μπουγατσοπωλείο ΡΙΖΟΣ στη Λεωφ. Κρυονερίου 17, Άγιος Στέφανος, με μπουγάτσα, πίτες, καφέ και 24ωρη λειτουργία." />
-  <style>
-    :root{--background:#fbfaf7;--foreground:#1d1715;--muted:#6f625f;--line:#e8ded9;--surface:#fff;--surface-soft:#f6f1ee;--brand-red:#8f1717;--brand-red-dark:#5b0d0d;--brand-red-soft:#c7352f;--gold:#d5a23f}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--background);color:var(--foreground);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}.languageInput{position:fixed;opacity:0;pointer-events:none}.en{display:none}#lang-en:checked~* .el{display:none}#lang-en:checked~* .en{display:inline}#lang-el:checked~* .languageToggle label[for=lang-el],#lang-en:checked~* .languageToggle label[for=lang-en]{background:var(--brand-red);color:#fff}.pageShell{min-height:100vh;overflow:hidden}.hero{position:relative;padding:20px clamp(18px,4vw,64px) 70px;background:linear-gradient(135deg,rgba(143,23,23,.09),transparent 36%),linear-gradient(180deg,#fff 0%,#fbfaf7 100%)}.hero:before{position:absolute;right:-160px;top:80px;width:440px;height:440px;border:1px solid rgba(143,23,23,.12);border-radius:999px;content:""}.nav,.heroGrid,.highlights,.section,.visit,.contact{position:relative;width:min(1120px,100%);margin:0 auto}.nav{display:flex;align-items:center;flex-direction:column;gap:22px;padding-bottom:58px}.brand{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:0;color:var(--foreground);font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:950;line-height:1.05;text-align:center}.brandMark{display:grid;flex:0 0 auto;width:58px;height:58px;place-items:center;border-radius:12px;background:var(--brand-red);color:#fff;font-weight:950;box-shadow:0 12px 28px rgba(143,23,23,.2)}.navCluster{display:flex;align-items:center;justify-content:center;gap:20px}.navLinks{display:flex;gap:24px;color:var(--muted);font-size:.94rem;font-weight:800}.navLinks a:hover,.textLink:hover{color:var(--brand-red)}.languageToggle{display:inline-flex;gap:4px;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:4px;box-shadow:0 12px 30px rgba(29,23,21,.06)}.languageToggle label{display:grid;min-width:38px;min-height:32px;cursor:pointer;place-items:center;border-radius:999px;color:var(--muted);font-size:.8rem;font-weight:900}.heroGrid{display:grid;grid-template-columns:1fr;align-items:center;justify-items:center;gap:clamp(30px,7vw,86px)}.heroCopy{max-width:920px;text-align:center}.eyebrow{margin:0 0 16px;color:var(--brand-red);font-size:.76rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase}.heroCopy h1,.sectionHeader h2,.visit h2,.contact h2{margin:0;color:var(--foreground);letter-spacing:0;line-height:1}.heroCopy h1{max-width:920px;font-size:clamp(3.2rem,7vw,6.8rem)}.intro,.visit p,.featureCard p,.contact p{color:var(--muted);font-size:1.04rem;line-height:1.75}.intro{max-width:660px;margin:24px auto 0;font-size:1.15rem}.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}.centered{justify-content:center}.button{display:inline-flex;min-height:52px;align-items:center;justify-content:center;border-radius:8px;padding:0 22px;font-weight:950}.primary{background:var(--brand-red);color:#fff;box-shadow:0 16px 32px rgba(143,23,23,.2)}.secondary{border:1px solid var(--line);background:var(--surface);color:var(--foreground)}.heroPlaceholder{position:relative;width:min(620px,100%);min-height:520px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(135deg,rgba(143,23,23,.08),transparent 55%),repeating-linear-gradient(135deg,#fff,#fff 12px,#f5eeee 12px,#f5eeee 24px);box-shadow:0 28px 70px rgba(29,23,21,.1)}.placeholderFrame{position:absolute;inset:22px;display:grid;place-items:center;align-content:center;gap:14px;border:1px dashed rgba(143,23,23,.34);border-radius:8px;background:rgba(255,255,255,.64);color:var(--brand-red-dark);text-align:center}.placeholderMark{display:grid;width:56px;height:56px;place-items:center;border-radius:50%;background:var(--brand-red);color:#fff;font-size:2rem;font-weight:900}.placeholderFrame p,.imageSlot p{margin:0;font-weight:900}.highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;overflow:hidden;margin-top:-38px;border:1px solid var(--line);border-radius:8px;background:var(--line);box-shadow:0 20px 50px rgba(29,23,21,.08)}.highlights span{display:grid;min-height:86px;place-items:center;background:var(--surface);color:var(--brand-red-dark);font-weight:950;text-align:center}.section{padding:86px clamp(18px,4vw,0px)}.sectionHeader{max-width:760px}.sectionHeader h2,.visit h2,.contact h2{font-size:clamp(2.1rem,4vw,4.25rem)}.featureGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}.featureCard{min-height:250px;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:26px;box-shadow:0 16px 40px rgba(29,23,21,.05)}.miniSlot{display:grid;width:54px;height:54px;place-items:center;border:1px solid rgba(143,23,23,.18);border-radius:8px;background:#fff6f4;color:var(--brand-red);font-weight:950}.featureCard h3{margin:28px 0 0;color:var(--foreground);font-size:1.35rem}.featureCard p{margin:16px 0 0}.slotsSection{padding-top:0}.slotGrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin-top:34px}.imageSlot{display:grid;min-height:250px;align-content:end;gap:18px;border:1px dashed rgba(143,23,23,.38);border-radius:8px;background:linear-gradient(135deg,rgba(143,23,23,.06),transparent 58%),var(--surface-soft);padding:24px;color:var(--brand-red-dark)}.imageSlot:first-child{min-height:330px}.imageSlot span:first-child{display:block;width:42px;height:3px;border-radius:999px;background:var(--brand-red)}.visit{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:stretch;padding:0 clamp(18px,4vw,0px) 82px}.textLink{display:inline-flex;margin-top:18px;color:var(--brand-red);font-weight:950}.hours{border-radius:8px;background:var(--brand-red-dark);color:#fff;padding:28px}.hours h3{margin:0 0 18px;font-size:1.35rem}.hours p{color:rgba(255,255,255,.84)}.hours strong{display:block;margin-top:4px;color:#fff}.linksBand{display:grid;width:min(1120px,calc(100% - 36px));margin:0 auto 72px;grid-template-columns:repeat(3,1fr);gap:12px}.linksBand a{display:grid;min-height:76px;place-items:center;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--foreground);font-weight:950;text-align:center}.contact{margin-bottom:34px;border-radius:8px;background:#efe5e1;padding:clamp(28px,6vw,56px);text-align:center}@media(max-width:860px){.nav{align-items:center;display:flex;flex-direction:column;padding-bottom:46px}.brand{text-align:center}.navCluster{width:100%;align-items:center;flex-direction:column}.heroGrid,.visit,.featureGrid,.linksBand,.slotGrid{grid-template-columns:1fr}.heroPlaceholder{min-height:380px}.highlights{grid-template-columns:repeat(2,1fr);margin-top:-28px}.heroCopy h1{font-size:clamp(2.7rem,13vw,4.5rem)}}@media(max-width:540px){.navLinks{width:100%;justify-content:space-between;gap:10px}.languageToggle,.actions,.button{width:100%}.languageToggle label{flex:1}}
-  </style>
+  <style>:root {
+  --background: #fbfaf7;
+  --foreground: #211817;
+  --muted: #756461;
+  --line: #eadfd9;
+  --surface: #ffffff;
+  --surface-soft: #f7f1ed;
+  --brand-red: #8f1717;
+  --brand-red-dark: #5b0d0d;
+  --brand-red-soft: #c7352f;
+  --gold: #d5a23f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.languageInput {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.en {
+  display: none;
+}
+
+#lang-en:checked ~ * .el {
+  display: none;
+}
+
+#lang-en:checked ~ * .en {
+  display: inline;
+}
+
+#lang-el:checked ~ * .languageToggle label[for="lang-el"],
+#lang-en:checked ~ * .languageToggle label[for="lang-en"] {
+  background: var(--brand-red);
+  color: #fff;
+}
+
+.pageShell {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.siteHeader,
+.hero,
+.highlights,
+.section,
+.storyBand,
+.visit,
+.contact {
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
+}
+
+.siteHeader {
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  padding: 24px 0 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--foreground);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 950;
+  line-height: 1;
+  text-align: center;
+}
+
+.brandMark {
+  display: grid;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--brand-red);
+  color: #fff;
+  font-weight: 950;
+  box-shadow: 0 18px 36px rgba(143, 23, 23, 0.22);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.navLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 900;
+}
+
+.languageToggle {
+  display: inline-flex;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  padding: 4px;
+  box-shadow: 0 12px 30px rgba(29, 23, 21, 0.06);
+}
+
+.languageToggle label {
+  display: grid;
+  min-width: 38px;
+  min-height: 32px;
+  cursor: pointer;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.hero {
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--brand-red-dark);
+  box-shadow: 0 30px 80px rgba(91, 13, 13, 0.2);
+}
+
+.heroIntro {
+  padding: clamp(42px, 7vw, 86px) clamp(22px, 5vw, 72px) 34px;
+  color: #fff;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroIntro h1,
+.sectionHeader h2,
+.visit h2,
+.contact h2 {
+  margin: 0;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.heroIntro h1 {
+  max-width: 920px;
+  margin: 0 auto;
+  font-size: clamp(3.25rem, 7.2vw, 7rem);
+}
+
+.intro {
+  max-width: 720px;
+  margin: 24px auto 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.12rem;
+  line-height: 1.75;
+}
+
+.heroSlider {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.heroPanel {
+  display: grid;
+  min-height: 380px;
+  background: #fff;
+}
+
+.imagePlaceholder {
+  display: grid;
+  min-height: 210px;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  background:
+    linear-gradient(135deg, rgba(143, 23, 23, 0.08), transparent 55%),
+    repeating-linear-gradient(135deg, #fff, #fff 12px, #f5eeee 12px, #f5eeee 24px);
+  color: var(--brand-red-dark);
+  text-align: center;
+}
+
+.imagePlaceholder span {
+  display: block;
+  width: 50px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--brand-red);
+}
+
+.imagePlaceholder p {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panelCopy {
+  display: grid;
+  align-content: end;
+  gap: 12px;
+  padding: 26px;
+}
+
+.panelCopy h2,
+.categoryCard h3 {
+  margin: 0;
+  color: var(--foreground);
+  font-size: 1.65rem;
+}
+
+.panelCopy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.panelCopy a,
+.categoryCard a {
+  color: var(--brand-red);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.11em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 0;
+}
+
+.centered {
+  justify-content: center;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0 22px;
+  font-weight: 950;
+}
+
+.primary {
+  background: var(--brand-red);
+  color: #fff;
+}
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--foreground);
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--line);
+}
+
+.highlights span {
+  display: grid;
+  min-height: 82px;
+  place-items: center;
+  background: var(--surface);
+  color: var(--brand-red-dark);
+  font-weight: 950;
+  text-align: center;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.centeredText {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionHeader h2,
+.visit h2,
+.contact h2 {
+  color: var(--foreground);
+  font-size: clamp(2.1rem, 4vw, 4.25rem);
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.categoryCard {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 16px 40px rgba(29, 23, 21, 0.05);
+}
+
+.categorySlot {
+  min-height: 190px;
+  background:
+    linear-gradient(135deg, rgba(143, 23, 23, 0.07), transparent 58%),
+    var(--surface-soft);
+}
+
+.categoryCard h3,
+.categoryCard a {
+  display: block;
+  margin: 22px 22px 0;
+}
+
+.categoryCard a {
+  margin-bottom: 24px;
+}
+
+.storyBand {
+  border-radius: 8px;
+  background: #efe5e1;
+  padding: clamp(38px, 6vw, 72px);
+  text-align: center;
+}
+
+.storyBand p {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--brand-red-dark);
+  font-size: clamp(1.45rem, 3vw, 2.7rem);
+  font-weight: 950;
+  line-height: 1.2;
+}
+
+.visit {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: stretch;
+  padding: 88px 0 72px;
+}
+
+.visit p,
+.contact p {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.textLink {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--brand-red);
+  font-weight: 950;
+}
+
+.hours {
+  border-radius: 8px;
+  background: var(--brand-red-dark);
+  color: #fff;
+  padding: 28px;
+}
+
+.hours h3 {
+  margin: 0 0 18px;
+  font-size: 1.35rem;
+}
+
+.hours p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.hours strong {
+  display: block;
+  margin-top: 4px;
+  color: #fff;
+}
+
+.linksBand {
+  display: grid;
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto 72px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.linksBand a {
+  display: grid;
+  min-height: 76px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-weight: 950;
+  text-align: center;
+}
+
+.contact {
+  margin-bottom: 34px;
+  border-radius: 8px;
+  background: var(--brand-red-dark);
+  color: #fff;
+  padding: clamp(32px, 6vw, 62px);
+  text-align: center;
+}
+
+.contact .eyebrow {
+  color: var(--gold);
+}
+
+.contact h2 {
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .heroSlider,
+  .categoryGrid,
+  .visit,
+  .linksBand {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .brand {
+    flex-direction: column;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .navLinks {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .languageToggle,
+  .actions,
+  .button {
+    width: 100%;
+  }
+
+  .languageToggle label {
+    flex: 1;
+  }
+}
+</style>
 </head>
 <body>
   <main class="pageShell">
     <input class="languageInput" id="lang-el" name="language" type="radio" checked><input class="languageInput" id="lang-en" name="language" type="radio">
-    <section class="hero" id="top"><nav class="nav" aria-label="Main navigation"><a class="brand" href="#top" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ"><span class="brandMark">Ρ</span><span>Μπουγατσοπωλείο ΡΙΖΟΣ</span></a><div class="navCluster"><div class="navLinks"><a href="#products"><span class="el">Προϊόντα</span><span class="en">Products</span></a><a href="#visit"><span class="el">Τοποθεσία</span><span class="en">Location</span></a><a href="#contact"><span class="el">Επικοινωνία</span><span class="en">Contact</span></a></div><div class="languageToggle"><label for="lang-el">EL</label><label for="lang-en">EN</label></div></div></nav><div class="heroGrid"><div class="heroCopy"><p class="eyebrow"><span class="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span><span class="en">Agios Stefanos · open 24 hours</span></p><h1><span class="el">Ζεστή μπουγάτσα και γρήγορο πρωινό, κάθε ώρα.</span><span class="en">Warm bougatsa and quick breakfast, any hour.</span></h1><p class="intro"><span class="el">Ένα καθαρό σημείο προβολής για το ΡΙΖΟΣ, με έμφαση στην τοποθεσία, το 24ωρο ωράριο και τα προϊόντα που θα προστεθούν με φωτογραφίες στη συνέχεια.</span><span class="en">A clean promotional page for RIZOS, focused on location, 24-hour service, and the products that will get photos added next.</span></p><div class="actions"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Δες το στον χάρτη</span><span class="en">View on map</span></a><a class="button secondary" href="tel:+302108141388">21 0814 1388</a></div></div><div class="heroPlaceholder" aria-label="Κενός χώρος για κεντρική φωτογραφία"><div class="placeholderFrame"><span class="placeholderMark">+</span><p><span class="el">Χώρος για κεντρική φωτογραφία</span><span class="en">Space for main photo</span></p></div></div></div></section>
-    <section class="highlights"><span><span class="el">Ανοιχτά 24 ώρες</span><span class="en">Open 24 hours</span></span><span><span class="el">Λεωφ. Κρυονερίου 17</span><span class="en">17 Kryoneriou Ave.</span></span><span><span class="el">Άγιος Στέφανος</span><span class="en">Agios Stefanos</span></span><span><span class="el">Τηλέφωνο: 21 0814 1388</span><span class="en">Phone: 21 0814 1388</span></span></section>
-    <section class="section products" id="products"><div class="sectionHeader"><p class="eyebrow"><span class="el">Τι θα βρεις</span><span class="en">What you will find</span></p><h2><span class="el">Τα βασικά προϊόντα μπροστά, χωρίς περιττό θόρυβο.</span><span class="en">The core products up front, without visual noise.</span></h2></div><div class="featureGrid"><article class="featureCard"><div class="miniSlot">01</div><h3><span class="el">Μπουγάτσα</span><span class="en">Bougatsa</span></h3><p><span class="el">Κλασική επιλογή για πρωινό, γλυκό διάλειμμα ή κάτι γρήγορο στον δρόμο.</span><span class="en">A classic choice for breakfast, a sweet break, or something quick on the go.</span></p></article><article class="featureCard"><div class="miniSlot">02</div><h3><span class="el">Πίτες & σφολιάτες</span><span class="en">Pies & pastries</span></h3><p><span class="el">Αλμυρές επιλογές για κάθε ώρα, από τυρόπιτες μέχρι καθημερινές σφολιάτες.</span><span class="en">Savory choices for any hour, from cheese pies to everyday pastries.</span></p></article><article class="featureCard"><div class="miniSlot">03</div><h3><span class="el">Καφές & πρωινό</span><span class="en">Coffee & breakfast</span></h3><p><span class="el">Καφές και συνοδευτικά για γρήγορη στάση πριν τη δουλειά ή στη διαδρομή.</span><span class="en">Coffee and breakfast picks for a quick stop before work or on the road.</span></p></article></div></section>
-    <section class="section slotsSection"><div class="sectionHeader"><p class="eyebrow"><span class="el">Φωτογραφίες αργότερα</span><span class="en">Photos later</span></p><h2><span class="el">Άφησα καθαρές θέσεις για τις εικόνες που θα διαλέξεις.</span><span class="en">I left clean spaces for the images you choose later.</span></h2></div><div class="slotGrid"><div class="imageSlot"><span></span><p><span class="el">Κεντρική φωτογραφία καταστήματος</span><span class="en">Main shop photo</span></p></div><div class="imageSlot"><span></span><p><span class="el">Βιτρίνα προϊόντων</span><span class="en">Product display</span></p></div><div class="imageSlot"><span></span><p><span class="el">Καφές και πρωινό</span><span class="en">Coffee and breakfast</span></p></div></div></section>
-    <section class="visit" id="visit"><div><p class="eyebrow"><span class="el">Πού θα μας βρεις</span><span class="en">Where to find us</span></p><h2><span class="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.</span><span class="en">17 Kryoneriou Avenue, Agios Stefanos.</span></h2><p><span class="el">Πέρασε για μπουγάτσα, πίτες και καφέ οποιαδήποτε στιγμή της ημέρας. Το κατάστημα λειτουργεί 24 ώρες.</span><span class="en">Stop by for bougatsa, pies, and coffee at any time of day. The shop is open 24 hours.</span></p><a class="textLink" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Άνοιγμα οδηγιών στο Google Maps</span><span class="en">Open directions in Google Maps</span></a></div><div class="hours"><h3><span class="el">Ωράριο</span><span class="en">Hours</span></h3><p><span class="el">Κάθε μέρα</span><span class="en">Every day</span><strong>24 ώρες / 24 hours</strong></p><p><span class="el">Τηλέφωνο</span><span class="en">Phone</span><strong>21 0814 1388</strong></p></div></section>
-    <section class="linksBand"><a href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Οδηγίες στο Google Maps</span><span class="en">Directions on Google Maps</span></a><a href="https://www.facebook.com/profile.php?id=100063526604702" target="_blank" rel="noreferrer"><span class="el">Σελίδα στο Facebook</span><span class="en">Facebook page</span></a><a href="https://www.xrysietairia.eu/company/rizos-basileios-eleutherios-335874" target="_blank" rel="noreferrer"><span class="el">Καταχώριση επιχείρησης</span><span class="en">Business listing</span></a></section>
+    <header class="siteHeader" id="top"><a class="brand" href="#top" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ"><span class="brandMark">Ρ</span><span>Μπουγατσοπωλείο ΡΙΖΟΣ</span></a><nav class="nav" aria-label="Main navigation"><div class="navLinks"><a href="#products"><span class="el">Προϊόντα</span><span class="en">Products</span></a><a href="#story"><span class="el">Το μαγαζί</span><span class="en">The shop</span></a><a href="#visit"><span class="el">Τοποθεσία</span><span class="en">Location</span></a><a href="#contact"><span class="el">Επικοινωνία</span><span class="en">Contact</span></a></div><div class="languageToggle" aria-label="Language"><label for="lang-el">EL</label><label for="lang-en">EN</label></div></nav></header>
+    <section class="hero"><div class="heroIntro"><p class="eyebrow"><span class="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span><span class="en">Agios Stefanos · open 24 hours</span></p><h1><span class="el">Ζεστή μπουγάτσα, πίτες και καφές κάθε ώρα.</span><span class="en">Warm bougatsa, pies, and coffee at any hour.</span></h1><p class="intro"><span class="el">Μια πιο σύγχρονη παρουσία για το ΡΙΖΟΣ, με καθαρή προβολή προϊόντων, 24ωρο ωράριο και έτοιμους χώρους για τις φωτογραφίες που θα διαλέξεις.</span><span class="en">A more modern presence for RIZOS, with clear product promotion, 24-hour service, and ready spaces for the photos you choose.</span></p></div><div class="heroSlider" aria-label="Product highlights"><article class="heroPanel"><div class="imagePlaceholder"><span></span><p><span class="el">Χώρος φωτογραφίας</span><span class="en">Photo space</span></p></div><div class="panelCopy"><h2><span class="el">Μπουγάτσα</span><span class="en">Bougatsa</span></h2><p><span class="el">Κλασική γεύση για πρωινό ή γλυκό διάλειμμα.</span><span class="en">A classic choice for breakfast or a sweet break.</span></p><a href="#products"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></div></article><article class="heroPanel"><div class="imagePlaceholder"><span></span><p><span class="el">Χώρος φωτογραφίας</span><span class="en">Photo space</span></p></div><div class="panelCopy"><h2><span class="el">Πίτες</span><span class="en">Pies</span></h2><p><span class="el">Αλμυρές επιλογές για κάθε ώρα της ημέρας.</span><span class="en">Savory choices for any hour of the day.</span></p><a href="#products"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></div></article><article class="heroPanel"><div class="imagePlaceholder"><span></span><p><span class="el">Χώρος φωτογραφίας</span><span class="en">Photo space</span></p></div><div class="panelCopy"><h2><span class="el">Καφές</span><span class="en">Coffee</span></h2><p><span class="el">Γρήγορη στάση για καφέ και συνοδευτικά.</span><span class="en">A quick stop for coffee and breakfast picks.</span></p><a href="#products"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></div></article></div><div class="actions centered"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Δες το στον χάρτη</span><span class="en">View on map</span></a><a class="button secondary" href="tel:+302108141388">21 0814 1388</a></div></section>
+    <section class="highlights" aria-label="Highlights"><span><span class="el">Ανοιχτά 24 ώρες</span><span class="en">Open 24 hours</span></span><span><span class="el">Λεωφ. Κρυονερίου 17</span><span class="en">17 Kryoneriou Ave.</span></span><span><span class="el">Άγιος Στέφανος</span><span class="en">Agios Stefanos</span></span><span><span class="el">21 0814 1388</span><span class="en">21 0814 1388</span></span></section>
+    <section class="section categorySection" id="products"><div class="sectionHeader centeredText"><p class="eyebrow"><span class="el">Προϊόντα</span><span class="en">Products</span></p><h2><span class="el">Κατηγορίες που μπορείς να χτίσεις με τις δικές σου φωτογραφίες.</span><span class="en">Categories ready to be built with your own photos.</span></h2></div><div class="categoryGrid"><article class="categoryCard"><div class="categorySlot"></div><h3><span class="el">Πρωινό</span><span class="en">Breakfast</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article><article class="categoryCard"><div class="categorySlot"></div><h3><span class="el">Σφολιάτες</span><span class="en">Pastries</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article><article class="categoryCard"><div class="categorySlot"></div><h3><span class="el">Γλυκές επιλογές</span><span class="en">Sweet choices</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article><article class="categoryCard"><div class="categorySlot"></div><h3><span class="el">Καφές</span><span class="en">Coffee</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article></div></section>
+    <section class="storyBand" id="story"><p><span class="el">Μπουγάτσα, πίτες, καφές και γρήγορο πρωινό στον Άγιο Στέφανο, με λειτουργία όλο το 24ωρο.</span><span class="en">Bougatsa, pies, coffee, and quick breakfast in Agios Stefanos, open around the clock.</span></p></section>
+    <section class="visit" id="visit"><div><p class="eyebrow"><span class="el">Βρες το κατάστημα</span><span class="en">Find the shop</span></p><h2><span class="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.</span><span class="en">17 Kryoneriou Avenue, Agios Stefanos.</span></h2><p><span class="el">Πέρασε για μπουγάτσα, πίτες και καφέ οποιαδήποτε στιγμή της ημέρας.</span><span class="en">Stop by for bougatsa, pies, and coffee at any time of day.</span></p><a class="textLink" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Άνοιγμα οδηγιών στο Google Maps</span><span class="en">Open directions in Google Maps</span></a></div><div class="hours"><h3><span class="el">Ωράριο</span><span class="en">Hours</span></h3><p><span class="el">Κάθε μέρα</span><span class="en">Every day</span><strong>24 ώρες / 24 hours</strong></p><p><span class="el">Τηλέφωνο</span><span class="en">Phone</span><strong>21 0814 1388</strong></p></div></section>
+    <section class="linksBand" aria-label="Useful links"><a href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Οδηγίες στο Google Maps</span><span class="en">Directions on Google Maps</span></a><a href="https://www.facebook.com/profile.php?id=100063526604702" target="_blank" rel="noreferrer"><span class="el">Σελίδα στο Facebook</span><span class="en">Facebook page</span></a><a href="https://www.xrysietairia.eu/company/rizos-basileios-eleutherios-335874" target="_blank" rel="noreferrer"><span class="el">Καταχώριση επιχείρησης</span><span class="en">Business listing</span></a></section>
     <section class="contact" id="contact"><p class="eyebrow"><span class="el">Επικοινωνία</span><span class="en">Contact</span></p><h2><span class="el">Θες να ρωτήσεις κάτι πριν περάσεις;</span><span class="en">Want to ask something before stopping by?</span></h2><div class="actions centered"><a class="button primary" href="tel:+302108141388">21 0814 1388</a><a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Τοποθεσία</span><span class="en">Location</span></a></div></section>
   </main>
 </body>
