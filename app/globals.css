@@ -212,33 +212,16 @@ a {
   background: #0f0909;
 }
 
-.imagePlaceholder {
-  display: grid;
-  min-height: 210px;
-  place-items: center;
-  align-content: center;
-  gap: 12px;
-  background:
-    linear-gradient(135deg, rgba(143, 23, 23, 0.2), transparent 55%),
-    repeating-linear-gradient(135deg, #120b0b, #120b0b 12px, #1b1010 12px, #1b1010 24px);
-  color: #fff7f2;
-  text-align: center;
-}
-
-.imagePlaceholder span {
+.productImage,
+.categoryImage {
   display: block;
-  width: 50px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--brand-red);
+  width: 100%;
+  object-fit: cover;
 }
 
-.imagePlaceholder p {
-  margin: 0;
-  font-size: 0.82rem;
-  font-weight: 950;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.productImage {
+  min-height: 240px;
+  aspect-ratio: 4 / 3;
 }
 
 .panelCopy {
@@ -354,11 +337,9 @@ a {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
 }
 
-.categorySlot {
+.categoryImage {
   min-height: 190px;
-  background:
-    linear-gradient(135deg, rgba(143, 23, 23, 0.22), transparent 58%),
-    var(--surface-soft);
+  aspect-ratio: 4 / 3;
 }
 
 .categoryCard h3,

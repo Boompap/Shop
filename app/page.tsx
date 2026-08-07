@@ -10,26 +10,52 @@ const heroSlides = [
     english: "Bougatsa",
     greekText: "Κλασική γεύση για πρωινό ή γλυκό διάλειμμα.",
     englishText: "A classic choice for breakfast or a sweet break.",
+    image: "/rizos/bougatsa-tray.jpg",
+    alt: "Ταψί με μπουγάτσες και πίτες στη βιτρίνα του ΡΙΖΟΣ",
   },
   {
     greek: "Πίτες",
     english: "Pies",
     greekText: "Αλμυρές επιλογές για κάθε ώρα της ημέρας.",
     englishText: "Savory choices for any hour of the day.",
+    image: "/rizos/ham-cheese-rolls.jpg",
+    alt: "Αλμυρά ρολά με ζαμπόν και τυρί",
   },
   {
-    greek: "Καφές",
-    english: "Coffee",
-    greekText: "Γρήγορη στάση για καφέ και συνοδευτικά.",
-    englishText: "A quick stop for coffee and breakfast picks.",
+    greek: "Γλυκά",
+    english: "Sweets",
+    greekText: "Γλυκιά μπουγάτσα και σοκολατένιες επιλογές.",
+    englishText: "Sweet bougatsa and chocolate choices.",
+    image: "/rizos/sweet-bougatsa.jpg",
+    alt: "Γλυκιά μπουγάτσα με σοκολάτα",
   },
 ];
 
 const categories = [
-  { greek: "Πρωινό", english: "Breakfast" },
-  { greek: "Σφολιάτες", english: "Pastries" },
-  { greek: "Γλυκές επιλογές", english: "Sweet choices" },
-  { greek: "Καφές", english: "Coffee" },
+  {
+    greek: "Το κατάστημα",
+    english: "The shop",
+    image: "/rizos/shop-front.jpg",
+    alt: "Πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ",
+  },
+  {
+    greek: "Μπουγάτσα",
+    english: "Bougatsa",
+    image: "/rizos/bougatsa-tray.jpg",
+    alt: "Μπουγάτσες στη βιτρίνα",
+  },
+  {
+    greek: "Σφολιάτες",
+    english: "Pastries",
+    image: "/rizos/pastry-display.jpg",
+    alt: "Σφολιάτες και αλμυρές πίτες στη βιτρίνα",
+  },
+  {
+    greek: "Γλυκές επιλογές",
+    english: "Sweet choices",
+    image: "/rizos/sweet-bougatsa.jpg",
+    alt: "Γλυκιά μπουγάτσα με σοκολάτα",
+  },
 ];
 
 const highlights = [
@@ -96,11 +122,11 @@ export default function Home() {
           <p className="intro">
             <span className="el">
               Μια πιο σύγχρονη παρουσία για το ΡΙΖΟΣ, με καθαρή προβολή προϊόντων,
-              24ωρο ωράριο και έτοιμους χώρους για τις φωτογραφίες που θα διαλέξεις.
+              24ωρο ωράριο και πραγματικές φωτογραφίες από τα προϊόντα και το κατάστημα.
             </span>
             <span className="en">
               A more modern presence for RIZOS, with clear product promotion,
-              24-hour service, and ready spaces for the photos you choose.
+              24-hour service, and real photos from the products and the shop.
             </span>
           </p>
         </div>
@@ -108,13 +134,7 @@ export default function Home() {
         <div className="heroSlider" aria-label="Product highlights">
           {heroSlides.map((slide) => (
             <article className="heroPanel" key={slide.greek}>
-              <div className="imagePlaceholder">
-                <span></span>
-                <p>
-                  <span className="el">Χώρος φωτογραφίας</span>
-                  <span className="en">Photo space</span>
-                </p>
-              </div>
+              <img className="productImage" src={slide.image} alt={slide.alt} />
               <div className="panelCopy">
                 <h2>
                   <span className="el">{slide.greek}</span>
@@ -160,14 +180,14 @@ export default function Home() {
             <span className="en">Products</span>
           </p>
           <h2>
-            <span className="el">Κατηγορίες που μπορείς να χτίσεις με τις δικές σου φωτογραφίες.</span>
-            <span className="en">Categories ready to be built with your own photos.</span>
+            <span className="el">Προϊόντα και εικόνες από το πραγματικό κατάστημα.</span>
+            <span className="en">Products and images from the real shop.</span>
           </h2>
         </div>
         <div className="categoryGrid">
           {categories.map((category) => (
             <article className="categoryCard" key={category.greek}>
-              <div className="categorySlot"></div>
+              <img className="categoryImage" src={category.image} alt={category.alt} />
               <h3>
                 <span className="el">{category.greek}</span>
                 <span className="en">{category.english}</span>
