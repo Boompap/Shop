@@ -41,8 +41,8 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(143, 23, 23, 0.13), transparent 34rem),
-    linear-gradient(180deg, #fff0d2 0%, var(--background) 42%, #e9c991 100%);
+    radial-gradient(circle at top left, rgba(143, 23, 23, 0.1), transparent 34rem),
+    linear-gradient(180deg, var(--cream) 0%, #fff0d2 40%, var(--cream) 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
@@ -96,7 +96,7 @@ a {
   display: grid;
   justify-items: center;
   gap: 22px;
-  padding: 28px 0 22px;
+  padding: 28px 0 26px;
 }
 
 .brand {
@@ -166,16 +166,16 @@ a {
 .hero {
   overflow: hidden;
   border-radius: 8px;
-  border: 1px solid rgba(143, 23, 23, 0.18);
+  border: 1px solid rgba(143, 23, 23, 0.2);
   background:
-    linear-gradient(135deg, rgba(143, 23, 23, 0.9), rgba(82, 43, 27, 0.92) 52%),
-    var(--surface);
-  box-shadow: 0 30px 80px rgba(117, 91, 64, 0.32);
+    linear-gradient(135deg, rgba(249, 228, 188, 0.96), rgba(255, 240, 210, 0.98) 52%),
+    var(--cream);
+  box-shadow: 0 30px 80px rgba(117, 91, 64, 0.26);
 }
 
 .heroIntro {
   padding: clamp(42px, 7vw, 86px) clamp(22px, 5vw, 72px) 34px;
-  color: #fff8ee;
+  color: var(--foreground);
   text-align: center;
 }
 
@@ -200,13 +200,14 @@ a {
 .heroIntro h1 {
   max-width: 920px;
   margin: 0 auto;
+  color: var(--brand-red-dark);
   font-size: clamp(3.25rem, 7.2vw, 7rem);
 }
 
 .intro {
   max-width: 720px;
   margin: 24px auto 0;
-  color: rgba(255, 248, 238, 0.84);
+  color: var(--muted);
   font-size: 1.12rem;
   line-height: 1.75;
 }
@@ -221,7 +222,7 @@ a {
 .heroPanel {
   display: grid;
   min-height: 380px;
-  background: #fff0d2;
+  background: rgba(255, 248, 234, 0.88);
 }
 
 .productImage {
@@ -237,6 +238,7 @@ a {
   align-content: end;
   gap: 12px;
   padding: 26px;
+  border-top: 5px solid var(--brand-red);
 }
 
 .panelCopy h2 {
@@ -278,8 +280,8 @@ a {
 }
 
 .secondary {
-  border: 1px solid rgba(143, 23, 23, 0.22);
-  background: rgba(255, 240, 210, 0.72);
+  border: 1px solid rgba(143, 23, 23, 0.28);
+  background: #fff8ea;
   color: var(--foreground);
 }
 
@@ -305,7 +307,7 @@ a {
 }
 
 .section {
-  padding: 88px 0;
+  padding: 96px 0;
 }
 
 .sectionHeader h2,
@@ -317,6 +319,11 @@ a {
 
 .productShowcase {
   position: relative;
+  width: 100%;
+  max-width: none;
+  padding-right: max(18px, calc((100vw - 1180px) / 2));
+  padding-left: max(18px, calc((100vw - 1180px) / 2));
+  background: linear-gradient(180deg, #fff0d2 0%, var(--cream) 100%);
 }
 
 .showcaseHeader {
@@ -346,7 +353,7 @@ a {
   overflow: hidden;
   border: 1px solid rgba(143, 23, 23, 0.18);
   border-radius: 8px;
-  background: rgba(255, 240, 210, 0.78);
+  background: #fff8ea;
   box-shadow: 0 22px 55px rgba(117, 91, 64, 0.2);
 }
 
@@ -476,7 +483,7 @@ a {
 .hours {
   border-radius: 8px;
   border: 1px solid rgba(143, 23, 23, 0.18);
-  background: rgba(255, 240, 210, 0.78);
+  background: #fff8ea;
   color: var(--foreground);
   padding: 28px;
 }
@@ -510,7 +517,7 @@ a {
   place-items: center;
   border: 1px solid rgba(143, 23, 23, 0.16);
   border-radius: 8px;
-  background: rgba(255, 240, 210, 0.78);
+  background: #fff8ea;
   color: var(--foreground);
   font-weight: 950;
   text-align: center;
@@ -646,4 +653,5 @@ a {
   </main>
 </body>
 </html>
+
 
