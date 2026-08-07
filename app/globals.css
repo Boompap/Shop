@@ -100,28 +100,32 @@ a {
 }
 
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   padding-bottom: 72px;
 }
 
 .brand {
   display: inline-flex;
+  grid-column: 2;
   align-items: center;
+  justify-self: center;
   gap: 12px;
   min-width: 0;
   color: var(--foreground);
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+  font-weight: 950;
+  line-height: 1.05;
+  text-align: center;
 }
 
 .brandMark {
   display: grid;
   flex: 0 0 auto;
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   place-items: center;
   border-radius: 12px;
   background: var(--brand-red);
@@ -132,7 +136,9 @@ a {
 
 .navCluster {
   display: flex;
+  grid-column: 3;
   align-items: center;
+  justify-self: end;
   gap: 20px;
 }
 
@@ -472,8 +478,14 @@ a {
 @media (max-width: 860px) {
   .nav {
     align-items: flex-start;
+    display: flex;
     flex-direction: column;
     padding-bottom: 46px;
+  }
+
+  .brand {
+    justify-self: auto;
+    text-align: left;
   }
 
   .navCluster {
