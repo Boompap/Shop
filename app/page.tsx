@@ -4,38 +4,39 @@ const facebookUrl = "https://www.facebook.com/profile.php?id=100063526604702";
 const listingUrl =
   "https://www.xrysietairia.eu/company/rizos-basileios-eleutherios-335874";
 
-const products = [
+const heroSlides = [
   {
-    greekTitle: "Μπουγάτσα",
-    greekText: "Κλασική επιλογή για πρωινό, γλυκό διάλειμμα ή κάτι γρήγορο στον δρόμο.",
-    englishTitle: "Bougatsa",
-    englishText: "A classic choice for breakfast, a sweet break, or something quick on the go.",
+    greek: "Μπουγάτσα",
+    english: "Bougatsa",
+    greekText: "Κλασική γεύση για πρωινό ή γλυκό διάλειμμα.",
+    englishText: "A classic choice for breakfast or a sweet break.",
   },
   {
-    greekTitle: "Πίτες & σφολιάτες",
-    greekText: "Αλμυρές επιλογές για κάθε ώρα, από τυρόπιτες μέχρι καθημερινές σφολιάτες.",
-    englishTitle: "Pies & pastries",
-    englishText: "Savory choices for any hour, from cheese pies to everyday pastries.",
+    greek: "Πίτες",
+    english: "Pies",
+    greekText: "Αλμυρές επιλογές για κάθε ώρα της ημέρας.",
+    englishText: "Savory choices for any hour of the day.",
   },
   {
-    greekTitle: "Καφές & πρωινό",
-    greekText: "Καφές και συνοδευτικά για γρήγορη στάση πριν τη δουλειά ή στη διαδρομή.",
-    englishTitle: "Coffee & breakfast",
-    englishText: "Coffee and breakfast picks for a quick stop before work or on the road.",
+    greek: "Καφές",
+    english: "Coffee",
+    greekText: "Γρήγορη στάση για καφέ και συνοδευτικά.",
+    englishText: "A quick stop for coffee and breakfast picks.",
   },
+];
+
+const categories = [
+  { greek: "Πρωινό", english: "Breakfast" },
+  { greek: "Σφολιάτες", english: "Pastries" },
+  { greek: "Γλυκές επιλογές", english: "Sweet choices" },
+  { greek: "Καφές", english: "Coffee" },
 ];
 
 const highlights = [
   { greek: "Ανοιχτά 24 ώρες", english: "Open 24 hours" },
   { greek: "Λεωφ. Κρυονερίου 17", english: "17 Kryoneriou Ave." },
   { greek: "Άγιος Στέφανος", english: "Agios Stefanos" },
-  { greek: "Τηλέφωνο: 21 0814 1388", english: "Phone: 21 0814 1388" },
-];
-
-const imageSlots = [
-  { greek: "Κεντρική φωτογραφία καταστήματος", english: "Main shop photo" },
-  { greek: "Βιτρίνα προϊόντων", english: "Product display" },
-  { greek: "Καφές και πρωινό", english: "Coffee and breakfast" },
+  { greek: "21 0814 1388", english: "21 0814 1388" },
 ];
 
 export default function Home() {
@@ -50,75 +51,96 @@ export default function Home() {
       />
       <input className="languageInput" id="lang-en" name="language" type="radio" />
 
-      <section className="hero" id="top">
-        <nav className="nav" aria-label="Main navigation">
-          <a className="brand" href="#top" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ">
-            <span className="brandMark">Ρ</span>
-            <span>Μπουγατσοπωλείο ΡΙΖΟΣ</span>
-          </a>
+      <header className="siteHeader" id="top">
+        <a className="brand" href="#top" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ">
+          <span className="brandMark">Ρ</span>
+          <span>Μπουγατσοπωλείο ΡΙΖΟΣ</span>
+        </a>
 
-          <div className="navCluster">
-            <div className="navLinks">
-              <a href="#products">
-                <span className="el">Προϊόντα</span>
-                <span className="en">Products</span>
-              </a>
-              <a href="#visit">
-                <span className="el">Τοποθεσία</span>
-                <span className="en">Location</span>
-              </a>
-              <a href="#contact">
-                <span className="el">Επικοινωνία</span>
-                <span className="en">Contact</span>
-              </a>
-            </div>
-            <div className="languageToggle" aria-label="Language">
-              <label htmlFor="lang-el">EL</label>
-              <label htmlFor="lang-en">EN</label>
-            </div>
+        <nav className="nav" aria-label="Main navigation">
+          <div className="navLinks">
+            <a href="#products">
+              <span className="el">Προϊόντα</span>
+              <span className="en">Products</span>
+            </a>
+            <a href="#story">
+              <span className="el">Το μαγαζί</span>
+              <span className="en">The shop</span>
+            </a>
+            <a href="#visit">
+              <span className="el">Τοποθεσία</span>
+              <span className="en">Location</span>
+            </a>
+            <a href="#contact">
+              <span className="el">Επικοινωνία</span>
+              <span className="en">Contact</span>
+            </a>
+          </div>
+          <div className="languageToggle" aria-label="Language">
+            <label htmlFor="lang-el">EL</label>
+            <label htmlFor="lang-en">EN</label>
           </div>
         </nav>
+      </header>
 
-        <div className="heroGrid">
-          <div className="heroCopy">
-            <p className="eyebrow">
-              <span className="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span>
-              <span className="en">Agios Stefanos · open 24 hours</span>
-            </p>
-            <h1>
-              <span className="el">Ζεστή μπουγάτσα και γρήγορο πρωινό, κάθε ώρα.</span>
-              <span className="en">Warm bougatsa and quick breakfast, any hour.</span>
-            </h1>
-            <p className="intro">
-              <span className="el">
-                Ένα καθαρό σημείο προβολής για το ΡΙΖΟΣ, με έμφαση στην τοποθεσία,
-                το 24ωρο ωράριο και τα προϊόντα που θα προστεθούν με φωτογραφίες στη συνέχεια.
-              </span>
-              <span className="en">
-                A clean promotional page for RIZOS, focused on location, 24-hour service,
-                and the products that will get photos added next.
-              </span>
-            </p>
-            <div className="actions">
-              <a className="button primary" href={mapUrl} rel="noreferrer" target="_blank">
-                <span className="el">Δες το στον χάρτη</span>
-                <span className="en">View on map</span>
-              </a>
-              <a className="button secondary" href="tel:+302108141388">
-                21 0814 1388
-              </a>
-            </div>
-          </div>
+      <section className="hero">
+        <div className="heroIntro">
+          <p className="eyebrow">
+            <span className="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span>
+            <span className="en">Agios Stefanos · open 24 hours</span>
+          </p>
+          <h1>
+            <span className="el">Ζεστή μπουγάτσα, πίτες και καφές κάθε ώρα.</span>
+            <span className="en">Warm bougatsa, pies, and coffee at any hour.</span>
+          </h1>
+          <p className="intro">
+            <span className="el">
+              Μια πιο σύγχρονη παρουσία για το ΡΙΖΟΣ, με καθαρή προβολή προϊόντων,
+              24ωρο ωράριο και έτοιμους χώρους για τις φωτογραφίες που θα διαλέξεις.
+            </span>
+            <span className="en">
+              A more modern presence for RIZOS, with clear product promotion,
+              24-hour service, and ready spaces for the photos you choose.
+            </span>
+          </p>
+        </div>
 
-          <div className="heroPlaceholder" aria-label="Κενός χώρος για κεντρική φωτογραφία">
-            <div className="placeholderFrame">
-              <span className="placeholderMark">+</span>
-              <p>
-                <span className="el">Χώρος για κεντρική φωτογραφία</span>
-                <span className="en">Space for main photo</span>
-              </p>
-            </div>
-          </div>
+        <div className="heroSlider" aria-label="Product highlights">
+          {heroSlides.map((slide) => (
+            <article className="heroPanel" key={slide.greek}>
+              <div className="imagePlaceholder">
+                <span></span>
+                <p>
+                  <span className="el">Χώρος φωτογραφίας</span>
+                  <span className="en">Photo space</span>
+                </p>
+              </div>
+              <div className="panelCopy">
+                <h2>
+                  <span className="el">{slide.greek}</span>
+                  <span className="en">{slide.english}</span>
+                </h2>
+                <p>
+                  <span className="el">{slide.greekText}</span>
+                  <span className="en">{slide.englishText}</span>
+                </p>
+                <a href="#products">
+                  <span className="el">ΠΕΡΙΣΣΟΤΕΡΑ</span>
+                  <span className="en">MORE</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="actions centered">
+          <a className="button primary" href={mapUrl} rel="noreferrer" target="_blank">
+            <span className="el">Δες το στον χάρτη</span>
+            <span className="en">View on map</span>
+          </a>
+          <a className="button secondary" href="tel:+302108141388">
+            21 0814 1388
+          </a>
         </div>
       </section>
 
@@ -131,65 +153,52 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="section products" id="products">
-        <div className="sectionHeader">
+      <section className="section categorySection" id="products">
+        <div className="sectionHeader centeredText">
           <p className="eyebrow">
-            <span className="el">Τι θα βρεις</span>
-            <span className="en">What you will find</span>
+            <span className="el">Προϊόντα</span>
+            <span className="en">Products</span>
           </p>
           <h2>
-            <span className="el">Τα βασικά προϊόντα μπροστά, χωρίς περιττό θόρυβο.</span>
-            <span className="en">The core products up front, without visual noise.</span>
+            <span className="el">Κατηγορίες που μπορείς να χτίσεις με τις δικές σου φωτογραφίες.</span>
+            <span className="en">Categories ready to be built with your own photos.</span>
           </h2>
         </div>
-        <div className="featureGrid">
-          {products.map((product, index) => (
-            <article className="featureCard" key={product.greekTitle}>
-              <div className="miniSlot" aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
-              </div>
+        <div className="categoryGrid">
+          {categories.map((category) => (
+            <article className="categoryCard" key={category.greek}>
+              <div className="categorySlot"></div>
               <h3>
-                <span className="el">{product.greekTitle}</span>
-                <span className="en">{product.englishTitle}</span>
+                <span className="el">{category.greek}</span>
+                <span className="en">{category.english}</span>
               </h3>
-              <p>
-                <span className="el">{product.greekText}</span>
-                <span className="en">{product.englishText}</span>
-              </p>
+              <a href="#contact">
+                <span className="el">ΠΕΡΙΣΣΟΤΕΡΑ</span>
+                <span className="en">MORE</span>
+              </a>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section slotsSection" aria-label="Χώροι φωτογραφιών">
-        <div className="sectionHeader">
-          <p className="eyebrow">
-            <span className="el">Φωτογραφίες αργότερα</span>
-            <span className="en">Photos later</span>
-          </p>
-          <h2>
-            <span className="el">Άφησα καθαρές θέσεις για τις εικόνες που θα διαλέξεις.</span>
-            <span className="en">I left clean spaces for the images you choose later.</span>
-          </h2>
-        </div>
-        <div className="slotGrid">
-          {imageSlots.map((slot) => (
-            <div className="imageSlot" key={slot.greek}>
-              <span></span>
-              <p>
-                <span className="el">{slot.greek}</span>
-                <span className="en">{slot.english}</span>
-              </p>
-            </div>
-          ))}
-        </div>
+      <section className="storyBand" id="story">
+        <p>
+          <span className="el">
+            Μπουγάτσα, πίτες, καφές και γρήγορο πρωινό στον Άγιο Στέφανο,
+            με λειτουργία όλο το 24ωρο.
+          </span>
+          <span className="en">
+            Bougatsa, pies, coffee, and quick breakfast in Agios Stefanos,
+            open around the clock.
+          </span>
+        </p>
       </section>
 
       <section className="visit" id="visit">
         <div>
           <p className="eyebrow">
-            <span className="el">Πού θα μας βρεις</span>
-            <span className="en">Where to find us</span>
+            <span className="el">Βρες το κατάστημα</span>
+            <span className="en">Find the shop</span>
           </p>
           <h2>
             <span className="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.</span>
@@ -198,10 +207,9 @@ export default function Home() {
           <p>
             <span className="el">
               Πέρασε για μπουγάτσα, πίτες και καφέ οποιαδήποτε στιγμή της ημέρας.
-              Το κατάστημα λειτουργεί 24 ώρες.
             </span>
             <span className="en">
-              Stop by for bougatsa, pies, and coffee at any time of day. The shop is open 24 hours.
+              Stop by for bougatsa, pies, and coffee at any time of day.
             </span>
           </p>
           <a className="textLink" href={mapUrl} rel="noreferrer" target="_blank">
