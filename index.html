@@ -1,21 +1,33 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="el">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Μπουγατσοπωλείο ΡΙΖΟΣ | Ανοιχτά 24 ώρες</title>
-  <meta name="description" content="Μπουγατσοπωλείο ΡΙΖΟΣ στη Λεωφ. Κρυονερίου 17, Άγιος Στέφανος, με μπουγάτσα, πίτες, καφέ και 24ωρη λειτουργία." />
-  <style>:root {
-  --background: #080606;
-  --foreground: #fff7f2;
-  --muted: #c8b6ad;
-  --line: #311312;
-  --surface: #120b0b;
-  --surface-soft: #1a1010;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Μπουγατσοπωλείο ΡΙΖΟΣ</title>
+  <meta name="description" content="Μπουγατσοπωλείο ΡΙΖΟΣ στον Άγιο Στέφανο. Μπουγάτσα, πίτες και καφές όλο το 24ωρο.">
+  <style>
+
+
+:root {
+  --background: #2b2118;
+  --foreground: #fff1dc;
+  --muted: #dec6ad;
+  --line: #6d4030;
+  --surface: #3a2a1d;
+  --surface-soft: #4a3525;
+  --cream: #f4dec1;
+  --cream-dark: #c8a77f;
   --brand-red: #8f1717;
   --brand-red-dark: #5b0d0d;
   --brand-red-soft: #c7352f;
-  --gold: #d5a23f;
+  --gold: #e1b85b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 * {
@@ -28,7 +40,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgba(143, 23, 23, 0.18), transparent 34rem),
+    linear-gradient(180deg, #3a2a1d 0%, var(--background) 38%, #241a13 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
@@ -130,11 +144,11 @@ a {
 .languageToggle {
   display: inline-flex;
   gap: 4px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(244, 222, 193, 0.28);
   border-radius: 999px;
-  background: #0f0909;
+  background: rgba(74, 53, 37, 0.72);
   padding: 4px;
-  box-shadow: 0 12px 30px rgba(29, 23, 21, 0.06);
+  box-shadow: 0 12px 30px rgba(49, 27, 18, 0.18);
 }
 
 .languageToggle label {
@@ -152,16 +166,16 @@ a {
 .hero {
   overflow: hidden;
   border-radius: 8px;
-  border: 1px solid rgba(143, 23, 23, 0.42);
+  border: 1px solid rgba(244, 222, 193, 0.18);
   background:
-    linear-gradient(135deg, rgba(143, 23, 23, 0.88), rgba(16, 8, 8, 0.96) 48%),
-    var(--brand-red-dark);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+    linear-gradient(135deg, rgba(143, 23, 23, 0.84), rgba(74, 53, 37, 0.94) 52%),
+    var(--surface);
+  box-shadow: 0 30px 80px rgba(49, 27, 18, 0.42);
 }
 
 .heroIntro {
   padding: clamp(42px, 7vw, 86px) clamp(22px, 5vw, 72px) 34px;
-  color: #fff;
+  color: #fff8ee;
   text-align: center;
 }
 
@@ -192,7 +206,7 @@ a {
 .intro {
   max-width: 720px;
   margin: 24px auto 0;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 248, 238, 0.84);
   font-size: 1.12rem;
   line-height: 1.75;
 }
@@ -201,25 +215,21 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(143, 23, 23, 0.5);
+  background: rgba(244, 222, 193, 0.18);
 }
 
 .heroPanel {
   display: grid;
   min-height: 380px;
-  background: #0f0909;
-}
-
-.productImage,
-.categoryImage {
-  display: block;
-  width: 100%;
-  object-fit: cover;
+  background: var(--surface);
 }
 
 .productImage {
+  display: block;
+  width: 100%;
   min-height: 240px;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .panelCopy {
@@ -229,10 +239,9 @@ a {
   padding: 26px;
 }
 
-.panelCopy h2,
-.categoryCard h3 {
+.panelCopy h2 {
   margin: 0;
-  color: #fff7f2;
+  color: var(--foreground);
   font-size: 1.65rem;
 }
 
@@ -240,14 +249,6 @@ a {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
-}
-
-.panelCopy a,
-.categoryCard a {
-  color: var(--brand-red);
-  font-size: 0.78rem;
-  font-weight: 950;
-  letter-spacing: 0.11em;
 }
 
 .actions {
@@ -277,9 +278,9 @@ a {
 }
 
 .secondary {
-  border: 1px solid rgba(143, 23, 23, 0.5);
-  background: #0d0808;
-  color: #fff7f2;
+  border: 1px solid rgba(244, 222, 193, 0.32);
+  background: rgba(244, 222, 193, 0.12);
+  color: var(--foreground);
 }
 
 .highlights {
@@ -288,29 +289,23 @@ a {
   gap: 1px;
   overflow: hidden;
   margin-top: 18px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(244, 222, 193, 0.18);
   border-radius: 8px;
-  background: rgba(143, 23, 23, 0.45);
+  background: rgba(244, 222, 193, 0.16);
 }
 
 .highlights span {
   display: grid;
   min-height: 82px;
   place-items: center;
-  background: var(--surface);
-  color: #fff7f2;
+  background: rgba(74, 53, 37, 0.82);
+  color: var(--foreground);
   font-weight: 950;
   text-align: center;
 }
 
 .section {
   padding: 88px 0;
-}
-
-.centeredText {
-  max-width: 840px;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .sectionHeader h2,
@@ -320,40 +315,129 @@ a {
   font-size: clamp(2.1rem, 4vw, 4.25rem);
 }
 
-.categoryGrid {
+.productShowcase {
+  position: relative;
+}
+
+.showcaseHeader {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 36px;
+  max-width: 980px;
+  gap: 18px;
+  margin-bottom: 34px;
 }
 
-.categoryCard {
+.showcaseHeader p:not(.eyebrow) {
+  max-width: 690px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(310px, 0.75fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.featureTile,
+.supportTile {
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(244, 222, 193, 0.22);
   border-radius: 8px;
-  background: var(--surface);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+  background: rgba(74, 53, 37, 0.72);
+  box-shadow: 0 22px 55px rgba(49, 27, 18, 0.3);
 }
 
-.categoryImage {
-  min-height: 190px;
-  aspect-ratio: 4 / 3;
+.featureTile {
+  position: relative;
+  min-height: 620px;
 }
 
-.categoryCard h3,
-.categoryCard a {
+.featureTile img,
+.supportTile img {
   display: block;
-  margin: 22px 22px 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.categoryCard a {
-  margin-bottom: 24px;
+.featureTile img {
+  position: absolute;
+  inset: 0;
+}
+
+.featureTile::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 28%, rgba(43, 33, 24, 0.22) 48%, rgba(43, 33, 24, 0.92));
+}
+
+.featureTile div {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  left: 28px;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.kicker {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.featureTile h3 {
+  margin: 0;
+  color: #fff8ee;
+  font-size: clamp(2rem, 4.4vw, 4.7rem);
+  line-height: 0.98;
+}
+
+.supportTiles {
+  display: grid;
+  gap: 18px;
+}
+
+.supportTile {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  min-height: 188px;
+}
+
+.supportTile div {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 22px;
+}
+
+.supportTile h3,
+.supportTile p {
+  margin: 0;
+}
+
+.supportTile h3 {
+  color: var(--foreground);
+  font-size: 1.32rem;
+}
+
+.supportTile p {
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .storyBand {
   border-radius: 8px;
-  border: 1px solid rgba(143, 23, 23, 0.45);
-  background: var(--brand-red-dark);
+  border: 1px solid rgba(244, 222, 193, 0.18);
+  background: linear-gradient(135deg, var(--brand-red-dark), #7d1b15);
   padding: clamp(38px, 6vw, 72px);
   text-align: center;
 }
@@ -361,7 +445,7 @@ a {
 .storyBand p {
   max-width: 900px;
   margin: 0 auto;
-  color: #fff7f2;
+  color: #fff8ee;
   font-size: clamp(1.45rem, 3vw, 2.7rem);
   font-weight: 950;
   line-height: 1.2;
@@ -385,15 +469,15 @@ a {
 .textLink {
   display: inline-flex;
   margin-top: 18px;
-  color: var(--brand-red);
+  color: var(--gold);
   font-weight: 950;
 }
 
 .hours {
   border-radius: 8px;
-  border: 1px solid rgba(143, 23, 23, 0.5);
-  background: #100909;
-  color: #fff;
+  border: 1px solid rgba(244, 222, 193, 0.22);
+  background: rgba(74, 53, 37, 0.8);
+  color: var(--foreground);
   padding: 28px;
 }
 
@@ -403,13 +487,13 @@ a {
 }
 
 .hours p {
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--muted);
 }
 
 .hours strong {
   display: block;
   margin-top: 4px;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .linksBand {
@@ -424,10 +508,10 @@ a {
   display: grid;
   min-height: 76px;
   place-items: center;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(244, 222, 193, 0.2);
   border-radius: 8px;
-  background: var(--surface);
-  color: #fff7f2;
+  background: rgba(74, 53, 37, 0.72);
+  color: var(--foreground);
   font-weight: 950;
   text-align: center;
 }
@@ -435,11 +519,11 @@ a {
 .contact {
   margin-bottom: 34px;
   border-radius: 8px;
-  border: 1px solid rgba(143, 23, 23, 0.5);
+  border: 1px solid rgba(244, 222, 193, 0.2);
   background:
-    linear-gradient(135deg, rgba(143, 23, 23, 0.72), rgba(12, 7, 7, 0.98)),
-    var(--brand-red-dark);
-  color: #fff;
+    linear-gradient(135deg, rgba(143, 23, 23, 0.74), rgba(74, 53, 37, 0.96)),
+    var(--surface);
+  color: #fff8ee;
   padding: clamp(32px, 6vw, 62px);
   text-align: center;
 }
@@ -449,12 +533,12 @@ a {
 }
 
 .contact h2 {
-  color: #fff;
+  color: #fff8ee;
 }
 
 @media (max-width: 980px) {
   .heroSlider,
-  .categoryGrid,
+  .showcaseGrid,
   .visit,
   .linksBand {
     grid-template-columns: 1fr;
@@ -462,6 +546,10 @@ a {
 
   .highlights {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featureTile {
+    min-height: 540px;
   }
 }
 
@@ -488,20 +576,73 @@ a {
   .languageToggle label {
     flex: 1;
   }
+
+  .supportTile {
+    grid-template-columns: 1fr;
+  }
+
+  .supportTile img {
+    aspect-ratio: 4 / 3;
+  }
 }
-</style>
+
+  </style>
 </head>
 <body>
   <main class="pageShell">
-    <input class="languageInput" id="lang-el" name="language" type="radio" checked><input class="languageInput" id="lang-en" name="language" type="radio">
-    <header class="siteHeader" id="top"><a class="brand" href="#top" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ"><span class="brandMark">Ρ</span><span>Μπουγατσοπωλείο ΡΙΖΟΣ</span></a><nav class="nav" aria-label="Main navigation"><div class="navLinks"><a href="#products"><span class="el">Προϊόντα</span><span class="en">Products</span></a><a href="#story"><span class="el">Το μαγαζί</span><span class="en">The shop</span></a><a href="#visit"><span class="el">Τοποθεσία</span><span class="en">Location</span></a><a href="#contact"><span class="el">Επικοινωνία</span><span class="en">Contact</span></a></div><div class="languageToggle" aria-label="Language"><label for="lang-el">EL</label><label for="lang-en">EN</label></div></nav></header>
-    <section class="hero"><div class="heroIntro"><p class="eyebrow"><span class="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span><span class="en">Agios Stefanos · open 24 hours</span></p><h1><span class="el">Ζεστή μπουγάτσα, πίτες και καφές κάθε ώρα.</span><span class="en">Warm bougatsa, pies, and coffee at any hour.</span></h1><p class="intro"><span class="el">Μια πιο σύγχρονη παρουσία για το ΡΙΖΟΣ, με καθαρή προβολή προϊόντων, 24ωρο ωράριο και πραγματικές φωτογραφίες από τα προϊόντα και το κατάστημα.</span><span class="en">A more modern presence for RIZOS, with clear product promotion, 24-hour service, and real photos from the products and the shop.</span></p></div><div class="heroSlider" aria-label="Product highlights"><article class="heroPanel"><img class="productImage" src="rizos/bougatsa-tray.jpg" alt="Ταψί με μπουγάτσες και πίτες στη βιτρίνα του ΡΙΖΟΣ"><div class="panelCopy"><h2><span class="el">Μπουγάτσα</span><span class="en">Bougatsa</span></h2><p><span class="el">Κλασική γεύση για πρωινό ή γλυκό διάλειμμα.</span><span class="en">A classic choice for breakfast or a sweet break.</span></p><a href="#products"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></div></article><article class="heroPanel"><img class="productImage" src="rizos/ham-cheese-rolls.jpg" alt="Αλμυρά ρολά με ζαμπόν και τυρί"><div class="panelCopy"><h2><span class="el">Πίτες</span><span class="en">Pies</span></h2><p><span class="el">Αλμυρές επιλογές για κάθε ώρα της ημέρας.</span><span class="en">Savory choices for any hour of the day.</span></p><a href="#products"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></div></article><article class="heroPanel"><img class="productImage" src="rizos/sweet-bougatsa.jpg" alt="Γλυκιά μπουγάτσα με σοκολάτα"><div class="panelCopy"><h2><span class="el">Γλυκά</span><span class="en">Sweets</span></h2><p><span class="el">Γλυκιά μπουγάτσα και σοκολατένιες επιλογές.</span><span class="en">Sweet bougatsa and chocolate choices.</span></p><a href="#products"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></div></article></div><div class="actions centered"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Δες το στον χάρτη</span><span class="en">View on map</span></a><a class="button secondary" href="tel:+302108141388">21 0814 1388</a></div></section>
+    <input class="languageInput" id="lang-el" name="language" type="radio" checked>
+    <input class="languageInput" id="lang-en" name="language" type="radio">
+
+    <header class="siteHeader" id="top">
+      <a class="brand" href="#top" aria-label="Μπουγατσοπωλείο ΡΙΖΟΣ"><span class="brandMark">Ρ</span><span>Μπουγατσοπωλείο ΡΙΖΟΣ</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <div class="navLinks">
+          <a href="#products"><span class="el">Προϊόντα</span><span class="en">Products</span></a>
+          <a href="#story"><span class="el">Το μαγαζί</span><span class="en">The shop</span></a>
+          <a href="#visit"><span class="el">Τοποθεσία</span><span class="en">Location</span></a>
+          <a href="#contact"><span class="el">Επικοινωνία</span><span class="en">Contact</span></a>
+        </div>
+        <div class="languageToggle" aria-label="Language"><label for="lang-el">EL</label><label for="lang-en">EN</label></div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="heroIntro">
+        <p class="eyebrow"><span class="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span><span class="en">Agios Stefanos · open 24 hours</span></p>
+        <h1><span class="el">Ζεστή μπουγάτσα, πίτες και καφές κάθε ώρα.</span><span class="en">Warm bougatsa, pies, and coffee at any hour.</span></h1>
+        <p class="intro"><span class="el">Μια μοντέρνα σελίδα για το ΡΙΖΟΣ, με έμφαση στα προϊόντα, την τοποθεσία και την καθημερινή εξυπηρέτηση στον Άγιο Στέφανο.</span><span class="en">A modern page for RIZOS, focused on the products, the location, and everyday service in Agios Stefanos.</span></p>
+      </div>
+
+      <div class="heroSlider" aria-label="Product highlights">
+        <article class="heroPanel"><img class="productImage" src="rizos/bougatsa-tray.jpg" alt="Ταψί με μπουγάτσες και πίτες στη βιτρίνα του ΡΙΖΟΣ"><div class="panelCopy"><h2><span class="el">Μπουγάτσα</span><span class="en">Bougatsa</span></h2><p><span class="el">Τραγανό φύλλο και γεμάτη γεύση για πρωινό ή γλυκό διάλειμμα.</span><span class="en">Crisp pastry and full flavor for breakfast or a sweet break.</span></p></div></article>
+        <article class="heroPanel"><img class="productImage" src="rizos/ham-cheese-rolls.jpg" alt="Αλμυρά ρολά με ζαμπόν και τυρί"><div class="panelCopy"><h2><span class="el">Αλμυρές πίτες</span><span class="en">Savory pies</span></h2><p><span class="el">Ζεστές επιλογές για κάθε ώρα της ημέρας.</span><span class="en">Warm savory choices for any hour of the day.</span></p></div></article>
+        <article class="heroPanel"><img class="productImage" src="rizos/sweet-bougatsa.jpg" alt="Γλυκιά μπουγάτσα με σοκολάτα"><div class="panelCopy"><h2><span class="el">Γλυκές επιλογές</span><span class="en">Sweet choices</span></h2><p><span class="el">Μπουγάτσα και σοκολατένιες επιλογές για κάτι πιο γλυκό.</span><span class="en">Bougatsa and chocolate choices when you want something sweeter.</span></p></div></article>
+      </div>
+
+      <div class="actions centered"><a class="button primary" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" rel="noreferrer" target="_blank"><span class="el">Δες το στον χάρτη</span><span class="en">View on map</span></a><a class="button secondary" href="tel:+302108141388">21 0814 1388</a></div>
+    </section>
+
     <section class="highlights" aria-label="Highlights"><span><span class="el">Ανοιχτά 24 ώρες</span><span class="en">Open 24 hours</span></span><span><span class="el">Λεωφ. Κρυονερίου 17</span><span class="en">17 Kryoneriou Ave.</span></span><span><span class="el">Άγιος Στέφανος</span><span class="en">Agios Stefanos</span></span><span><span class="el">21 0814 1388</span><span class="en">21 0814 1388</span></span></section>
-    <section class="section categorySection" id="products"><div class="sectionHeader centeredText"><p class="eyebrow"><span class="el">Προϊόντα</span><span class="en">Products</span></p><h2><span class="el">Προϊόντα και εικόνες από το πραγματικό κατάστημα.</span><span class="en">Products and images from the real shop.</span></h2></div><div class="categoryGrid"><article class="categoryCard"><img class="categoryImage" src="rizos/shop-front.jpg" alt="Πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ"><h3><span class="el">Το κατάστημα</span><span class="en">The shop</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article><article class="categoryCard"><img class="categoryImage" src="rizos/bougatsa-tray.jpg" alt="Μπουγάτσες στη βιτρίνα"><h3><span class="el">Μπουγάτσα</span><span class="en">Bougatsa</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article><article class="categoryCard"><img class="categoryImage" src="rizos/pastry-display.jpg" alt="Σφολιάτες και αλμυρές πίτες στη βιτρίνα"><h3><span class="el">Σφολιάτες</span><span class="en">Pastries</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article><article class="categoryCard"><img class="categoryImage" src="rizos/sweet-bougatsa.jpg" alt="Γλυκιά μπουγάτσα με σοκολάτα"><h3><span class="el">Γλυκές επιλογές</span><span class="en">Sweet choices</span></h3><a href="#contact"><span class="el">ΠΕΡΙΣΣΟΤΕΡΑ</span><span class="en">MORE</span></a></article></div></section>
+
+    <section class="section productShowcase" id="products">
+      <div class="sectionHeader showcaseHeader"><p class="eyebrow"><span class="el">Προϊόντα</span><span class="en">Products</span></p><h2><span class="el">Καθημερινές επιλογές, καθαρές εικόνες, ζεστή αίσθηση.</span><span class="en">Everyday choices, clean photos, warm presentation.</span></h2><p><span class="el">Η προβολή γίνεται πιο απλή και premium: μεγάλο προϊόν, μικρότερες λεπτομέρειες και καθαρή ανάγνωση χωρίς βαριά μαύρα πλαίσια.</span><span class="en">A simpler, more premium presentation: one large product moment, smaller details, and clear reading without heavy black cards.</span></p></div>
+      <div class="showcaseGrid">
+        <article class="featureTile"><img src="rizos/sweet-bougatsa.jpg" alt="Γλυκιά μπουγάτσα με σοκολάτα"><div><span class="kicker"><span class="el">Γλυκό highlight</span><span class="en">Sweet highlight</span></span><h3><span class="el">Μπουγάτσα, σφολιάτες και γλυκές επιλογές για κάθε στιγμή.</span><span class="en">Bougatsa, pastries, and sweet choices for every moment.</span></h3></div></article>
+        <div class="supportTiles">
+          <article class="supportTile"><img src="rizos/shop-front.jpg" alt="Πρόσοψη του Μπουγατσοπωλείου ΡΙΖΟΣ"><div><h3><span class="el">Το κατάστημα</span><span class="en">The shop</span></h3><p><span class="el">Η βιτρίνα του ΡΙΖΟΣ στον Άγιο Στέφανο.</span><span class="en">The RIZOS storefront in Agios Stefanos.</span></p></div></article>
+          <article class="supportTile"><img src="rizos/bougatsa-tray.jpg" alt="Μπουγάτσες στη βιτρίνα"><div><h3><span class="el">Μπουγάτσα</span><span class="en">Bougatsa</span></h3><p><span class="el">Κλασική, ζεστή και έτοιμη για σερβίρισμα.</span><span class="en">Classic, warm, and ready to serve.</span></p></div></article>
+          <article class="supportTile"><img src="rizos/pastry-display.jpg" alt="Σφολιάτες και αλμυρές πίτες στη βιτρίνα"><div><h3><span class="el">Σφολιάτες</span><span class="en">Pastries</span></h3><p><span class="el">Αλμυρές επιλογές για γρήγορο πρωινό ή σνακ.</span><span class="en">Savory choices for breakfast or a quick snack.</span></p></div></article>
+        </div>
+      </div>
+    </section>
+
     <section class="storyBand" id="story"><p><span class="el">Μπουγάτσα, πίτες, καφές και γρήγορο πρωινό στον Άγιο Στέφανο, με λειτουργία όλο το 24ωρο.</span><span class="en">Bougatsa, pies, coffee, and quick breakfast in Agios Stefanos, open around the clock.</span></p></section>
-    <section class="visit" id="visit"><div><p class="eyebrow"><span class="el">Βρες το κατάστημα</span><span class="en">Find the shop</span></p><h2><span class="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.</span><span class="en">17 Kryoneriou Avenue, Agios Stefanos.</span></h2><p><span class="el">Πέρασε για μπουγάτσα, πίτες και καφέ οποιαδήποτε στιγμή της ημέρας.</span><span class="en">Stop by for bougatsa, pies, and coffee at any time of day.</span></p><a class="textLink" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Άνοιγμα οδηγιών στο Google Maps</span><span class="en">Open directions in Google Maps</span></a></div><div class="hours"><h3><span class="el">Ωράριο</span><span class="en">Hours</span></h3><p><span class="el">Κάθε μέρα</span><span class="en">Every day</span><strong>24 ώρες / 24 hours</strong></p><p><span class="el">Τηλέφωνο</span><span class="en">Phone</span><strong>21 0814 1388</strong></p></div></section>
-    <section class="linksBand" aria-label="Useful links"><a href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Οδηγίες στο Google Maps</span><span class="en">Directions on Google Maps</span></a><a href="https://www.facebook.com/profile.php?id=100063526604702" target="_blank" rel="noreferrer"><span class="el">Σελίδα στο Facebook</span><span class="en">Facebook page</span></a><a href="https://www.xrysietairia.eu/company/rizos-basileios-eleutherios-335874" target="_blank" rel="noreferrer"><span class="el">Καταχώριση επιχείρησης</span><span class="en">Business listing</span></a></section>
-    <section class="contact" id="contact"><p class="eyebrow"><span class="el">Επικοινωνία</span><span class="en">Contact</span></p><h2><span class="el">Θες να ρωτήσεις κάτι πριν περάσεις;</span><span class="en">Want to ask something before stopping by?</span></h2><div class="actions centered"><a class="button primary" href="tel:+302108141388">21 0814 1388</a><a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" target="_blank" rel="noreferrer"><span class="el">Τοποθεσία</span><span class="en">Location</span></a></div></section>
+
+    <section class="visit" id="visit"><div><p class="eyebrow"><span class="el">Βρες το κατάστημα</span><span class="en">Find the shop</span></p><h2><span class="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.</span><span class="en">17 Kryoneriou Avenue, Agios Stefanos.</span></h2><p><span class="el">Πέρασε για μπουγάτσα, πίτες και καφέ οποιαδήποτε στιγμή της ημέρας.</span><span class="en">Stop by for bougatsa, pies, and coffee at any time of day.</span></p><a class="textLink" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" rel="noreferrer" target="_blank"><span class="el">Άνοιγμα οδηγιών στο Google Maps</span><span class="en">Open directions in Google Maps</span></a></div><div class="hours"><h3><span class="el">Ωράριο</span><span class="en">Hours</span></h3><p><span class="el">Κάθε μέρα</span><span class="en">Every day</span><strong>24 ώρες / 24 hours</strong></p><p><span class="el">Τηλέφωνο</span><span class="en">Phone</span><strong>21 0814 1388</strong></p></div></section>
+
+    <section class="linksBand" aria-label="Useful links"><a href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" rel="noreferrer" target="_blank"><span class="el">Οδηγίες στο Google Maps</span><span class="en">Directions on Google Maps</span></a><a href="https://www.facebook.com/profile.php?id=100063526604702" rel="noreferrer" target="_blank"><span class="el">Σελίδα στο Facebook</span><span class="en">Facebook page</span></a><a href="https://www.xrysietairia.eu/company/rizos-basileios-eleutherios-335874" rel="noreferrer" target="_blank"><span class="el">Καταχώριση επιχείρησης</span><span class="en">Business listing</span></a></section>
+
+    <section class="contact" id="contact"><p class="eyebrow"><span class="el">Επικοινωνία</span><span class="en">Contact</span></p><h2><span class="el">Θες να ρωτήσεις κάτι πριν περάσεις;</span><span class="en">Want to ask something before stopping by?</span></h2><div class="actions centered"><a class="button primary" href="tel:+302108141388">21 0814 1388</a><a class="button secondary" href="https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065" rel="noreferrer" target="_blank"><span class="el">Τοποθεσία</span><span class="en">Location</span></a></div></section>
   </main>
 </body>
 </html>
