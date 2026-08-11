@@ -214,7 +214,7 @@ export default function Home() {
               <span className="optionDot" aria-hidden="true" />
               <div>
                 <h3>
-                  <span className="el">{item.greek}</span>
+                  <span className="el">{item.title}</span>
                   <span className="en">{item.english}</span>
                 </h3>
                 <p>

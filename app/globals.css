@@ -621,35 +621,76 @@ a {
 }
 
 .bougatsaOption h3 span {
-  text-shadow: 0 2px 10px rgba(43, 33, 24, 0.36);
+  text-shadow:
+    0 2px 10px rgba(43, 33, 24, 0.42),
+    0 0 1px rgba(255, 250, 238, 0.45);
+}
+
+.flourWord,
+.cinnamonWord,
+.pralineWord,
+.chocolateWord,
+.cheeseWord,
+.creamWord,
+.buenoWord {
+  display: inline-block;
+  color: transparent;
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ingredientShimmer 7s ease-in-out infinite alternate;
+  text-shadow: none !important;
 }
 
 .flourWord {
-  color: #fffaf0;
+  background-image: linear-gradient(122deg, #ffffff 0 24%, #fff8e8 38%, #9f6735 54%, #ffffff 72%, #c28a4b 100%);
 }
 
 .cinnamonWord {
-  color: #c88745;
+  background-image: linear-gradient(122deg, #d89450 0 24%, #b86b35 42%, #9c572c 58%, #ca7f42 78%, #ad6332 100%);
 }
 
 .pralineWord {
-  color: #b96f3f;
+  background-image: linear-gradient(122deg, #e0a86b 0 24%, #c98249 42%, #b36c3c 58%, #d99b61 78%, #c47a42 100%);
 }
 
 .chocolateWord {
-  color: #6f351f;
+  background-image: linear-gradient(122deg, #d19a6a 0 22%, #b8754b 40%, #a86542 58%, #c58a5d 78%, #ad6d47 100%);
 }
 
 .cheeseWord {
-  color: #ffd66e;
+  background-image: linear-gradient(122deg, #fffaf0 0 24%, #ffe98f 44%, #ffd764 60%, #fff4ba 78%, #f2c84c 100%);
 }
 
 .creamWord {
-  color: #f9e4bc;
+  background-image: linear-gradient(122deg, #ffffff 0 28%, #fff2cf 48%, #f9e4bc 64%, #ffffff 82%, #f5d9a3 100%);
 }
 
 .buenoWord {
-  color: #d99a57;
+  background-image: linear-gradient(122deg, #f8ddb0 0 24%, #daa163 42%, #c4864f 58%, #efd0a0 78%, #cf9258 100%);
+}
+
+@keyframes ingredientShimmer {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flourWord,
+  .cinnamonWord,
+  .pralineWord,
+  .chocolateWord,
+  .cheeseWord,
+  .creamWord,
+  .buenoWord {
+    animation: none;
+  }
 }
 
 .bougatsaOption p {
