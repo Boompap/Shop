@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Miama";
+  src: url("/fonts/Miama.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #f9e4bc;
   --foreground: #2b2118;
@@ -54,18 +62,19 @@ body::before {
   pointer-events: none;
   content: "";
   background:
-    radial-gradient(circle at 8% 12%, rgba(255, 255, 248, 0.96) 0 0.18rem, transparent 0.24rem),
-    radial-gradient(circle at 16% 18%, rgba(255, 250, 238, 0.78) 0 0.34rem, transparent 0.46rem),
-    radial-gradient(circle at 24% 10%, rgba(255, 250, 238, 0.58) 0 0.14rem, transparent 0.24rem),
-    radial-gradient(circle at 42% 22%, rgba(255, 255, 248, 0.86) 0 0.2rem, transparent 0.28rem),
-    radial-gradient(circle at 64% 16%, rgba(255, 250, 238, 0.68) 0 0.28rem, transparent 0.4rem),
-    radial-gradient(circle at 80% 28%, rgba(255, 255, 248, 0.78) 0 0.16rem, transparent 0.26rem),
-    radial-gradient(circle at 90% 18%, rgba(255, 250, 238, 0.66) 0 0.36rem, transparent 0.48rem),
-    radial-gradient(circle at 12% 64%, rgba(255, 250, 238, 0.64) 0 0.42rem, transparent 0.56rem),
-    radial-gradient(circle at 72% 72%, rgba(255, 255, 248, 0.72) 0 0.24rem, transparent 0.36rem),
-    radial-gradient(circle at 54% 86%, rgba(255, 250, 238, 0.62) 0 0.34rem, transparent 0.48rem);
-  background-size: 18rem 18rem;
-  opacity: 0.78;
+    linear-gradient(
+      180deg,
+      rgba(43, 33, 24, 0.04) 0%,
+      rgba(122, 91, 58, 0.12) 28%,
+      rgba(221, 188, 132, 0.28) 42%,
+      rgba(249, 228, 188, 0.42) 58%,
+      rgba(249, 228, 188, 0.48) 100%
+    ),
+    url("/rizos/flourthrown.jpg");
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: cover;
+  opacity: 0.9;
 }
 
 a {
@@ -126,12 +135,15 @@ a {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  color: var(--foreground);
+  color: #fff4dc;
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 800;
   line-height: 1;
   text-align: center;
+  text-shadow:
+    0 3px 18px rgba(0, 0, 0, 0.74),
+    0 12px 32px rgba(91, 13, 13, 0.42);
 }
 
 .brandMark {
@@ -160,9 +172,10 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 22px;
-  color: var(--muted);
+  color: #f9e4bc;
   font-size: 0.94rem;
   font-weight: 900;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.58);
 }
 
 .languageToggle {
@@ -425,6 +438,34 @@ a {
   max-width: 980px;
   gap: 18px;
   margin-bottom: 34px;
+  justify-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.showcaseHeader .handmadeTitle {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  color: #5b0d0d;
+  font-family: "Miama", cursive;
+  font-size: clamp(2.4rem, 5.35vw, 6.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.92;
+  white-space: nowrap;
+  -webkit-text-stroke: 1.75px #5b0d0d;
+  text-shadow:
+    1.3px 0 #5b0d0d,
+    -1.3px 0 #5b0d0d,
+    0 1.3px #5b0d0d,
+    0 -0.9px #5b0d0d,
+    0.9px 0.9px #5b0d0d,
+    -0.9px 0.9px #5b0d0d,
+    0 1px 0 rgba(255, 250, 238, 0.95),
+    0 8px 26px rgba(255, 250, 238, 0.55),
+    0 16px 44px rgba(117, 91, 64, 0.18);
 }
 
 .showcaseHeader p:not(.eyebrow) {
@@ -480,7 +521,8 @@ a {
 
 .mosaicCard div {
   display: grid;
-  gap: 10px;
+  align-content: start;
+  gap: 14px;
   padding: 24px;
   border-top: 5px solid var(--brand-red);
 }
@@ -492,14 +534,19 @@ a {
 
 .mosaicCard h3 {
   color: var(--brand-red-dark);
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.45rem, 2.3vw, 2.35rem);
-  line-height: 1;
+  font-family: var(--font-ui);
+  font-weight: 900;
+  font-size: clamp(1.3rem, 1.9vw, 2rem);
+  letter-spacing: 0.01em;
+  line-height: 1.08;
 }
 
 .mosaicCard p {
-  color: var(--muted);
+  max-width: 34ch;
+  color: #5f442f;
+  font-family: var(--font-ui);
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  font-weight: 600;
   line-height: 1.55;
 }
 
@@ -701,7 +748,15 @@ a {
 }
 
 .toppingsSection {
+  width: 100%;
+  max-width: none;
   padding-top: 76px;
+  padding-right: max(18px, calc((100vw - 1180px) / 2));
+  padding-left: max(18px, calc((100vw - 1180px) / 2));
+  background:
+    radial-gradient(ellipse at 16% 20%, rgba(255, 255, 248, 0.86) 0 8rem, transparent 18rem),
+    radial-gradient(ellipse at 84% 28%, rgba(143, 23, 23, 0.12) 0 10rem, transparent 22rem),
+    linear-gradient(180deg, #f9e4bc 0%, #e9c383 100%);
 }
 
 .compactToppings {
@@ -769,6 +824,7 @@ a {
     linear-gradient(135deg, var(--brand-red-dark), #7d1b15 58%, var(--brown-deep));
   padding: clamp(38px, 6vw, 72px);
   text-align: center;
+  box-shadow: 0 26px 70px rgba(43, 33, 24, 0.2);
 }
 
 .storyBand p {

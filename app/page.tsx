@@ -58,12 +58,12 @@ const bougatsaOptions = [
 
 const productShowcase = [
   {
-    greek: "Γλυκιά μπουγάτσα",
-    english: "Sweet bougatsa",
+    greek: "Μπουγάτσα σοκολάτα",
+    english: "Chocolate bougatsa",
     textGreek: "Η σπεσιαλιτέ μας.",
     textEnglish: "Our specialty.",
     image: "/rizos/sweet-bougatsa.jpg",
-    alt: "Γλυκιά μπουγάτσα",
+    alt: "Μπουγάτσα σοκολάτα",
     featured: true,
   },
   {
@@ -89,6 +89,14 @@ const productShowcase = [
     textEnglish: "Warm peinirli for breakfast or a snack.",
     image: "/rizos/ham-cheese-rolls.jpg",
     alt: "Πεϊνιρλί με ζαμπόν και τυρί",
+  },
+  {
+    greek: "Πίτσα ατομική",
+    english: "Individual pizza",
+    textGreek: "Αφράτη πίτσα με τυρί, αλλαντικά και πιπεριές.",
+    textEnglish: "Soft individual pizza with cheese, cold cuts, and peppers.",
+    image: "/rizos/pizza-warm-background.png",
+    alt: "Ατομική πίτσα σε ζεστό φόντο αρτοποιείου",
   },
 ];
 
@@ -168,18 +176,10 @@ export default function Home() {
 
       <section className="section productShowcase" id="products">
         <div className="sectionHeader showcaseHeader">
-          <h2>
+          <h2 className="handmadeTitle">
             <span className="el">ΧΕΙΡΟΠΟΙΗΤΑ ΠΡΟΪΟΝΤΑ</span>
             <span className="en">HANDMADE PRODUCTS</span>
           </h2>
-          <p>
-            <span className="el">
-              Γλυκές και αλμυρές επιλογές από τη βιτρίνα και καφές για κάθε ώρα.
-            </span>
-            <span className="en">
-              Sweet and savory counter choices, plus coffee for any hour.
-            </span>
-          </p>
         </div>
 
         <div className="productMosaic" aria-label="Product showcase">
@@ -188,7 +188,7 @@ export default function Home() {
               <img src={item.image} alt={item.alt} />
               <div>
                 <h3>
-                  <span className="el">{item.title}</span>
+                  <span className="el">{item.greek}</span>
                   <span className="en">{item.english}</span>
                 </h3>
                 <p>
