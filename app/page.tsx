@@ -98,6 +98,15 @@ const productShowcase = [
     image: "/rizos/pizza-warm-background.png",
     alt: "Ατομική πίτσα σε ζεστό φόντο αρτοποιείου",
   },
+  {
+    greek: "Καφές",
+    english: "Coffee",
+    textGreek: "Freddo espresso, freddo cappuccino, cappuccino και άλλα.",
+    textEnglish: "Freddo espresso, freddo cappuccino, cappuccino, and more.",
+    image: "/rizos/coffee-clean.png",
+    alt: "Καφές ΡΙΖΟΣ",
+    wide: true,
+  },
 ];
 
 export default function Home() {
@@ -115,7 +124,7 @@ export default function Home() {
       <header className="siteHeader" id="top">
         <a className="brand" href="#top" aria-label="ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ">
           <span className="brandMark">Ρ</span>
-          <span>ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ</span>
+          <span className="brandName">ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ</span>
         </a>
 
         <nav className="nav" aria-label="Main navigation">
@@ -158,7 +167,18 @@ export default function Home() {
           </div>
 
           <figure className="shopHeroPhoto">
-            <img src="/rizos/shop-front.jpg" alt="Το κατάστημα ΡΙΖΟΣ στον Άγιο Στέφανο" />
+            <div className="shopPhotoCarousel">
+              <img
+                className="shopPhotoSlide"
+                src="/rizos/shop-front.jpg"
+                alt="Το κατάστημα ΡΙΖΟΣ στον Άγιο Στέφανο"
+              />
+              <img
+                className="shopPhotoSlide"
+                src="/rizos/shop-front-night.jpg"
+                alt="Το κατάστημα ΡΙΖΟΣ φωτισμένο το βράδυ"
+              />
+            </div>
             <figcaption>
               <span className="el">Το κατάστημα</span>
               <span className="en">The shop</span>
@@ -177,8 +197,8 @@ export default function Home() {
       <section className="section productShowcase" id="products">
         <div className="sectionHeader showcaseHeader">
           <h2 className="handmadeTitle">
-            <span className="el">ΧΕΙΡΟΠΟΙΗΤΑ ΠΡΟΪΟΝΤΑ</span>
-            <span className="en">HANDMADE PRODUCTS</span>
+            <span className="el">ΧΕΙΡΟΠΟΙΗΤΑ ΚΑΘΗΜΕΡΙΝΑ</span>
+            <span className="en">HANDMADE DAILY</span>
           </h2>
         </div>
 
@@ -264,7 +284,10 @@ export default function Home() {
 
         <div className="productMosaic" aria-label="Product showcase">
           {productShowcase.map((item) => (
-            <article className={item.featured ? "mosaicCard featuredProduct" : "mosaicCard"} key={item.greek}>
+            <article
+              className={`mosaicCard${item.featured ? " featuredProduct" : ""}${item.wide ? " coffeeProduct" : ""}`}
+              key={item.greek}
+            >
               <img src={item.image} alt={item.alt} />
               <div>
                 <h3>

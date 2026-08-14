@@ -22,8 +22,8 @@ export const metadata: Metadata = {
       "Ζεστή μπουγάτσα, πίτες και καφές όλο το 24ωρο στη Λεωφ. Κρυονερίου 17.",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/rizos-favicon.svg",
+    shortcut: "/rizos-favicon.svg",
   },
 };
 
