@@ -483,6 +483,135 @@ a {
   align-items: stretch;
 }
 
+.bakerLoop {
+  position: relative;
+  top: auto;
+  width: min(460px, 100%);
+  overflow: visible;
+  min-height: 230px;
+  margin: -4px auto 24px;
+}
+
+.bakerLoop::before {
+  position: absolute;
+  right: 8%;
+  bottom: 10px;
+  left: 12%;
+  height: 72px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255, 248, 232, 0.72) 0 35%, rgba(199, 139, 70, 0.18) 62%, transparent 76%);
+  content: "";
+  filter: blur(2px);
+}
+
+.bakerLoop svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  padding: 0 8px 8px;
+}
+
+.doughShape {
+  fill: #fff3d1;
+  stroke: #e3c977;
+  stroke-width: 5;
+  filter: drop-shadow(0 14px 18px rgba(117, 91, 64, 0.2));
+  transform-origin: 190px 178px;
+  animation: doughPulse 1.45s ease-in-out infinite;
+}
+
+.stickHead {
+  fill: #fff1d5;
+  stroke: #2b2118;
+  stroke-width: 6;
+}
+
+.chefHat path {
+  fill: #fffaf0;
+  stroke: #e4cf7a;
+  stroke-linejoin: round;
+  stroke-width: 4;
+  filter: drop-shadow(0 4px 5px rgba(91, 50, 25, 0.1));
+}
+
+.apronGroup {
+  transform-origin: 82px 126px;
+  animation: apronSway 1.8s ease-in-out infinite;
+}
+
+.stickApron {
+  fill: #fff7e8;
+  stroke: #ffffff;
+  stroke-linejoin: round;
+  stroke-width: 4;
+  filter: drop-shadow(0 7px 10px rgba(91, 50, 25, 0.12));
+}
+
+.apronStrap {
+  fill: none;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.apronPocket {
+  fill: rgba(255, 255, 255, 0.36);
+  stroke: #ffffff;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+}
+
+.apronLogo {
+  fill: #9d1717;
+  stroke: #fff8ee;
+  stroke-linejoin: round;
+  stroke-width: 0.65px;
+  paint-order: stroke fill;
+  font-family: "Arial Rounded MT Bold", "Comic Sans MS", "Trebuchet MS", var(--font-ui);
+  font-size: 9.6px;
+  font-weight: 900;
+  letter-spacing: 0.15px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  filter: drop-shadow(0 1px 1px rgba(75, 25, 15, 0.18));
+}
+
+.stickNeck,
+.stickBack {
+  fill: none;
+  stroke: #2b2118;
+  stroke-linecap: round;
+  stroke-width: 6;
+}
+
+.stickRollingAction {
+  transform-origin: 180px 178px;
+}
+
+.stickArm,
+.stickArmSupport {
+  fill: none;
+  stroke: #2b2118;
+  stroke-linecap: round;
+  stroke-width: 6;
+}
+
+.rollingPin {
+  fill: none;
+  stroke: #b06b38;
+  stroke-linecap: round;
+  stroke-width: 11;
+  filter: drop-shadow(0 10px 12px rgba(91, 50, 25, 0.2));
+}
+
+.rollingHandle {
+  fill: #a86535;
+}
+
 .productMosaic {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr 0.85fr;
@@ -548,6 +677,56 @@ a {
   font-size: clamp(0.98rem, 1.1vw, 1.08rem);
   font-weight: 600;
   line-height: 1.55;
+}
+
+@keyframes kneadPress {
+  0%,
+  100% {
+    transform: translateX(-20px) translateY(6px) rotate(-1deg);
+  }
+
+  48% {
+    transform: translateX(22px) translateY(-4px) rotate(1deg);
+  }
+}
+
+@keyframes apronSway {
+  0%,
+  100% {
+    transform: translateX(-1px) rotate(-1.5deg);
+  }
+
+  50% {
+    transform: translateX(2px) rotate(2deg);
+  }
+
+  78% {
+    transform: translateX(1px) rotate(0.5deg);
+  }
+}
+
+@keyframes doughPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  48% {
+    transform: scale(1.045, 0.965);
+  }
+}
+
+@keyframes flourSweep {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.52;
+  }
+
+  48% {
+    stroke-dashoffset: -30;
+    opacity: 0.9;
+  }
 }
 
 .featureTile,
@@ -735,7 +914,9 @@ a {
   .chocolateWord,
   .cheeseWord,
   .creamWord,
-  .buenoWord {
+  .buenoWord,
+  .apronGroup,
+  .doughShape {
     animation: none;
   }
 }
@@ -955,6 +1136,17 @@ a {
 
   .featuredProduct {
     min-height: 0;
+  }
+
+  .bakerLoop {
+    position: relative;
+    top: auto;
+    min-height: 260px;
+  }
+
+  .bakerLoop svg {
+    min-height: 260px;
+    max-height: 320px;
   }
 
   .compactToppings {

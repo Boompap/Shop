@@ -182,6 +182,86 @@ export default function Home() {
           </h2>
         </div>
 
+        <aside className="bakerLoop" aria-label="Animated baker kneading dough">
+          <svg viewBox="0 0 340 260" role="img" aria-hidden="true">
+            <path
+              className="doughShape"
+              d="M104 164 C122 128, 169 113, 229 121 C290 129, 326 153, 319 187 C311 224, 249 240, 177 230 C119 222, 90 195, 104 164 Z"
+            />
+            <g className="stickBody">
+              <g className="apronGroup">
+                <path
+                  className="stickApron"
+                  d="M82 126 C69 144, 59 170, 52 205 L46 237 L75 241 C91 214, 98 182, 96 150 C92 139, 88 131, 82 126 Z"
+                />
+                <path className="apronStrap" d="M82 126 C74 135, 67 147, 61 162" />
+                <path className="apronStrap" d="M84 128 C91 138, 95 149, 97 163" />
+                <path
+                  className="apronPocket"
+                  d="M55 196 L78 200 L72 219 L52 216 Z"
+                />
+                <g className="apronLogoBadge" transform="rotate(-40 69 196)">
+                  <text className="apronLogo" x="69" y="196">
+                    ΡΙΖΟΣ
+                  </text>
+                </g>
+              </g>
+              <g className="chefHat">
+                <path d="M91 40 C97 30, 109 25, 124 24 C133 17, 146 20, 151 30 C164 34, 166 45, 154 51 C145 55, 134 58, 124 64 C115 68, 104 66, 99 58 C91 58, 86 51, 91 40 Z" />
+              </g>
+              <circle className="stickHead" cx="126" cy="68" r="37" />
+              <path className="stickNeck" d="M112 102 L83 128" />
+              <path className="stickBack" d="M83 128 C60 153, 43 185, 28 240" />
+            </g>
+            <g className="stickRollingAction">
+              <path
+                className="stickArm"
+                d="M83 128 C98 151, 123 175, 146 181"
+              >
+                <animate
+                  attributeName="d"
+                  dur="1.8s"
+                  repeatCount="indefinite"
+                  keyTimes="0;0.5;0.78;1"
+                  values="M83 128 C98 151, 123 175, 146 181; M83 128 C105 164, 132 189, 154 190; M83 128 C103 149, 126 166, 149 170; M83 128 C98 151, 123 175, 146 181"
+                />
+              </path>
+              <path
+                className="stickArmSupport"
+                d="M86 134 C108 151, 140 163, 166 158"
+              >
+                <animate
+                  attributeName="d"
+                  dur="1.8s"
+                  repeatCount="indefinite"
+                  keyTimes="0;0.5;0.78;1"
+                  values="M86 134 C108 151, 140 163, 166 158; M86 134 C130 164, 177 180, 216 177; M86 134 C119 149, 159 160, 190 158; M86 134 C108 151, 140 163, 166 158"
+                />
+              </path>
+              <path
+                className="rollingPin"
+                d="M123 194 C148 180, 177 162, 207 143"
+              >
+                <animate
+                  attributeName="d"
+                  dur="1.8s"
+                  repeatCount="indefinite"
+                  keyTimes="0;0.5;0.78;1"
+                  values="M123 194 C148 180, 177 162, 207 143; M118 207 C159 195, 229 181, 292 174; M131 177 C164 169, 207 160, 246 157; M123 194 C148 180, 177 162, 207 143"
+                />
+              </path>
+              <circle className="rollingHandle" cx="123" cy="194" r="8">
+                <animate attributeName="cx" dur="1.8s" repeatCount="indefinite" keyTimes="0;0.5;0.78;1" values="123;118;131;123" />
+                <animate attributeName="cy" dur="1.8s" repeatCount="indefinite" keyTimes="0;0.5;0.78;1" values="194;207;177;194" />
+              </circle>
+              <circle className="rollingHandle" cx="207" cy="143" r="8">
+                <animate attributeName="cx" dur="1.8s" repeatCount="indefinite" keyTimes="0;0.5;0.78;1" values="207;292;246;207" />
+                <animate attributeName="cy" dur="1.8s" repeatCount="indefinite" keyTimes="0;0.5;0.78;1" values="143;174;157;143" />
+              </circle>
+            </g>
+          </svg>
+        </aside>
+
         <div className="productMosaic" aria-label="Product showcase">
           {productShowcase.map((item) => (
             <article className={item.featured ? "mosaicCard featuredProduct" : "mosaicCard"} key={item.greek}>
