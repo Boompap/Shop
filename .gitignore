@@ -39,3 +39,6 @@ dev-server.*.log
 /.wrangler/
 /outputs/
 /work/
+.codex/
+video_deps/
+video-scan-output/
