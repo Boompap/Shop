@@ -97,7 +97,7 @@ const productShowcase = [
     greek: "Πίτσα ατομική",
     english: "Individual pizza",
     textGreek: "Αφράτη πίτσα με τυρί, αλλαντικά και πιπεριές.",
-    textEnglish: "Soft individual pizza with cheese, cold cuts, and peppers.",
+    textEnglish: "Soft individual pizza with cheese, ham, and peppers.",
     image: "/rizos/pizza-warm-background.png",
     alt: "Ατομική πίτσα σε ζεστό φόντο αρτοποιείου",
   },
@@ -111,6 +111,13 @@ const productShowcase = [
     wide: true,
   },
 ];
+
+const productTicker = {
+  greek:
+    "ΚΑΦΕΔΕΣ | ΡΟΦΗΜΑΤΑ | ΧΥΜΟΙ | ΑΝΑΨΥΚΤΙΚΑ | ΜΠΥΡΕΣ | ΣΦΟΛΙΑΤΕΣ | ΜΠΑΓΚΕΤΕΣ",
+  english:
+    "COFFEES | DRINKS | JUICES | SOFT DRINKS | BEERS | PASTRIES | BAGUETTES",
+};
 
 export default function Home() {
   return (
@@ -140,18 +147,45 @@ export default function Home() {
             <a href="#products">
               <span className="el">Προϊόντα</span>
               <span className="en">Products</span>
+              <span className="navIcon navIconProducts" aria-hidden="true">
+                <svg viewBox="0 0 64 48" focusable="false">
+                  <path d="M13 31c3-12 13-21 25-22 7-1 12 2 14 7 2 6-2 13-9 17-9 6-22 6-30-2z" />
+                  <path d="M18 29c7 4 17 3 24-1 5-3 8-7 7-11-5 5-11 8-18 8-6 0-11-2-15-6-2 3-3 7 2 10z" fill="#2b2118" opacity="0.28" />
+                  <path d="M22 18c3 4 7 6 12 6" opacity="0.58" />
+                  <path d="M35 13c1 5 0 9-2 12" opacity="0.5" />
+                </svg>
+              </span>
             </a>
             <a href="#story">
               <span className="el">Το μαγαζί</span>
               <span className="en">The shop</span>
+              <span className="navIcon navIconShop" aria-hidden="true">
+                <svg viewBox="0 0 64 48" focusable="false">
+                  <path d="M20 6h24v7H20z" />
+                  <path d="M13 15h38l6 9c-1 5-5 8-9 8-4 0-7-2-8-6-2 4-5 6-8 6s-6-2-8-6c-1 4-4 6-8 6s-8-3-9-8l6-9z" />
+                  <path d="M15 33h6v10h22V33h6v15H15z" />
+                </svg>
+              </span>
             </a>
             <a href="#visit">
               <span className="el">Τοποθεσία</span>
               <span className="en">Location</span>
+              <span className="navIcon navIconLocation" aria-hidden="true">
+                <svg viewBox="0 0 64 48" focusable="false">
+                  <path d="M32 4c-9 0-16 7-16 16 0 12 16 25 16 25s16-13 16-25c0-9-7-16-16-16zm0 22a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" />
+                  <path d="M20 43c3 3 21 3 24 0 2-2-3-4-12-4s-14 2-12 4z" opacity="0.72" />
+                </svg>
+              </span>
             </a>
             <a href="#contact">
               <span className="el">Επικοινωνία</span>
               <span className="en">Contact</span>
+              <span className="navIcon navIconContact" aria-hidden="true">
+                <svg viewBox="0 0 64 48" focusable="false">
+                  <path d="M18 6c-4 2-7 6-7 11 0 15 21 25 35 25 5 0 9-3 11-7l-10-8c-2 2-4 4-7 4-6 0-17-8-17-14 0-3 2-5 4-7L18 6z" />
+                  <path d="M43 8c7 2 11 6 13 13l-5 1c-1-5-5-8-9-10l1-4z" opacity="0.72" />
+                </svg>
+              </span>
             </a>
           </div>
           <div className="languageToggle" aria-label="Language">
@@ -162,16 +196,30 @@ export default function Home() {
       </header>
 
       <section className="hero bougatsaHero">
-        <p className="eyebrow heroKicker">
-          <span className="el">Άγιος Στέφανος · ανοιχτώ όλο το 24ωρο</span>
-          <span className="en">Agios Stefanos · open 24 hours</span>
-        </p>
         <div className="heroLayout">
           <div className="heroIntro">
+            <p className="eyebrow heroKicker">
+              <span className="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span>
+              <span className="en">Agios Stefanos · open 24 hours</span>
+            </p>
             <h1>
-              <span className="el">Ο μάστορας της μπουγάτσας.</span>
-              <span className="en">The master of bougatsa.</span>
+              <span className="el">
+                Ο μάστορας της
+                <br />
+                μπουγάτσας.
+              </span>
+              <span className="en">
+                The master of
+                <br />
+                bougatsa.
+              </span>
             </h1>
+            <div className="actions">
+              <a className="button primary" href="#products">
+                <span className="el">Δες τα προϊόντα</span>
+                <span className="en">See products</span>
+              </a>
+            </div>
           </div>
 
           <figure className="shopHeroPhoto">
@@ -193,16 +241,20 @@ export default function Home() {
             </figcaption>
           </figure>
         </div>
-
-        <div className="actions centered">
-          <a className="button primary" href="#products">
-            <span className="el">Δες τα προϊόντα</span>
-            <span className="en">See products</span>
-          </a>
-        </div>
       </section>
 
       <section className="section productShowcase" id="products">
+        <div className="productTicker productTickerTop" aria-hidden="true">
+          <div className="productTickerTrack">
+            {[0, 1, 2, 3].map((item) => (
+              <span className="productTickerItem" key={item}>
+                <span className="el">{productTicker.greek}</span>
+                <span className="en">{productTicker.english}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
         <div className="sectionHeader showcaseHeader">
           <h2 className="handmadeTitle">
             <span className="el">ΧΕΙΡΟΠΟΙΗΤΑ ΚΑΘΗΜΕΡΙΝΑ</span>
@@ -336,6 +388,17 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="productTicker productTickerBottom" aria-hidden="true">
+          <div className="productTickerTrack">
+            {[0, 1, 2, 3].map((item) => (
+              <span className="productTickerItem" key={item}>
+                <span className="el">{productTicker.greek}</span>
+                <span className="en">{productTicker.english}</span>
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -623,15 +686,6 @@ export default function Home() {
         <div className="actions centered">
           <a className="button primary" href="tel:+302108141388">
             21 0814 1388
-          </a>
-          <a
-            className="button secondary"
-            href={mapUrl}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <span className="el">Τοποθεσία</span>
-            <span className="en">Location</span>
           </a>
         </div>
       </section>
