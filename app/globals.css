@@ -217,8 +217,8 @@ a {
 .siteHeader {
   display: grid;
   justify-items: center;
-  gap: 22px;
-  padding: 28px 0 26px;
+  gap: 28px;
+  padding: 28px 0 6px;
 }
 
 .brand {
@@ -267,13 +267,17 @@ a {
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) auto minmax(86px, 1fr);
+  align-items: start;
+  justify-content: stretch;
   gap: 22px;
+  margin-top: 26px;
 }
 
 .navLinks {
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -287,7 +291,9 @@ a {
 .navLinks a {
   position: relative;
   display: inline-grid;
-  place-items: center;
+  place-items: end center;
+  margin-top: -22px;
+  padding: 22px 2px 0;
   color: inherit;
   line-height: 1.1;
   transition:
@@ -339,11 +345,11 @@ a {
   display: block;
   width: 42px;
   height: 34px;
-  color: #e84a38;
-  opacity: 0.86;
+  color: #ff6b4f;
+  opacity: 1;
   filter: drop-shadow(0 0 5px rgba(255, 230, 188, 0.42));
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -92%) scale(1.02);
   transition:
     color 180ms ease,
     opacity 180ms ease,
@@ -361,11 +367,13 @@ a {
 .navLinks a:focus-visible .navIcon {
   color: #ff6b4f;
   opacity: 1;
-  transform: translate(-50%, -118%) scale(1.02);
+  transform: translate(-50%, -92%) scale(1.02);
 }
 
 .languageToggle {
   display: inline-flex;
+  grid-column: 3;
+  justify-self: end;
   gap: 4px;
   border: 1px solid rgba(143, 23, 23, 0.18);
   border-radius: 999px;
@@ -381,15 +389,31 @@ a {
 }
 
 .languageToggle label {
-  display: grid;
-  min-width: 38px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 58px;
   min-height: 32px;
+  padding: 0 9px;
   cursor: pointer;
-  place-items: center;
   border-radius: 999px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 900;
+}
+
+.languageFlag {
+  display: block;
+  width: 24px;
+  height: 16px;
+  flex: 0 0 auto;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow:
+    inset 0 0 0 1px rgba(43, 33, 24, 0.2),
+    0 2px 6px rgba(43, 33, 24, 0.16);
 }
 
 .hero {
@@ -479,6 +503,8 @@ a {
 }
 
 .heroLayout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(380px, 0.48fr);
   gap: clamp(30px, 5vw, 68px);
@@ -489,6 +515,10 @@ a {
 .heroLayout .heroIntro {
   padding-right: 0;
   padding-left: 0;
+}
+
+.bougatsaHero .heroIntro {
+  transform: none;
 }
 
 .shopHeroPhoto {
@@ -633,7 +663,7 @@ a {
 }
 
 .heroKicker {
-  margin: 0 0 clamp(18px, 2vw, 24px);
+  margin: -52px 0 clamp(18px, 2vw, 24px);
   color: var(--cream);
   font-size: clamp(0.78rem, 0.92vw, 0.96rem);
   letter-spacing: 0.08em;
@@ -644,6 +674,7 @@ a {
   box-shadow:
     0 16px 34px rgba(77, 12, 12, 0.22),
     inset 0 1px 0 rgba(255, 230, 163, 0.24);
+  animation: warmShopSignFlash 8.5s linear infinite;
 }
 
 .heroIntro .heroKicker {
@@ -692,11 +723,16 @@ a {
 
 .bougatsaHero .heroIntro h1 {
   max-width: 720px;
+  transform: translateY(-34px);
 }
 
 .bougatsaHero .actions {
-  margin-top: clamp(22px, 3vw, 34px);
+  position: absolute;
+  right: 50%;
+  bottom: clamp(48px, 6vw, 78px);
+  margin-top: 0;
   padding: 0;
+  transform: translateX(50%);
 }
 
 .intro {
@@ -1803,7 +1839,8 @@ a {
   .buenoWord,
   .shopPhotoSlide,
   .apronGroup,
-  .doughShape {
+  .doughShape,
+  .heroKicker {
     animation: none;
   }
 
@@ -2035,72 +2072,229 @@ a {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
-  gap: 54px;
-  align-items: end;
-  min-height: 560px;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 330px);
+  grid-template-areas:
+    "label label"
+    "copy hours"
+    "actions actions";
+  gap: clamp(22px, 3vw, 40px);
+  align-items: center;
   overflow: hidden;
   margin-top: 72px;
   margin-bottom: 72px;
   border: 1px solid rgba(143, 23, 23, 0.22);
   border-radius: 8px;
-  padding: clamp(42px, 6vw, 72px);
+  padding: clamp(34px, 5vw, 58px);
 
   background:
     linear-gradient(
       90deg,
-      rgba(30, 20, 12, 0.78) 0%,
-      rgba(30, 20, 12, 0.58) 42%,
-      rgba(30, 20, 12, 0.18) 72%,
-      rgba(30, 20, 12, 0.08) 100%
+      rgba(24, 16, 10, 0.82) 0%,
+      rgba(34, 20, 12, 0.64) 45%,
+      rgba(34, 20, 12, 0.28) 76%,
+      rgba(34, 20, 12, 0.16) 100%
     ),
-    url("/rizos/brioche-buns.jpg");
+    url("/rizos/visit-buns-background.png");
 
   background-size: cover;
   background-position: center;
   box-shadow: 0 30px 75px rgba(43, 33, 24, 0.28);
 }
 
+.visitCopy {
+  position: relative;
+  z-index: 2;
+  grid-area: copy;
+  max-width: 680px;
+}
+
 .hours.visitHoursOverlay {
   position: relative;
   z-index: 2;
+  grid-area: hours;
   width: 100%;
-  background: rgba(255, 240, 210, 0.93);
+  background: rgba(255, 244, 220, 0.9);
   backdrop-filter: blur(5px);
   box-shadow: 0 18px 45px rgba(43, 33, 24, 0.28);
 }
 
-.visit > div:first-child > .eyebrow {
+.visitLabel {
+  position: relative;
+  z-index: 2;
+  grid-area: label;
+  justify-self: center;
   display: inline-flex;
+  align-items: center;
+  gap: 10px;
   width: fit-content;
-  margin: 0 0 24px;
+  margin: 0 0 4px;
   border: 1px solid rgba(225, 184, 91, 0.78);
   border-radius: 8px;
   background: rgba(91, 13, 13, 0.92);
   color: #f3c967;
-  padding: 14px 22px;
-  font-size: 1.05rem;
+  padding: 12px 18px;
+  font-size: 0.9rem;
   font-weight: 950;
-  letter-spacing: 0.1em;
-  box-shadow: 0 10px 28px rgba(43, 33, 24, 0.24);
+  letter-spacing: 0.11em;
+  box-shadow:
+    0 10px 28px rgba(43, 33, 24, 0.24),
+    0 0 0 rgba(243, 201, 103, 0);
 }
 
-.visit h2 {
-  font-size: clamp(3.6rem, 5vw, 5.8rem);
-  line-height: 0.94;
+.visitLabel::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #f3c967;
+  box-shadow: 0 0 0 4px rgba(243, 201, 103, 0.16);
+  content: "";
 }
 
-.visit > div:first-child {
-  position: relative;
-  z-index: 2;
-}
+@keyframes warmShopSignFlash {
+  0% {
+    filter: brightness(0.86) saturate(1.03);
+    opacity: 0.94;
+    text-shadow:
+      0 0 2px rgba(255, 224, 150, 0.2),
+      0 0 7px rgba(236, 187, 87, 0.12);
+    box-shadow:
+      0 12px 28px rgba(77, 12, 12, 0.2),
+      0 0 8px rgba(236, 187, 87, 0.12),
+      inset 0 1px 0 rgba(255, 230, 163, 0.2);
+  }
 
-.visit .eyebrow {
-  color: #f3c967;
+  7% {
+    filter: brightness(1.02) saturate(1.08);
+    opacity: 0.98;
+    text-shadow:
+      0 0 4px rgba(255, 231, 167, 0.36),
+      0 0 12px rgba(236, 187, 87, 0.22);
+    box-shadow:
+      0 14px 31px rgba(77, 12, 12, 0.24),
+      0 0 18px rgba(236, 187, 87, 0.24),
+      0 0 30px rgba(143, 23, 23, 0.18),
+      inset 0 1px 0 rgba(255, 230, 163, 0.26);
+  }
+
+  13% {
+    filter: brightness(0.78) saturate(1.01);
+    opacity: 0.91;
+    text-shadow:
+      0 0 2px rgba(255, 224, 150, 0.16),
+      0 0 5px rgba(236, 187, 87, 0.08);
+    box-shadow:
+      0 10px 24px rgba(77, 12, 12, 0.18),
+      0 0 5px rgba(236, 187, 87, 0.08),
+      inset 0 1px 0 rgba(255, 230, 163, 0.16);
+  }
+
+  21% {
+    filter: brightness(1.12) saturate(1.1);
+    opacity: 1;
+    text-shadow:
+      0 0 5px rgba(255, 231, 167, 0.5),
+      0 0 15px rgba(236, 187, 87, 0.32);
+    box-shadow:
+      0 16px 34px rgba(77, 12, 12, 0.28),
+      0 0 24px rgba(236, 187, 87, 0.32),
+      0 0 42px rgba(143, 23, 23, 0.24),
+      inset 0 1px 0 rgba(255, 230, 163, 0.34);
+  }
+
+  32% {
+    filter: brightness(0.9) saturate(1.04);
+    opacity: 0.95;
+    text-shadow:
+      0 0 3px rgba(255, 224, 150, 0.22),
+      0 0 8px rgba(236, 187, 87, 0.12);
+    box-shadow:
+      0 12px 27px rgba(77, 12, 12, 0.21),
+      0 0 11px rgba(236, 187, 87, 0.13),
+      inset 0 1px 0 rgba(255, 230, 163, 0.2);
+  }
+
+  43% {
+    filter: brightness(1.06) saturate(1.08);
+    opacity: 0.99;
+    text-shadow:
+      0 0 4px rgba(255, 231, 167, 0.42),
+      0 0 12px rgba(236, 187, 87, 0.24);
+    box-shadow:
+      0 15px 32px rgba(77, 12, 12, 0.25),
+      0 0 20px rgba(236, 187, 87, 0.25),
+      0 0 34px rgba(143, 23, 23, 0.18),
+      inset 0 1px 0 rgba(255, 230, 163, 0.28);
+  }
+
+  51% {
+    filter: brightness(0.82) saturate(1.02);
+    opacity: 0.92;
+    text-shadow:
+      0 0 2px rgba(255, 224, 150, 0.18),
+      0 0 6px rgba(236, 187, 87, 0.1);
+    box-shadow:
+      0 10px 24px rgba(77, 12, 12, 0.18),
+      0 0 7px rgba(236, 187, 87, 0.09),
+      inset 0 1px 0 rgba(255, 230, 163, 0.17);
+  }
+
+  64% {
+    filter: brightness(1.15) saturate(1.1);
+    opacity: 1;
+    text-shadow:
+      0 0 5px rgba(255, 231, 167, 0.52),
+      0 0 16px rgba(236, 187, 87, 0.34);
+    box-shadow:
+      0 16px 35px rgba(77, 12, 12, 0.29),
+      0 0 26px rgba(236, 187, 87, 0.34),
+      0 0 45px rgba(143, 23, 23, 0.24),
+      inset 0 1px 0 rgba(255, 230, 163, 0.35);
+  }
+
+  78% {
+    filter: brightness(0.88) saturate(1.03);
+    opacity: 0.94;
+    text-shadow:
+      0 0 3px rgba(255, 224, 150, 0.2),
+      0 0 7px rgba(236, 187, 87, 0.11);
+    box-shadow:
+      0 11px 26px rgba(77, 12, 12, 0.2),
+      0 0 10px rgba(236, 187, 87, 0.11),
+      inset 0 1px 0 rgba(255, 230, 163, 0.19);
+  }
+
+  89% {
+    filter: brightness(1.08) saturate(1.08);
+    opacity: 0.99;
+    text-shadow:
+      0 0 4px rgba(255, 231, 167, 0.44),
+      0 0 13px rgba(236, 187, 87, 0.26);
+    box-shadow:
+      0 15px 32px rgba(77, 12, 12, 0.26),
+      0 0 22px rgba(236, 187, 87, 0.27),
+      0 0 36px rgba(143, 23, 23, 0.19),
+      inset 0 1px 0 rgba(255, 230, 163, 0.29);
+  }
+
+  100% {
+    filter: brightness(0.9) saturate(1.04);
+    opacity: 0.95;
+    text-shadow:
+      0 0 3px rgba(255, 224, 150, 0.22),
+      0 0 8px rgba(236, 187, 87, 0.12);
+    box-shadow:
+      0 10px 26px rgba(77, 12, 12, 0.22),
+      0 0 12px rgba(236, 187, 87, 0.12),
+      inset 0 1px 0 rgba(255, 230, 163, 0.2);
+  }
 }
 
 .visit h2 {
   color: #fff4dc;
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(2.65rem, 4.15vw, 4.65rem);
+  line-height: 0.98;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.58);
 }
 
@@ -2114,6 +2308,10 @@ a {
   color: var(--muted);
   font-size: 1.04rem;
   line-height: 1.75;
+}
+
+.visit .visitLabel {
+  color: #f3c967;
 }
 
 .textLink {
@@ -2131,32 +2329,35 @@ a {
       circle at 28% 24%,
       rgba(255, 250, 238, 0.72) 0 0.14rem,
       transparent 0.22rem
-    ),
+  ),
     linear-gradient(145deg, #fff8ea, #f0d09b 74%, #dcb16e);
   color: var(--foreground);
-  padding: 34px 36px;
+  padding: 26px 28px;
 }
 
 .hours h3 {
-  margin: 0 0 22px;
+  margin: 0 0 16px;
   color: var(--brand-red-dark);
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
   font-weight: 800;
 }
 
 .hours p {
-  font-size: 1.15rem;
-  line-height: 1.65;
+  margin: 0;
+  border-top: 1px solid rgba(143, 23, 23, 0.16);
+  padding-top: 14px;
+  font-size: 1rem;
+  line-height: 1.45;
 }
 
 .hours p > span {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .hours strong {
-  margin-top: 6px;
-  font-size: 1.15rem;
+  margin-top: 5px;
+  font-size: 1.08rem;
 }
 
 .hours p {
@@ -2182,30 +2383,27 @@ a {
   color: var(--foreground);
 }
 
-.linksBand {
-  display: grid;
-  width: min(800px, calc(100% - 36px));
-  margin: 0 auto 72px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+.visitActions {
+  position: relative;
+  z-index: 2;
+  grid-area: actions;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 4px;
 }
 
-.linksBand a {
+.visitActions a {
   position: relative;
-  display: grid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   overflow: hidden;
-  min-height: 76px;
-  place-items: center;
-  border: 1px solid rgba(143, 23, 23, 0.16);
+  min-height: 54px;
   border-radius: 8px;
-  background:
-    radial-gradient(
-      circle at 24% 30%,
-      rgba(255, 250, 238, 0.72) 0 0.12rem,
-      transparent 0.2rem
-    ),
-    linear-gradient(145deg, #fff8ea, #efce97);
-  color: var(--foreground);
+  padding: 0 22px;
   font-weight: 950;
   text-align: center;
   text-decoration: none;
@@ -2216,40 +2414,42 @@ a {
     transform 180ms ease;
 }
 
-.linksBand a::before {
-  position: absolute;
-  inset: 0;
-  content: "";
+.visitMapButton {
+  border: 1px solid rgba(249, 228, 188, 0.34);
+  background: linear-gradient(135deg, var(--brand-red), #5b0d0d 66%, #402616);
+  color: #fff4dc;
+  box-shadow: 0 16px 34px rgba(43, 33, 24, 0.26);
+}
+
+.visitMapButton svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
+.visitFacebookButton {
+  border: 1px solid rgba(225, 184, 91, 0.46);
   background:
     radial-gradient(
-      circle at 82% 24%,
-      rgba(255, 248, 232, 0.2) 0 0.18rem,
-      transparent 0.28rem
+      circle at 20% 26%,
+      rgba(255, 250, 238, 0.72) 0 0.12rem,
+      transparent 0.2rem
     ),
-    linear-gradient(135deg, var(--brand-red), #5b0d0d 62%, #402616);
-  opacity: 0;
-  transition: opacity 180ms ease;
+    linear-gradient(145deg, rgba(255, 248, 234, 0.92), rgba(239, 206, 151, 0.92));
+  color: var(--brand-red-dark);
 }
 
-.linksBand a span {
-  position: relative;
-  z-index: 1;
-}
-
-.linksBand a:hover,
-.linksBand a:focus-visible {
+.visitActions a:hover,
+.visitActions a:focus-visible {
   border-color: rgba(249, 228, 188, 0.72);
-  color: #fff4dc;
   box-shadow: 0 16px 32px rgba(91, 13, 13, 0.22);
   transform: translateY(-3px);
 }
 
-.linksBand a:hover::before,
-.linksBand a:focus-visible::before {
-  opacity: 1;
-}
-
 .contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   margin-bottom: 34px;
   border-radius: 8px;
   border: 1px solid rgba(143, 23, 23, 0.18);
@@ -2264,19 +2464,72 @@ a {
       rgba(249, 228, 188, 0.14),
       transparent 18rem
     ),
-    linear-gradient(135deg, rgba(143, 23, 23, 0.88), rgba(82, 43, 27, 0.94)),
+    linear-gradient(135deg, rgba(143, 23, 23, 0.88), rgba(82, 43, 27, 0.92)),
     var(--surface);
   color: #fff8ee;
-  padding: clamp(32px, 6vw, 62px);
+  padding: clamp(28px, 5vw, 48px);
   text-align: center;
 }
 
 .contact .eyebrow {
+  margin-bottom: 12px;
   color: var(--gold);
 }
 
 .contact h2 {
+  margin-bottom: 0;
   color: #fff8ee;
+  font-size: clamp(2.25rem, 5vw, 4.6rem);
+  line-height: 0.98;
+}
+
+.contact .actions {
+  margin-top: clamp(22px, 3vw, 32px);
+}
+
+.contactCallButton {
+  min-height: clamp(62px, 7vw, 78px);
+  gap: 12px;
+  padding: 0 clamp(22px, 4vw, 34px);
+  border: 1px solid rgba(249, 228, 188, 0.34);
+  background:
+    radial-gradient(
+      circle at 20% 22%,
+      rgba(255, 250, 238, 0.24) 0 0.16rem,
+      transparent 0.24rem
+    ),
+    linear-gradient(135deg, #b01818, #7f1111 64%, #5b0d0d);
+  color: #fff7df;
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  box-shadow:
+    0 18px 40px rgba(36, 18, 10, 0.34),
+    inset 0 1px 0 rgba(255, 236, 178, 0.22);
+}
+
+.contactCallButton svg {
+  display: block;
+  width: 1.35em;
+  height: 1.35em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.1;
+}
+
+.contactCallButton:hover,
+.contactCallButton:focus-visible {
+  background:
+    radial-gradient(
+      circle at 20% 22%,
+      rgba(255, 250, 238, 0.28) 0 0.16rem,
+      transparent 0.24rem
+    ),
+    linear-gradient(135deg, #c4211c, var(--brand-red) 62%, #6f0a0d);
+  box-shadow:
+    0 22px 46px rgba(36, 18, 10, 0.38),
+    inset 0 1px 0 rgba(255, 236, 178, 0.28);
 }
 
 @media (max-width: 980px) {
@@ -2315,7 +2568,6 @@ a {
   .productMosaic,
   .coffeeProduct,
   .wideSupport,
-  .visit,
   .linksBand {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2491,10 +2743,13 @@ a {
 
   .nav {
     width: 100%;
+    grid-template-columns: 1fr;
     gap: 12px;
+    margin-top: 6px;
   }
 
   .navLinks {
+    grid-column: 1;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2503,6 +2758,7 @@ a {
 
   .navLinks a {
     display: grid;
+    margin-top: 0;
     min-height: 42px;
     place-items: center;
     border: 1px solid rgba(249, 228, 188, 0.22);
@@ -2517,7 +2773,7 @@ a {
     top: 50%;
     width: 28px;
     height: 24px;
-    opacity: 0.82;
+    opacity: 1;
     transform: translateY(-50%);
   }
 
@@ -2532,6 +2788,8 @@ a {
   }
 
   .languageToggle {
+    grid-column: 1;
+    justify-self: center;
     max-width: 230px;
     margin: 0 auto;
   }
@@ -2543,7 +2801,7 @@ a {
 
   .heroKicker {
     max-width: calc(100% - 32px);
-    margin: 0 auto 16px;
+    margin: -30px auto 16px;
     padding: 10px 12px;
     font-size: 0.9rem;
     line-height: 1.35;
@@ -2567,6 +2825,10 @@ a {
     text-align: center;
   }
 
+  .bougatsaHero .heroIntro {
+    transform: none;
+  }
+
   .heroIntro h1 {
     font-size: clamp(3.3rem, 17vw, 4.7rem);
     line-height: 0.9;
@@ -2578,9 +2840,15 @@ a {
       0 12px 24px rgba(91, 13, 13, 0.14);
   }
 
+  .bougatsaHero .heroIntro h1 {
+    transform: translateY(-20px);
+  }
+
   .bougatsaHero .actions {
+    position: static;
     margin-top: 20px;
     padding: 0;
+    transform: none;
   }
 
   .shopPhotoCarousel {
@@ -2768,6 +3036,12 @@ a {
   }
 
   .visit {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "label"
+      "copy"
+      "hours"
+      "actions";
     gap: 24px;
     align-items: start;
     min-height: 0;
@@ -2781,14 +3055,15 @@ a {
         rgba(30, 20, 12, 0.42) 58%,
         rgba(30, 20, 12, 0.22) 100%
       ),
-      url("/rizos/brioche-buns.jpg");
+      url("/rizos/visit-buns-background.png");
     background-position: center;
     background-size: cover;
   }
 
-  .visit > div:first-child > .eyebrow {
+  .visitLabel {
     justify-content: center;
     width: 100%;
+    margin-bottom: 0;
     padding: 12px 14px;
     font-size: 0.82rem;
     line-height: 1.35;
@@ -2796,9 +3071,19 @@ a {
   }
 
   .visit h2 {
+    max-width: 11ch;
     font-size: clamp(2.45rem, 12vw, 3.8rem);
     line-height: 0.98;
     text-align: center;
+  }
+
+  .visitActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .visitActions a {
+    width: 100%;
   }
 
   .hours {

@@ -149,10 +149,36 @@ export default function Home() {
               <span className="en">Products</span>
               <span className="navIcon navIconProducts" aria-hidden="true">
                 <svg viewBox="0 0 64 48" focusable="false">
-                  <path d="M13 31c3-12 13-21 25-22 7-1 12 2 14 7 2 6-2 13-9 17-9 6-22 6-30-2z" />
-                  <path d="M18 29c7 4 17 3 24-1 5-3 8-7 7-11-5 5-11 8-18 8-6 0-11-2-15-6-2 3-3 7 2 10z" fill="#2b2118" opacity="0.28" />
-                  <path d="M22 18c3 4 7 6 12 6" opacity="0.58" />
-                  <path d="M35 13c1 5 0 9-2 12" opacity="0.5" />
+                  <defs>
+                    <mask id="navCroissantCuts">
+                      <rect
+                        width="64"
+                        height="48"
+                        style={{ fill: "white" }}
+                      />
+                      <path
+                        d="M18 18c5 5 8 12 8 22"
+                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                      />
+                      <path
+                        d="M30 10c6 8 8 18 6 31"
+                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                      />
+                      <path
+                        d="M43 12c-4 8-5 17-3 27"
+                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                      />
+                      <path
+                        d="M53 22c-6 4-10 10-11 17"
+                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                      />
+                    </mask>
+                  </defs>
+                  <path
+                    d="M5 30c4-12 16-22 31-25 12 0 22 7 25 17 2 8-1 15-8 20-4 3-9 2-12-2-7 5-18 5-25 0-4 4-9 4-12 0-3-3-2-7 1-10zm9 4c11 7 31 7 42-6-5 3-12 5-20 5s-16-1-22-5c-3 2-3 4 0 6z"
+                    fillRule="evenodd"
+                    mask="url(#navCroissantCuts)"
+                  />
                 </svg>
               </span>
             </a>
@@ -189,8 +215,14 @@ export default function Home() {
             </a>
           </div>
           <div className="languageToggle" aria-label="Language">
-            <label htmlFor="lang-el">EL</label>
-            <label htmlFor="lang-en">EN</label>
+            <label htmlFor="lang-el">
+              <img className="languageFlag" src="/rizos/flag-greece.png" alt="" />
+              <span>EL</span>
+            </label>
+            <label htmlFor="lang-en">
+              <img className="languageFlag" src="/rizos/flag-uk.png" alt="" />
+              <span>EN</span>
+            </label>
           </div>
         </nav>
       </header>
@@ -372,7 +404,7 @@ export default function Home() {
         <div className="productMosaic" aria-label="Product showcase">
           {productShowcase.map((item) => (
             <article
-              className={`mosaicCard${item.featured ? " featuredProduct" : ""}${item.wide ? " coffeeProduct" : ""}`}
+              className={`mosaicCard${item.featured ? " featuredProduct" : ""}${item.wide ? " coffeeProduct" : ""}${item.contained ? " containedProduct" : ""}`}
               key={item.greek}
             >
               <img src={item.image} alt={item.alt} />
@@ -460,26 +492,24 @@ export default function Home() {
 
       <section className="storyBand" id="story">
         <p>
-          <span className="el">
-            Ζεστή μπουγάτσα στον Άγιο Στέφανο, με λειτουργία όλο το 24ωρο.
-          </span>
-          <span className="en">
-            Warm bougatsa in Agios Stefanos, open around the clock.
-          </span>
+          <span className="el">ΠΡΟΪΟΝΤΑ ΗΜΕΡΑΣ, ΚΑΘΕ ΜΕΡΑ</span>
+          <span className="en">FRESH DAILY PRODUCTS, EVERY DAY</span>
         </p>
       </section>
 
       <section className="visit" id="visit">
-        <div>
-          <p className="eyebrow">
-            <span className="el">Βρες το κατάστημα</span>
-            <span className="en">Find the shop</span>
-          </p>
+        <p className="eyebrow visitLabel">
+          <span className="el">Βρες το κατάστημα</span>
+          <span className="en">Find the shop</span>
+        </p>
+
+        <div className="visitCopy">
           <h2>
             <span className="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.</span>
             <span className="en">17 Kryoneriou Avenue, Agios Stefanos.</span>
           </h2>
         </div>
+
         <div className="hours visitHoursOverlay">
           <h3>
             <span className="el">Ωράριο</span>
@@ -498,18 +528,21 @@ export default function Home() {
             <strong>21 0814 1388</strong>
           </p>
         </div>
-      </section>
 
-      <section className="linksBand" aria-label="Useful links">
-        <a href={mapUrl} rel="noreferrer" target="_blank">
-          <span className="el">Οδηγίες στο Google Maps</span>
-          <span className="en">Directions on Google Maps</span>
-        </a>
+        <div className="visitActions" role="group" aria-label="Useful links">
+          <a className="visitMapButton" href={mapUrl} rel="noreferrer" target="_blank">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2.4c-4.1 0-7.4 3.3-7.4 7.4 0 5.1 6.3 11.2 6.6 11.5.4.4 1.2.4 1.6 0 .3-.3 6.6-6.4 6.6-11.5 0-4.1-3.3-7.4-7.4-7.4Zm0 10.4a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+            </svg>
+            <span className="el">Οδηγίες στο Google Maps</span>
+            <span className="en">Directions on Google Maps</span>
+          </a>
 
-        <a href={facebookUrl} rel="noreferrer" target="_blank">
-          <span className="el">Σελίδα στο Facebook</span>
-          <span className="en">Facebook page</span>
-        </a>
+          <a className="visitFacebookButton" href={facebookUrl} rel="noreferrer" target="_blank">
+            <span className="el">Σελίδα στο Facebook</span>
+            <span className="en">Facebook page</span>
+          </a>
+        </div>
       </section>
 
       <section className="awardSection">
@@ -678,14 +711,26 @@ export default function Home() {
           <span className="en">Contact</span>
         </p>
         <h2>
-          <span className="el">Θες να ρωτήσεις τι μπουγάτσα υπάρχει τώρα;</span>
+          <span className="el">
+            Θες να ρωτήσεις τι μπουγάτσα
+            <br />
+            υπάρχει τώρα;
+          </span>
           <span className="en">
-            Want to ask which bougatsa is available now?
+            Want to ask which bougatsa
+            <br />
+            is available now?
           </span>
         </h2>
         <div className="actions centered">
-          <a className="button primary" href="tel:+302108141388">
-            21 0814 1388
+          <a className="button primary contactCallButton" href="tel:+302108141388">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <path d="M6.6 3.8c1.3 5.7 4.9 10.6 10.2 13.4" />
+              <path d="M6.6 3.8 9.9 2l3.2 4.5-2.5 2.2" />
+              <path d="m16.8 17.2 2.7-2.1 2.5 3.8-2.5 3.1" />
+            </svg>
+            <span className="el">Κάλεσέ μας · 21 0814 1388</span>
+            <span className="en">Call us · 21 0814 1388</span>
           </a>
         </div>
       </section>
