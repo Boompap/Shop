@@ -1,4 +1,5 @@
 import LiquidEther from "@/components/LiquidEther";
+import StickyNav from "@/components/StickyNav";
 
 const mapUrl =
   "https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065";
@@ -77,8 +78,8 @@ const productShowcase = [
     alt: "Κλασικές μπουγάτσες στη βιτρίνα",
   },
   {
-    greek: "Τυροπιτοειδή & σφολιάτες",
-    english: "Cheese pies & pastries",
+    greek: "Τυρόπιτες / σφολιάτες",
+    english: "Cheese pies / pastries",
     textGreek: "Τυροπιτοειδή, σφολιάτες και αλμυρές επιλογές για κάτι γρήγορο.",
     textEnglish:
       "Cheese pies, pastries, and savory choices for something quick.",
@@ -101,6 +102,9 @@ const productShowcase = [
     image: "/rizos/pizza-warm-background.png",
     alt: "Ατομική πίτσα σε ζεστό φόντο αρτοποιείου",
   },
+];
+
+const productPair = [
   {
     greek: "Καφές",
     english: "Coffee",
@@ -108,7 +112,14 @@ const productShowcase = [
     textEnglish: "Freddo espresso, freddo cappuccino, cappuccino, and more.",
     image: "/rizos/coffee-clean.png",
     alt: "Καφές ΡΙΖΟΣ",
-    wide: true,
+  },
+  {
+    greek: "Μπριός",
+    english: "Brioche buns",
+    textGreek: "Αφράτα μπριός για κάθε στιγμή.",
+    textEnglish: "Soft brioche buns for any moment.",
+    image: "/rizos/brioche-buns.jpg",
+    alt: "Μπριός ΡΙΖΟΣ",
   },
 ];
 
@@ -136,6 +147,8 @@ export default function Home() {
         type="radio"
       />
 
+      <StickyNav />
+
       <header className="siteHeader" id="top">
         <a className="brand" href="#top" aria-label="ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ">
           <span className="brandMark">Ρ</span>
@@ -151,26 +164,42 @@ export default function Home() {
                 <svg viewBox="0 0 64 48" focusable="false">
                   <defs>
                     <mask id="navCroissantCuts">
-                      <rect
-                        width="64"
-                        height="48"
-                        style={{ fill: "white" }}
-                      />
+                      <rect width="64" height="48" style={{ fill: "white" }} />
                       <path
                         d="M18 18c5 5 8 12 8 22"
-                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                        style={{
+                          fill: "none",
+                          stroke: "black",
+                          strokeLinecap: "round",
+                          strokeWidth: 5,
+                        }}
                       />
                       <path
                         d="M30 10c6 8 8 18 6 31"
-                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                        style={{
+                          fill: "none",
+                          stroke: "black",
+                          strokeLinecap: "round",
+                          strokeWidth: 5,
+                        }}
                       />
                       <path
                         d="M43 12c-4 8-5 17-3 27"
-                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                        style={{
+                          fill: "none",
+                          stroke: "black",
+                          strokeLinecap: "round",
+                          strokeWidth: 5,
+                        }}
                       />
                       <path
                         d="M53 22c-6 4-10 10-11 17"
-                        style={{ fill: "none", stroke: "black", strokeLinecap: "round", strokeWidth: 5 }}
+                        style={{
+                          fill: "none",
+                          stroke: "black",
+                          strokeLinecap: "round",
+                          strokeWidth: 5,
+                        }}
                       />
                     </mask>
                   </defs>
@@ -199,7 +228,10 @@ export default function Home() {
               <span className="navIcon navIconLocation" aria-hidden="true">
                 <svg viewBox="0 0 64 48" focusable="false">
                   <path d="M32 4c-9 0-16 7-16 16 0 12 16 25 16 25s16-13 16-25c0-9-7-16-16-16zm0 22a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" />
-                  <path d="M20 43c3 3 21 3 24 0 2-2-3-4-12-4s-14 2-12 4z" opacity="0.72" />
+                  <path
+                    d="M20 43c3 3 21 3 24 0 2-2-3-4-12-4s-14 2-12 4z"
+                    opacity="0.72"
+                  />
                 </svg>
               </span>
             </a>
@@ -209,14 +241,21 @@ export default function Home() {
               <span className="navIcon navIconContact" aria-hidden="true">
                 <svg viewBox="0 0 64 48" focusable="false">
                   <path d="M18 6c-4 2-7 6-7 11 0 15 21 25 35 25 5 0 9-3 11-7l-10-8c-2 2-4 4-7 4-6 0-17-8-17-14 0-3 2-5 4-7L18 6z" />
-                  <path d="M43 8c7 2 11 6 13 13l-5 1c-1-5-5-8-9-10l1-4z" opacity="0.72" />
+                  <path
+                    d="M43 8c7 2 11 6 13 13l-5 1c-1-5-5-8-9-10l1-4z"
+                    opacity="0.72"
+                  />
                 </svg>
               </span>
             </a>
           </div>
           <div className="languageToggle" aria-label="Language">
             <label htmlFor="lang-el">
-              <img className="languageFlag" src="/rizos/flag-greece.png" alt="" />
+              <img
+                className="languageFlag"
+                src="/rizos/flag-greece.png"
+                alt=""
+              />
               <span>EL</span>
             </label>
             <label htmlFor="lang-en">
@@ -231,8 +270,8 @@ export default function Home() {
         <div className="heroLayout">
           <div className="heroIntro">
             <p className="eyebrow heroKicker">
-              <span className="el">Άγιος Στέφανος · ανοιχτά όλο το 24ωρο</span>
-              <span className="en">Agios Stefanos · open 24 hours</span>
+              <span className="el">Άγιος Στέφανος · ανοιχτά 08:00 - 20:00</span>
+              <span className="en">Agios Stefanos · open 08:00 - 20:00</span>
             </p>
             <h1>
               <span className="el">
@@ -267,10 +306,6 @@ export default function Home() {
                 alt="Το κατάστημα ΡΙΖΟΣ φωτισμένο το βράδυ"
               />
             </div>
-            <figcaption>
-              <span className="el">Το κατάστημα</span>
-              <span className="en">The shop</span>
-            </figcaption>
           </figure>
         </div>
       </section>
@@ -404,7 +439,28 @@ export default function Home() {
         <div className="productMosaic" aria-label="Product showcase">
           {productShowcase.map((item) => (
             <article
-              className={`mosaicCard${item.featured ? " featuredProduct" : ""}${item.wide ? " coffeeProduct" : ""}${item.contained ? " containedProduct" : ""}`}
+              className={`mosaicCard${item.featured ? " featuredProduct" : ""}`}
+              key={item.greek}
+            >
+              <img src={item.image} alt={item.alt} />
+              <div>
+                <h3>
+                  <span className="el">{item.greek}</span>
+                  <span className="en">{item.english}</span>
+                </h3>
+                <p>
+                  <span className="el">{item.textGreek}</span>
+                  <span className="en">{item.textEnglish}</span>
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="productPairGrid" aria-label="Coffee and brioche">
+          {productPair.map((item) => (
+            <article
+              className="mosaicCard pairedProduct coffeeProduct"
               key={item.greek}
             >
               <img src={item.image} alt={item.alt} />
@@ -492,8 +548,8 @@ export default function Home() {
 
       <section className="storyBand" id="story">
         <p>
-          <span className="el">ΠΡΟΪΟΝΤΑ ΗΜΕΡΑΣ, ΚΑΘΕ ΜΕΡΑ</span>
-          <span className="en">FRESH DAILY PRODUCTS, EVERY DAY</span>
+          <span className="el">Προϊόντα ημέρας, κάθε μέρα</span>
+          <span className="en">Fresh daily products, Every Day</span>
         </p>
       </section>
 
@@ -505,8 +561,14 @@ export default function Home() {
 
         <div className="visitCopy">
           <h2>
-            <span className="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.</span>
-            <span className="en">17 Kryoneriou Avenue, Agios Stefanos.</span>
+            <span className="el">
+              Λεωφ. Κρυονερίου <span className="addressGold">17</span>,{" "}
+              <span className="addressGold">Άγιος Στέφανος.</span>
+            </span>
+            <span className="en">
+              <span className="addressGold">17</span> Kryoneriou Avenue,{" "}
+              <span className="addressGold">Agios Stefanos.</span>
+            </span>
           </h2>
         </div>
 
@@ -519,7 +581,7 @@ export default function Home() {
           <p>
             <span className="el">Κάθε μέρα</span>
             <span className="en">Every day</span>
-            <strong>24 ώρες / 24 hours</strong>
+            <strong>08:00 - 20:00</strong>
           </p>
 
           <p>
@@ -530,7 +592,12 @@ export default function Home() {
         </div>
 
         <div className="visitActions" role="group" aria-label="Useful links">
-          <a className="visitMapButton" href={mapUrl} rel="noreferrer" target="_blank">
+          <a
+            className="visitMapButton"
+            href={mapUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M12 2.4c-4.1 0-7.4 3.3-7.4 7.4 0 5.1 6.3 11.2 6.6 11.5.4.4 1.2.4 1.6 0 .3-.3 6.6-6.4 6.6-11.5 0-4.1-3.3-7.4-7.4-7.4Zm0 10.4a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
             </svg>
@@ -538,7 +605,12 @@ export default function Home() {
             <span className="en">Directions on Google Maps</span>
           </a>
 
-          <a className="visitFacebookButton" href={facebookUrl} rel="noreferrer" target="_blank">
+          <a
+            className="visitFacebookButton"
+            href={facebookUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
             <span className="el">Σελίδα στο Facebook</span>
             <span className="en">Facebook page</span>
           </a>
@@ -723,7 +795,10 @@ export default function Home() {
           </span>
         </h2>
         <div className="actions centered">
-          <a className="button primary contactCallButton" href="tel:+302108141388">
+          <a
+            className="button primary contactCallButton"
+            href="tel:+302108141388"
+          >
             <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
               <path d="M6.6 3.8c1.3 5.7 4.9 10.6 10.2 13.4" />
               <path d="M6.6 3.8 9.9 2l3.2 4.5-2.5 2.2" />

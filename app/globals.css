@@ -518,7 +518,11 @@ a {
 }
 
 .bougatsaHero .heroIntro {
+  align-self: start;
+  align-items: center;
+  padding-top: clamp(34px, 4.4vw, 56px);
   transform: none;
+  text-align: center;
 }
 
 .shopHeroPhoto {
@@ -638,7 +642,11 @@ a {
   border: 1px solid rgba(143, 23, 23, 0.24);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 251, 238, 0.86), rgba(239, 191, 128, 0.58)),
+    linear-gradient(
+      135deg,
+      rgba(255, 251, 238, 0.86),
+      rgba(239, 191, 128, 0.58)
+    ),
     rgba(249, 228, 188, 0.84);
   box-shadow:
     0 14px 34px rgba(77, 33, 11, 0.12),
@@ -663,7 +671,7 @@ a {
 }
 
 .heroKicker {
-  margin: -52px 0 clamp(18px, 2vw, 24px);
+  margin: 0 0 clamp(48px, 5vw, 64px);
   color: var(--cream);
   font-size: clamp(0.78rem, 0.92vw, 0.96rem);
   letter-spacing: 0.08em;
@@ -722,8 +730,40 @@ a {
 }
 
 .bougatsaHero .heroIntro h1 {
+  position: relative;
   max-width: 720px;
-  transform: translateY(-34px);
+  padding-bottom: clamp(34px, 3.8vw, 48px);
+  text-align: center;
+  transform: translateY(-12px);
+}
+
+.bougatsaHero .heroIntro h1::after {
+  position: absolute;
+  right: 11%;
+  bottom: clamp(2px, 0.8vw, 10px);
+  width: min(390px, 62%);
+  height: clamp(34px, 3.5vw, 48px);
+  content: "";
+  border-bottom: clamp(3px, 0.34vw, 5px) solid var(--brand-red-dark);
+  border-radius: 0 0 70% 45%;
+  opacity: 0.95;
+  transform: rotate(-2deg) skewX(-18deg);
+  transform-origin: right center;
+  filter: drop-shadow(0 10px 16px rgba(91, 13, 13, 0.12));
+}
+
+.bougatsaHero .heroIntro h1::before {
+  position: absolute;
+  right: 6%;
+  bottom: clamp(8px, 1.2vw, 16px);
+  width: min(170px, 28%);
+  height: clamp(18px, 1.8vw, 28px);
+  content: "";
+  border-bottom: clamp(2px, 0.24vw, 3px) solid var(--brand-red-dark);
+  border-radius: 0 0 68% 40%;
+  opacity: 0.82;
+  transform: rotate(-8deg) skewX(-25deg);
+  transform-origin: right center;
 }
 
 .bougatsaHero .actions {
@@ -966,7 +1006,7 @@ a {
 }
 
 .productTickerBottom {
-  margin-top: 28px;
+  margin-top: 26px;
 }
 
 .productTickerTrack {
@@ -1192,14 +1232,23 @@ a {
 .productMosaic {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr 0.85fr;
-  gap: 16px;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.productPairGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
 }
 
 .mosaicCard {
   display: grid;
+  grid-template-rows: minmax(240px, 1fr) auto;
   overflow: hidden;
-  min-height: 330px;
-  border: 1px solid rgba(143, 23, 23, 0.2);
+  min-height: 342px;
+  border: 2px solid rgba(143, 23, 23, 0.26);
   border-radius: 8px;
   background:
     radial-gradient(
@@ -1213,18 +1262,25 @@ a {
       transparent 9rem
     ),
     linear-gradient(145deg, #fff8ea, #f0d09b 66%, #d19b54);
-  box-shadow: 0 22px 55px rgba(117, 91, 64, 0.18);
+  box-shadow:
+    0 18px 44px rgba(117, 91, 64, 0.17),
+    inset 0 1px 0 rgba(255, 252, 240, 0.62);
 }
 
 .featuredProduct {
   grid-row: span 2;
-  min-height: 680px;
+  min-height: 702px;
 }
 
 .coffeeProduct {
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
-  min-height: 340px;
+  grid-template-rows: 1fr;
+  grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+  height: clamp(232px, 18vw, 266px);
+  min-height: 0;
+}
+
+.pairedProduct {
+  min-height: 0;
 }
 
 .mosaicCard img {
@@ -1236,27 +1292,50 @@ a {
 }
 
 .featuredProduct img {
-  min-height: 480px;
+  min-height: 520px;
 }
 
 .coffeeProduct img {
-  min-height: 340px;
-  object-position: center 58%;
+  min-height: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 62%;
+}
+
+.productPairGrid .coffeeProduct:nth-child(1) img {
+  object-position: center 62%;
+}
+
+.productPairGrid .coffeeProduct:nth-child(2) img {
+  object-position: center 50%;
 }
 
 .mosaicCard div {
   display: grid;
   align-content: start;
-  gap: 14px;
-  padding: 24px;
+  gap: 10px;
+  min-height: 102px;
+  padding: 20px 22px 22px;
   border-top: 5px solid var(--brand-red);
+  background:
+    radial-gradient(
+      ellipse at 14% 16%,
+      rgba(255, 255, 248, 0.74) 0 3rem,
+      transparent 7rem
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 246, 225, 0.94),
+      rgba(232, 187, 119, 0.82)
+    );
 }
 
 .coffeeProduct div {
   align-content: center;
   border-top: 0;
   border-left: 5px solid var(--brand-red);
-  padding: clamp(28px, 5vw, 58px);
+  min-height: 0;
+  padding: clamp(18px, 2vw, 26px);
 }
 
 .mosaicCard h3,
@@ -1266,20 +1345,28 @@ a {
 
 .mosaicCard h3 {
   color: var(--brand-red-dark);
-  font-family: var(--font-ui);
+  font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(1.3rem, 1.9vw, 2rem);
+  font-size: clamp(1.42rem, 1.55vw, 1.82rem);
   letter-spacing: 0.01em;
   line-height: 1.08;
 }
 
+.featuredProduct h3 {
+  font-size: clamp(1.72rem, 1.9vw, 2.14rem);
+}
+
 .mosaicCard p {
-  max-width: 34ch;
-  color: #5f442f;
-  font-family: var(--font-ui);
-  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  max-width: 32ch;
+  color: #3f2417;
+  font-family: "Trebuchet MS", var(--font-ui), Arial, sans-serif;
+  font-size: clamp(1rem, 1.08vw, 1.12rem);
   font-weight: 600;
-  line-height: 1.55;
+  line-height: 1.58;
+}
+
+.coffeeProduct p {
+  max-width: 31ch;
 }
 
 @keyframes kneadPress {
@@ -2061,11 +2148,22 @@ a {
 .storyBand p {
   max-width: 900px;
   margin: 0 auto;
-  color: #fff8ee;
-  font-family: var(--font-display);
-  font-size: clamp(1.45rem, 3vw, 2.7rem);
-  font-weight: 800;
-  line-height: 1.2;
+
+  color: #fff4dc;
+
+  font-family: "Miama", cursive;
+  font-size: clamp(3.4rem, 6vw, 6rem);
+  font-weight: 400;
+  line-height: 0.95;
+
+  text-align: center;
+
+  -webkit-text-stroke: 0.8px #fff4dc;
+
+  text-shadow:
+    1px 0 #fff4dc,
+    -0.7px 0 #fff4dc,
+    0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
 .visit {
@@ -2298,6 +2396,10 @@ a {
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.58);
 }
 
+.addressGold {
+  color: var(--gold);
+}
+
 .visit > div:first-child > p:not(.eyebrow) {
   color: rgba(255, 248, 238, 0.9);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
@@ -2329,7 +2431,7 @@ a {
       circle at 28% 24%,
       rgba(255, 250, 238, 0.72) 0 0.14rem,
       transparent 0.22rem
-  ),
+    ),
     linear-gradient(145deg, #fff8ea, #f0d09b 74%, #dcb16e);
   color: var(--foreground);
   padding: 26px 28px;
@@ -2435,7 +2537,11 @@ a {
       rgba(255, 250, 238, 0.72) 0 0.12rem,
       transparent 0.2rem
     ),
-    linear-gradient(145deg, rgba(255, 248, 234, 0.92), rgba(239, 206, 151, 0.92));
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 234, 0.92),
+      rgba(239, 206, 151, 0.92)
+    );
   color: var(--brand-red-dark);
 }
 
@@ -2604,6 +2710,11 @@ a {
 
   .heroLayout .heroIntro {
     text-align: left;
+  }
+
+  .bougatsaHero .heroIntro {
+    align-items: center;
+    text-align: center;
   }
 
   .shopHeroPhoto img {
@@ -2801,7 +2912,7 @@ a {
 
   .heroKicker {
     max-width: calc(100% - 32px);
-    margin: -30px auto 16px;
+    margin: -30px auto 36px;
     padding: 10px 12px;
     font-size: 0.9rem;
     line-height: 1.35;
@@ -2826,6 +2937,7 @@ a {
   }
 
   .bougatsaHero .heroIntro {
+    padding-top: 0;
     transform: none;
   }
 
@@ -2841,7 +2953,24 @@ a {
   }
 
   .bougatsaHero .heroIntro h1 {
-    transform: translateY(-20px);
+    padding-bottom: 26px;
+    transform: translateY(-6px);
+  }
+
+  .bougatsaHero .heroIntro h1::after {
+    right: 8%;
+    bottom: 3px;
+    width: 58%;
+    height: 24px;
+    border-bottom-width: 3px;
+  }
+
+  .bougatsaHero .heroIntro h1::before {
+    right: 6%;
+    bottom: 10px;
+    width: 24%;
+    height: 12px;
+    border-bottom-width: 2px;
   }
 
   .bougatsaHero .actions {
@@ -2931,6 +3060,12 @@ a {
     gap: 10px;
   }
 
+  .productPairGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
   .productMosaic .mosaicCard:nth-child(2),
   .productMosaic .mosaicCard:nth-child(3) {
     order: 2;
@@ -2948,11 +3083,18 @@ a {
 
   .productMosaic .mosaicCard:nth-child(5) {
     order: 4;
+    grid-column: 1 / -1;
   }
 
   .coffeeProduct {
     order: 4;
     grid-column: auto;
+    height: auto;
+  }
+
+  .productPairGrid .coffeeProduct {
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
   }
 
   .mosaicCard img,
@@ -3257,5 +3399,260 @@ a {
   }
   html {
     @apply font-sans;
+  }
+}
+
+/* =========================================
+   Sticky navigation while scrolling down
+   ========================================= */
+
+.stickyNav {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 28px;
+
+  width: 100%;
+  min-height: 72px;
+  padding: 8px max(22px, calc((100vw - 1180px) / 2));
+
+  border-bottom: 1px solid rgba(225, 184, 91, 0.32);
+
+  background: linear-gradient(
+    90deg,
+    rgba(24, 19, 15, 0.97),
+    rgba(39, 31, 24, 0.95),
+    rgba(24, 19, 15, 0.97)
+  );
+
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateY(-110%);
+
+  transition:
+    transform 320ms ease,
+    opacity 260ms ease;
+}
+
+.stickyNavVisible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.stickyBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #fff1d1;
+  text-decoration: none;
+}
+
+.stickyBrandMark {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: var(--brand-red);
+  color: #fff4dc;
+
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+
+  box-shadow: 0 8px 20px rgba(143, 23, 23, 0.35);
+}
+
+.stickyBrandName {
+  color: #fff4dc;
+
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.stickyNavLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.4vw, 36px);
+}
+
+.stickyNavLinks a {
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
+  color: #fff1d1;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.05;
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    text-shadow 180ms ease;
+}
+
+.stickyNavLinks a:hover,
+.stickyNavLinks a:focus-visible {
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(225, 184, 91, 0.38);
+}
+
+.stickyNavLinkIcon {
+  display: block;
+  width: 30px;
+  height: 24px;
+
+  color: #ff6b4f;
+
+  filter: drop-shadow(0 0 5px rgba(255, 230, 188, 0.42));
+  pointer-events: none;
+}
+
+.stickyNavLinkIcon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.stickyNavLinkText {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.stickyLanguageToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  border: 1px solid rgba(225, 184, 91, 0.45);
+  border-radius: 999px;
+
+  background: rgba(255, 239, 202, 0.96);
+
+  padding: 4px;
+}
+
+.stickyLanguageToggle label {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  cursor: pointer;
+
+  border-radius: 999px;
+
+  padding: 0 9px;
+
+  color: var(--brand-red-dark);
+
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.stickyLanguageFlag {
+  display: block;
+  width: 24px;
+  height: 16px;
+
+  border-radius: 2px;
+
+  object-fit: cover;
+}
+
+/* Keep the selected language styled like the original switch */
+
+#lang-el:checked ~ .stickyNav .stickyLanguageToggle label[for="lang-el"],
+#lang-en:checked ~ .stickyNav .stickyLanguageToggle label[for="lang-en"] {
+  background: var(--brand-red);
+  color: #fff;
+}
+
+/* Prevent fixed navigation from covering anchor destinations */
+
+#products,
+#story,
+#visit,
+#contact {
+  scroll-margin-top: 90px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .stickyNav {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+
+    min-height: 66px;
+    padding: 6px 10px;
+  }
+
+  .stickyBrandName {
+    display: none;
+  }
+
+  .stickyBrandMark {
+    width: 38px;
+    height: 38px;
+    font-size: 1.55rem;
+  }
+
+  .stickyNavLinks {
+    justify-content: space-around;
+    gap: 4px;
+  }
+
+  .stickyNavLinks a {
+    gap: 1px;
+    min-width: 0;
+
+    font-size: 0.68rem;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .stickyNavLinkIcon {
+    width: 24px;
+    height: 20px;
+  }
+
+  .stickyNavLinkText {
+    white-space: nowrap;
+  }
+
+  .stickyLanguageToggle {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stickyNav {
+    transition: none;
   }
 }
