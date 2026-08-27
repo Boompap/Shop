@@ -64,7 +64,7 @@ export default function SfoliatoidiPopup() {
               </button>
 
               <h2 id="sfoliatoidi-title">
-                <span className="el">Τυρόπιτες / σφολιάτες</span>
+                <span className="el">Σφολιατοειδή</span>
                 <span className="en">Savory pastries</span>
               </h2>
 

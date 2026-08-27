@@ -12,6 +12,7 @@ const bougatsaOptions = [
   {
     greek: "Άχνη και κανέλα",
     english: "Sugar and cinnamon",
+
     title: (
       <>
         <span className="flourWord">Άχνη</span>{" "}
@@ -19,16 +20,32 @@ const bougatsaOptions = [
         <span className="cinnamonWord">Κανέλα</span>
       </>
     ),
+
+    englishTitle: (
+      <>
+        <span className="flourWord">Sugar</span>{" "}
+        <span className="creamWord">and</span>{" "}
+        <span className="cinnamonWord">Cinnamon</span>
+      </>
+    ),
     textGreek: "Η κλασική επιλογή που μυρίζει πρωινό.",
     textEnglish: "The classic breakfast-style finish.",
   },
   {
     greek: "Πραλίνα σοκολάτα",
-    english: "Chocolate praline",
+    english: "Praline chocolate",
+
     title: (
       <>
         <span className="pralineWord">Πραλίνα</span>{" "}
         <span className="chocolateWord">Σοκολάτα</span>
+      </>
+    ),
+
+    englishTitle: (
+      <>
+        <span className="pralineWord">Praline</span>{" "}
+        <span className="chocolateWord">Chocolate</span>
       </>
     ),
     textGreek: "Για όσους θέλουν τη μπουγάτσα πιο πλούσια και γλυκιά.",
@@ -36,11 +53,19 @@ const bougatsaOptions = [
   },
   {
     greek: "Μπουγάτσα με τυρί",
-    english: "Cheese bougatsa",
+    english: "Bougatsa with cheese",
+
     title: (
       <>
         <span className="creamWord">Μπουγάτσα με</span>{" "}
         <span className="cheeseWord">Τυρί</span>
+      </>
+    ),
+
+    englishTitle: (
+      <>
+        <span className="creamWord">Bougatsa with</span>{" "}
+        <span className="cheeseWord">Cheese</span>
       </>
     ),
     textGreek: "Αλμυρή επιλογή με τυρί για κάθε ώρα.",
@@ -49,9 +74,17 @@ const bougatsaOptions = [
   {
     greek: "Λιωμένο Bueno",
     english: "Melted Bueno",
+
     title: (
       <>
         <span className="creamWord">Λιωμένο</span>{" "}
+        <span className="buenoWord">Bueno</span>
+      </>
+    ),
+
+    englishTitle: (
+      <>
+        <span className="creamWord">Melted</span>{" "}
         <span className="buenoWord">Bueno</span>
       </>
     ),
@@ -79,8 +112,8 @@ const productShowcase = [
     alt: "Κλασικές μπουγάτσες στη βιτρίνα",
   },
   {
-    greek: "Τυρόπιτες / σφολιάτες",
-    english: "Cheese pies / pastries",
+    greek: "Σφολιατοειδή",
+    english: "Savory pastries",
     textGreek: "Τυροπιτοειδή, σφολιάτες και αλμυρές επιλογές για κάτι γρήγορο.",
     textEnglish:
       "Cheese pies, pastries, and savory choices for something quick.",
@@ -288,8 +321,14 @@ export default function Home() {
         <div className="heroLayout">
           <div className="heroIntro">
             <p className="eyebrow heroKicker">
-              <span className="el">Άγιος Στέφανος · ανοιχτά 08:00 - 20:00</span>
-              <span className="en">Agios Stefanos · open 08:00 - 20:00</span>
+              <span className="el">
+                ΑΓΙΟΣ ΣΤΕΦΑΝΟΣ · ΔΕΥ - ΠΑΡ 05:00 - 20:00 · ΣΑΒ - ΚΥΡ 05:00 -
+                15:00
+              </span>
+              <span className="en">
+                AGIOS STEFANOS · MON - FRI 05:00 - 20:00 · SAT - SUN 05:00 -
+                15:00
+              </span>
             </p>
             <h1>
               <span className="el">
@@ -470,7 +509,7 @@ export default function Home() {
                   <span className="el">{item.textGreek}</span>
                   <span className="en">{item.textEnglish}</span>
                 </p>
-                {item.greek === "Τυρόπιτες / σφολιάτες" && <SfoliatoidiPopup />}
+                {item.greek === "Σφολιατοειδή" && <SfoliatoidiPopup />}
               </div>
             </article>
           ))}
@@ -553,7 +592,7 @@ export default function Home() {
               <div>
                 <h3>
                   <span className="el">{item.title}</span>
-                  <span className="en">{item.english}</span>
+                  <span className="en">{item.englishTitle}</span>
                 </h3>
                 <p>
                   <span className="el">{item.textGreek}</span>
@@ -598,9 +637,15 @@ export default function Home() {
           </h3>
 
           <p>
-            <span className="el">Κάθε μέρα</span>
-            <span className="en">Every day</span>
-            <strong>08:00 - 20:00</strong>
+            <span className="el">Δευτέρα - Παρασκευή</span>
+            <span className="en">Monday - Friday</span>
+            <strong>05:00 - 20:00</strong>
+          </p>
+
+          <p>
+            <span className="el">Σάββατο - Κυριακή</span>
+            <span className="en">Saturday - Sunday</span>
+            <strong>05:00 - 15:00</strong>
           </p>
 
           <p>
