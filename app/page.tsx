@@ -63,7 +63,7 @@ const bougatsaOptions = [
 const productShowcase = [
   {
     greek: "Μπουγάτσα Σοκολάτα",
-    english: "Chocolate bougatsa",
+    english: "Chocolate Bougatsa",
     textGreek: "Η σπεσιαλιτέ μας.",
     textEnglish: "Our specialty.",
     image: "/rizos/sweet-bougatsa.jpg",
@@ -72,7 +72,7 @@ const productShowcase = [
   },
   {
     greek: "Κλασική Μπουγάτσα",
-    english: "Classic bougatsa",
+    english: "Classic Bougatsa",
     textGreek: "Τραγανό φύλλο, ζεστή βιτρίνα, καθημερινή επιλογή.",
     textEnglish: "Crisp pastry, warm counter, everyday choice.",
     image: "/rizos/bougatsa-tray.jpg",
@@ -97,7 +97,7 @@ const productShowcase = [
   },
   {
     greek: "Πίτσα Ατομική",
-    english: "Individual pizza",
+    english: "Individual Pizza",
     textGreek: "Αφράτη πίτσα με τυρί, αλλαντικά και πιπεριές.",
     textEnglish: "Soft individual pizza with cheese, ham, and peppers.",
     image: "/rizos/pizza-warm-background.png",
@@ -116,7 +116,7 @@ const productPair = [
   },
   {
     greek: "Μπριός",
-    english: "Brioche buns",
+    english: "Brioche Buns",
     textGreek: "Αφράτα μπριός για κάθε στιγμή.",
     textEnglish: "Soft brioche buns for any moment.",
     image: "/rizos/brioche-buns.jpg",
@@ -298,9 +298,9 @@ export default function Home() {
                 Μπουγάτσας.
               </span>
               <span className="en">
-                The master of
+                The Master of
                 <br />
-                bougatsa.
+                Bougatsa.
               </span>
             </h1>
             <div className="actions">
