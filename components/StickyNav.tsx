@@ -46,6 +46,18 @@ export default function StickyNav() {
 
   return (
     <header className={`stickyNav ${visible ? "stickyNavVisible" : ""}`}>
+      <a className="stickyFullMenuButton" href="#products">
+        <span className="stickyFullMenuIcon" aria-hidden="true">
+          <svg viewBox="0 0 32 24" focusable="false">
+            <path d="M3 4h26v3H3z" />
+            <path d="M3 10.5h26v3H3z" />
+            <path d="M3 17h26v3H3z" />
+          </svg>
+        </span>
+
+        <span className="el">Όλο το μενού</span>
+        <span className="en">Full menu</span>
+      </a>
       <a className="stickyBrand" href="#top" aria-label="ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ">
         <span className="stickyBrandMark">Ρ</span>
         <span className="stickyBrandName">ΡΙΖΟΣ</span>

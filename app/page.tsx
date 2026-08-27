@@ -1,5 +1,6 @@
 import LiquidEther from "@/components/LiquidEther";
 import StickyNav from "@/components/StickyNav";
+import SfoliatoidiPopup from "@/components/SfoliatoidiPopup";
 
 const mapUrl =
   "https://www.google.com/maps/search/?api=1&query=%CE%A1%CE%99%CE%96%CE%9F%CE%A3%20%CE%92%CE%91%CE%A3%CE%99%CE%9B%CE%95%CE%99%CE%9F%CE%A3%20%CE%95%CE%9B%CE%95%CE%A5%CE%98%CE%95%CE%A1%CE%99%CE%9F%CE%A3%20%CE%9B%CE%B5%CF%89%CF%86.%20%CE%9A%CF%81%CF%85%CE%BF%CE%BD%CE%B5%CF%81%CE%AF%CE%BF%CF%85%2017%20%CE%86%CE%B3.%20%CE%A3%CF%84%CE%AD%CF%86%CE%B1%CE%BD%CE%BF%CF%82%20145%2065";
@@ -156,6 +157,22 @@ export default function Home() {
         </a>
 
         <nav className="nav" aria-label="Main navigation">
+          <a className="fullMenuNavButton" href="#products">
+            <span className="fullMenuNavIcon" aria-hidden="true">
+              <svg viewBox="0 0 32 24" focusable="false">
+                <path d="M3 4h26v3H3z" />
+                <path d="M3 10.5h26v3H3z" />
+                <path d="M3 17h26v3H3z" />
+              </svg>
+            </span>
+
+            <span>
+              <span className="el">Όλο το μενού</span>
+              <span className="en">Full menu</span>
+            </span>
+          </a>
+
+          <div className="navLinks"></div>
           <div className="navLinks">
             <a href="#products">
               <span className="el">Προϊόντα</span>
@@ -235,6 +252,7 @@ export default function Home() {
                 </svg>
               </span>
             </a>
+
             <a href="#contact">
               <span className="el">Επικοινωνία</span>
               <span className="en">Contact</span>
@@ -452,6 +470,7 @@ export default function Home() {
                   <span className="el">{item.textGreek}</span>
                   <span className="en">{item.textEnglish}</span>
                 </p>
+                {item.greek === "Τυρόπιτες / σφολιάτες" && <SfoliatoidiPopup />}
               </div>
             </article>
           ))}
