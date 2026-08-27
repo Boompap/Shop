@@ -2225,12 +2225,14 @@ a {
 
   text-align: center;
 
-  -webkit-text-stroke: 0.8px #fff4dc;
+  -webkit-text-stroke: 0.6px #fff4dc;
 
   text-shadow:
-    1px 0 #fff4dc,
-    -0.7px 0 #fff4dc,
-    0 8px 24px rgba(0, 0, 0, 0.28);
+    -2px -1.5px 0 #5b0d0d,
+    2px -1.5px 0 #5b0d0d,
+    -2px 1.5px 0 #5b0d0d,
+    2px 1.5px 0 #5b0d0d,
+    0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .visit {
@@ -3267,7 +3269,7 @@ a {
   }
 
   .storyBand p {
-    font-size: clamp(1.35rem, 7vw, 2rem);
+    font-size: clamp(2.7rem, 12vw, 3.8rem);
   }
 
   .visit {

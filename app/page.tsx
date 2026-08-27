@@ -16,7 +16,7 @@ const bougatsaOptions = [
       <>
         <span className="flourWord">Άχνη</span>{" "}
         <span className="creamWord">και</span>{" "}
-        <span className="cinnamonWord">κανέλα</span>
+        <span className="cinnamonWord">Κανέλα</span>
       </>
     ),
     textGreek: "Η κλασική επιλογή που μυρίζει πρωινό.",
@@ -28,7 +28,7 @@ const bougatsaOptions = [
     title: (
       <>
         <span className="pralineWord">Πραλίνα</span>{" "}
-        <span className="chocolateWord">σοκολάτα</span>
+        <span className="chocolateWord">Σοκολάτα</span>
       </>
     ),
     textGreek: "Για όσους θέλουν τη μπουγάτσα πιο πλούσια και γλυκιά.",
@@ -40,7 +40,7 @@ const bougatsaOptions = [
     title: (
       <>
         <span className="creamWord">Μπουγάτσα με</span>{" "}
-        <span className="cheeseWord">τυρί</span>
+        <span className="cheeseWord">Τυρί</span>
       </>
     ),
     textGreek: "Αλμυρή επιλογή με τυρί για κάθε ώρα.",
@@ -62,7 +62,7 @@ const bougatsaOptions = [
 
 const productShowcase = [
   {
-    greek: "Μπουγάτσα σοκολάτα",
+    greek: "Μπουγάτσα Σοκολάτα",
     english: "Chocolate bougatsa",
     textGreek: "Η σπεσιαλιτέ μας.",
     textEnglish: "Our specialty.",
@@ -71,7 +71,7 @@ const productShowcase = [
     featured: true,
   },
   {
-    greek: "Κλασική μπουγάτσα",
+    greek: "Κλασική Μπουγάτσα",
     english: "Classic bougatsa",
     textGreek: "Τραγανό φύλλο, ζεστή βιτρίνα, καθημερινή επιλογή.",
     textEnglish: "Crisp pastry, warm counter, everyday choice.",
@@ -96,7 +96,7 @@ const productShowcase = [
     alt: "Πεϊνιρλί με ζαμπόν και τυρί",
   },
   {
-    greek: "Πίτσα ατομική",
+    greek: "Πίτσα Ατομική",
     english: "Individual pizza",
     textGreek: "Αφράτη πίτσα με τυρί, αλλαντικά και πιπεριές.",
     textEnglish: "Soft individual pizza with cheese, ham, and peppers.",
@@ -293,9 +293,9 @@ export default function Home() {
             </p>
             <h1>
               <span className="el">
-                Ο μάστορας της
+                Ο Μάστορας της
                 <br />
-                μπουγάτσας.
+                Μπουγάτσας.
               </span>
               <span className="en">
                 The master of
