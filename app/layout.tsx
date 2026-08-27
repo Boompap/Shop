@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ΡΙΖΟΣ",
   description:
-    "Μπουγατσοπωλείο ΡΙΖΟΣ στη Λεωφ. Κρυονερίου 17, Άγιος Στέφανος, με μπουγάτσα, πίτες, καφέ και ωράριο 08:00 - 20:00.",
+    "Μπουγατσοπωλείο ΡΙΖΟΣ στη Λεωφ. Κρυονερίου 17, Άγιος Στέφανος, με μπουγάτσα, πίτες, καφέ και ωράριο Δευτέρα - Παρασκευή 05:00 - 20:00 και Σάββατο - Κυριακή 05:00 - 15:00.",
   openGraph: {
     title: "ΡΙΖΟΣ",
     description:
-      "Ζεστή μπουγάτσα, πίτες και καφές από 08:00 έως 20:00 στη Λεωφ. Κρυονερίου 17.",
+      "Ζεστή μπουγάτσα, πίτες και καφές στη Λεωφ. Κρυονερίου 17. Δευτέρα - Παρασκευή 05:00 - 20:00, Σάββατο - Κυριακή 05:00 - 15:00.",
   },
   icons: {
     icon: "/rizos-favicon.svg",
@@ -34,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="el">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
