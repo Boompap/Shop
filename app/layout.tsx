@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,19 +12,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "ΡΙΖΟΣ",
   description:
-    "Μπουγατσοπωλείο ΡΙΖΟΣ στη Λεωφ. Κρυονερίου 17, Άγιος Στέφανος, με μπουγάτσα, πίτες, καφέ και ωράριο Δευτέρα - Παρασκευή 05:00 - 20:00 και Σάββατο - Κυριακή 05:00 - 15:00.",
+    "Μπουγατσοπωλείο ΡΙΖΟΣ στη Λεωφ. Κρυονερίου 17, Άγιος Στέφανος, με μπουγάτσα, πίτες, καφέ και ωράριο 08:00 - 20:00.",
   openGraph: {
     title: "ΡΙΖΟΣ",
     description:
-      "Ζεστή μπουγάτσα, πίτες και καφές στη Λεωφ. Κρυονερίου 17. Δευτέρα - Παρασκευή 05:00 - 20:00, Σάββατο - Κυριακή 05:00 - 15:00.",
+      "Ζεστή μπουγάτσα, πίτες και καφές στη Λεωφ. Κρυονερίου 17. Ωράριο 08:00 - 20:00.",
   },
   icons: {
     icon: "/rizos-favicon.svg",
     shortcut: "/rizos-favicon.svg",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -35,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="el">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorantGaramond.variable} antialiased`}
       >
         {children}
       </body>

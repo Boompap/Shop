@@ -42,3 +42,13 @@ dev-server.*.log
 .codex/
 video_deps/
 video-scan-output/
+
+# local browser/test artifacts
+.tmp-chrome-profile/
+.tmp-rizos-*.png
+
+.tmp-chrome-debug/
+
+# local Impeccable tooling
+.agents/
+.impeccable/

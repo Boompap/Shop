@@ -1,5 +1,5 @@
-import LiquidEther from "@/components/LiquidEther";
-import StickyNav from "@/components/StickyNav";
+import HeaderScrollState from "@/components/HeaderScrollState";
+import LanguageToggle from "@/components/LanguageToggle";
 import SfoliatoidiPopup from "@/components/SfoliatoidiPopup";
 
 const mapUrl =
@@ -167,29 +167,29 @@ const productTicker = {
 export default function Home() {
   return (
     <main className="pageShell">
-      <input
-        className="languageInput"
-        id="lang-el"
-        name="language"
-        type="radio"
-        defaultChecked
-      />
-      <input
-        className="languageInput"
-        id="lang-en"
-        name="language"
-        type="radio"
-      />
-
-      <StickyNav />
+      <HeaderScrollState />
 
       <header className="siteHeader" id="top">
         <a className="brand" href="#top" aria-label="ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ">
           <span className="brandMark">Ρ</span>
           <span className="brandName">ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ</span>
+          <span className="compactBrandName">ΡΙΖΟΣ</span>
         </a>
 
         <nav className="nav" aria-label="Main navigation">
+          <p className="topInfoLabel">
+            <span className="el">
+              Αγ. Στέφανος · Λεωφ. Κρυονερίου 17 · <br className="topInfoMobileBreak" />
+              ΔΕΥ - ΠΑΡ 05:00 - 20:00 · <br className="topInfoMobileBreak" />
+              ΣΑΒ - ΚΥΡ 05:00 - 15:00
+            </span>
+            <span className="en">
+              AGIOS STEFANOS · <br className="topInfoMobileBreak" />
+              MON - FRI 05:00 - 20:00 · <br className="topInfoMobileBreak" />
+              SAT - SUN 05:00 - 15:00
+            </span>
+          </p>
+
           <a className="fullMenuNavButton" href="#products">
             <span className="fullMenuNavIcon" aria-hidden="true">
               <svg viewBox="0 0 32 24" focusable="false">
@@ -205,7 +205,6 @@ export default function Home() {
             </span>
           </a>
 
-          <div className="navLinks"></div>
           <div className="navLinks">
             <a href="#products">
               <span className="el">Προϊόντα</span>
@@ -261,6 +260,45 @@ export default function Home() {
                 </svg>
               </span>
             </a>
+            <a href="#options">
+              <span className="el">Μπουγάτσα</span>
+              <span className="en">Bougatsa</span>
+              <span className="navIcon navIconBougatsa" aria-hidden="true">
+                <svg viewBox="0 0 88 58" focusable="false">
+                  <path
+                    d="M16 30c-2-7 2-13 9-16 5-5 14-9 22-7 3 0 4 4 7 4 8-3 17 0 20 7 6 5 8 13 3 21-4 6-12 8-19 13-5 4-13 3-19 0-7-4-18-3-23-10-4-2-4-7 0-12z"
+                    style={{
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      strokeWidth: 5.2,
+                    }}
+                  />
+                  <path
+                    d="M24 15c-6 6-9 11-8 20m0-2c5-2 9-6 15-5 4 0 2 8 6 9 5 0 10-2 14 1 4 3 0 10 5 12"
+                    style={{
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      strokeWidth: 4,
+                    }}
+                  />
+                  <path
+                    d="M35 19c7-3 15-4 22-1m5 9c5 0 10 1 13 5m-34 19c9 2 17 1 24-3"
+                    style={{
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      strokeWidth: 3.2,
+                    }}
+                    opacity="0.72"
+                  />
+                </svg>
+              </span>
+            </a>
             <a href="#story">
               <span className="el">Το μαγαζί</span>
               <span className="en">The shop</span>
@@ -269,19 +307,6 @@ export default function Home() {
                   <path d="M20 6h24v7H20z" />
                   <path d="M13 15h38l6 9c-1 5-5 8-9 8-4 0-7-2-8-6-2 4-5 6-8 6s-6-2-8-6c-1 4-4 6-8 6s-8-3-9-8l6-9z" />
                   <path d="M15 33h6v10h22V33h6v15H15z" />
-                </svg>
-              </span>
-            </a>
-            <a href="#visit">
-              <span className="el">Τοποθεσία</span>
-              <span className="en">Location</span>
-              <span className="navIcon navIconLocation" aria-hidden="true">
-                <svg viewBox="0 0 64 48" focusable="false">
-                  <path d="M32 4c-9 0-16 7-16 16 0 12 16 25 16 25s16-13 16-25c0-9-7-16-16-16zm0 22a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" />
-                  <path
-                    d="M20 43c3 3 21 3 24 0 2-2-3-4-12-4s-14 2-12 4z"
-                    opacity="0.72"
-                  />
                 </svg>
               </span>
             </a>
@@ -300,35 +325,16 @@ export default function Home() {
               </span>
             </a>
           </div>
-          <div className="languageToggle" aria-label="Language">
-            <label htmlFor="lang-el">
-              <img
-                className="languageFlag"
-                src="/rizos/flag-greece.png"
-                alt=""
-              />
-              <span>EL</span>
-            </label>
-            <label htmlFor="lang-en">
-              <img className="languageFlag" src="/rizos/flag-uk.png" alt="" />
-              <span>EN</span>
-            </label>
-          </div>
+          <LanguageToggle />
         </nav>
       </header>
 
       <section className="hero bougatsaHero">
         <div className="heroLayout">
           <div className="heroIntro">
-            <p className="eyebrow heroKicker">
-              <span className="el">
-                ΑΓΙΟΣ ΣΤΕΦΑΝΟΣ · ΔΕΥ - ΠΑΡ 05:00 - 20:00 · ΣΑΒ - ΚΥΡ 05:00 -
-                15:00
-              </span>
-              <span className="en">
-                AGIOS STEFANOS · MON - FRI 05:00 - 20:00 · SAT - SUN 05:00 -
-                15:00
-              </span>
+            <p className="heroBrandTitle">
+              <span className="el">ΜΠΟΥΓΑΤΣΟΠΩΛΕΙΟ ΡΙΖΟΣ</span>
+              <span className="en">RIZOS BOUGATSA SHOP</span>
             </p>
             <h1>
               <span className="el">
@@ -342,28 +348,31 @@ export default function Home() {
                 Bougatsa.
               </span>
             </h1>
-            <div className="actions">
-              <a className="button primary" href="#products">
+            <p className="heroSupport">
+              <span className="el">Μπουγάτσα και καφές στον Αγ. Στέφανο.</span>
+              <span className="en">Bougatsa and coffee in Agios Stefanos.</span>
+            </p>
+            <div className="heroActions" role="group" aria-label="Hero actions">
+              <a
+                className="heroAction heroActionPrimary"
+                href={mapUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span className="el">Οδηγίες</span>
+                <span className="en">Directions</span>
+              </a>
+              <a className="heroAction heroActionSecondary" href="tel:+302108141388">
+                <span className="el">Κλήση</span>
+                <span className="en">Call</span>
+              </a>
+              <a className="heroAction heroActionTertiary" href="#products">
                 <span className="el">Δες τα προϊόντα</span>
                 <span className="en">See products</span>
               </a>
             </div>
           </div>
 
-          <figure className="shopHeroPhoto">
-            <div className="shopPhotoCarousel">
-              <img
-                className="shopPhotoSlide"
-                src="/rizos/shop-front.jpg"
-                alt="Το κατάστημα ΡΙΖΟΣ στον Άγιο Στέφανο"
-              />
-              <img
-                className="shopPhotoSlide"
-                src="/rizos/shop-front-night.jpg"
-                alt="Το κατάστημα ΡΙΖΟΣ φωτισμένο το βράδυ"
-              />
-            </div>
-          </figure>
         </div>
       </section>
 
@@ -548,59 +557,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section toppingsSection">
+      <section className="section toppingsSection" id="options">
         <div className="sectionHeader showcaseHeader">
           <h2>
             <span className="el">ΕΠΙΛΟΓΕΣ ΜΠΟΥΓΑΤΣΑΣ</span>
             <span className="en">BOUGATSA OPTIONS</span>
           </h2>
         </div>
-        <div className="toppingChocolateCutout" aria-hidden="true">
-          <LiquidEther
-            mouseForce={20}
-            cursorSize={24}
-            isViscous
-            viscous={40}
-            iterationsViscous={32}
-            iterationsPoisson={32}
-            dt={0.014}
-            BFECC
-            resolution={1}
-            isBounce={false}
-            colors={["#240803", "#54180A", "#91401F"]}
-            autoDemo
-            autoSpeed={0.3}
-            autoIntensity={1.5}
-          />
-        </div>
-        <figure
-          className="toppingBuenoCutout toppingBuenoTopLeft"
-          aria-hidden="true"
-        >
-          <img src="/rizos/bueno-chocolate-hard.png" alt="" />
-        </figure>
-        <figure
-          className="toppingBuenoCutout toppingBuenoBottomRight"
-          aria-hidden="true"
-        >
-          <img src="/rizos/bueno-chocolate-hard.png" alt="" />
-        </figure>
-        <div className="bougatsaMenu compactToppings">
-          {bougatsaOptions.map((item) => (
-            <article className="bougatsaOption" key={item.greek}>
-              <span className="optionDot" aria-hidden="true" />
-              <div>
-                <h3>
-                  <span className="el">{item.title}</span>
-                  <span className="en">{item.englishTitle}</span>
-                </h3>
-                <p>
-                  <span className="el">{item.textGreek}</span>
-                  <span className="en">{item.textEnglish}</span>
-                </p>
-              </div>
-            </article>
-          ))}
+
+        <div className="toppingsBoard">
+          <figure className="toppingsPhoto">
+            <img src="/rizos/sweet-bougatsa.jpg" alt="Μπουγάτσα με γλυκιά γέμιση" />
+          </figure>
+
+          <div className="bougatsaMenu compactToppings">
+            {bougatsaOptions.map((item) => (
+              <article className="bougatsaOption" key={item.greek}>
+                <div>
+                  <h3>
+                    <span className="el">{item.title}</span>
+                    <span className="en">{item.englishTitle}</span>
+                  </h3>
+                  <p>
+                    <span className="el">{item.textGreek}</span>
+                    <span className="en">{item.textEnglish}</span>
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -612,72 +597,77 @@ export default function Home() {
       </section>
 
       <section className="visit" id="visit">
-        <p className="eyebrow visitLabel">
-          <span className="el">Βρες το κατάστημα</span>
-          <span className="en">Find the shop</span>
-        </p>
+        <div className="visitInner">
+          <div className="visitContent">
+            <p className="eyebrow visitLabel">
+              <span className="el">Βρες το κατάστημα</span>
+              <span className="en">Find the shop</span>
+            </p>
 
-        <div className="visitCopy">
-          <h2>
-            <span className="el">
-              Λεωφ. Κρυονερίου <span className="addressGold">17</span>,{" "}
-              <span className="addressGold">Άγιος Στέφανος.</span>
-            </span>
-            <span className="en">
-              <span className="addressGold">17</span> Kryoneriou Avenue,{" "}
-              <span className="addressGold">Agios Stefanos.</span>
-            </span>
-          </h2>
-        </div>
+            <div className="visitCopy">
+              <h2>
+                <span className="el">
+                  Λεωφ. Κρυονερίου 17, Άγιος Στέφανος.
+                </span>
+                <span className="en">
+                  17 Kryoneriou Avenue, Agios Stefanos.
+                </span>
+              </h2>
+            </div>
 
-        <div className="hours visitHoursOverlay">
-          <h3>
-            <span className="el">Ωράριο</span>
-            <span className="en">Hours</span>
-          </h3>
+            <div className="hours visitHoursOverlay">
+              <h3>
+                <span className="el">Ωράριο</span>
+                <span className="en">Hours</span>
+              </h3>
 
-          <p>
-            <span className="el">Δευτέρα - Παρασκευή</span>
-            <span className="en">Monday - Friday</span>
-            <strong>05:00 - 20:00</strong>
-          </p>
+              <p>
+                <span className="el">Δευτέρα - Παρασκευή</span>
+                <span className="en">Monday - Friday</span>
+                <strong>05:00 - 20:00</strong>
+              </p>
 
-          <p>
-            <span className="el">Σάββατο - Κυριακή</span>
-            <span className="en">Saturday - Sunday</span>
-            <strong>05:00 - 15:00</strong>
-          </p>
+              <p>
+                <span className="el">Σάββατο - Κυριακή</span>
+                <span className="en">Saturday - Sunday</span>
+                <strong>05:00 - 15:00</strong>
+              </p>
 
-          <p>
-            <span className="el">Τηλέφωνο</span>
-            <span className="en">Phone</span>
-            <strong>21 0814 1388</strong>
-          </p>
-        </div>
+              <p>
+                <span className="el">Τηλέφωνο</span>
+                <span className="en">Phone</span>
+                <strong>21 0814 1388</strong>
+              </p>
+            </div>
 
-        <div className="visitActions" role="group" aria-label="Useful links">
-          <a
-            className="visitMapButton"
-            href={mapUrl}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M12 2.4c-4.1 0-7.4 3.3-7.4 7.4 0 5.1 6.3 11.2 6.6 11.5.4.4 1.2.4 1.6 0 .3-.3 6.6-6.4 6.6-11.5 0-4.1-3.3-7.4-7.4-7.4Zm0 10.4a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-            </svg>
-            <span className="el">Οδηγίες στο Google Maps</span>
-            <span className="en">Directions on Google Maps</span>
-          </a>
+            <div className="visitActions" role="group" aria-label="Useful links">
+              <a
+                className="visitMapButton"
+                href={mapUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span className="el">Οδηγίες στο Maps</span>
+                <span className="en">Directions to Maps</span>
+              </a>
 
-          <a
-            className="visitFacebookButton"
-            href={facebookUrl}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <span className="el">Σελίδα στο Facebook</span>
-            <span className="en">Facebook page</span>
-          </a>
+              <a
+                className="visitFacebookButton"
+                href={facebookUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
+
+          <figure className="visitShopPhoto">
+            <img
+              src="/rizos/shop-front.jpg"
+              alt="Το κατάστημα ΡΙΖΟΣ στον Άγιο Στέφανο"
+            />
+          </figure>
         </div>
       </section>
 
@@ -694,183 +684,74 @@ export default function Home() {
           </a>
 
           <div className="awardCopy">
-            <div className="awardDetailsCard">
-              <h2>
-                <span className="el">Νικητής του βραβείου Χρυσή Εταιρεία</span>
-                <span className="en">Gold Company Award Winner</span>
-              </h2>
-              <h3>ΡΙΖΟΣ ΒΑΣΙΛΕΙΟΣ ΕΛΕΥΘΕΡΙΟΣ</h3>
-
-              <div className="awardTopStats">
-                <div className="awardTopStat">
-                  <div className="awardTopIcon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.3l-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L12 2.5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <strong>4.5 / 215</strong>
-                    <span>
-                      <span className="el">Αξιολογήσεις</span>
-                      <span className="en">Reviews</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div className="awardTopStat">
-                  <div className="awardTopIcon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.4"
-                      />
-                      <circle cx="12" cy="9" r="2.4" />
-                    </svg>
-                  </div>
-                  <div>
-                    <strong>
-                      <span className="el">Αγ. Στέφανος</span>
-                      <span className="en">Agios Stefanos</span>
-                    </strong>
-
-                    <span>
-                      <span className="el">Λεωφ. Κρυονερίου 17</span>
-                      <span className="en">17 Kryoneriou Avenue</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div className="awardTopStat">
-                  <div className="awardTopIcon awardShieldIcon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 2L4 5v6c0 5.1 3.4 9.7 8 11 4.6-1.3 8-5.9 8-11V5l-8-3z" />
-
-                      <path
-                        d="M8.5 11.8l2.2 2.2 4.8-5"
-                        fill="none"
-                        stroke="#202e39"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <strong>
-                      <span className="el">Ημερομηνία Σάρωσης:</span>
-                      <span className="en">Scan Date:</span>
-                    </strong>
-
-                    <span>May 23, 2026</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="awardScorePanel">
-                <div className="awardScoreLeft">
-                  <p className="awardScoreLabel">
-                    <span className="el">Τελική Βαθμολογία</span>
-                    <span className="en">Final Rating</span>
-                  </p>
-                  <div className="awardScoreValue">4.5</div>
-
-                  <div className="awardStars" aria-label="4.5 στα 5">
-                    <span className="filled">★</span>
-                    <span className="filled">★</span>
-                    <span className="filled">★</span>
-                    <span className="filled">★</span>
-                    <span className="empty">★</span>
-                  </div>
-
-                  <p className="awardScoreTotal">
-                    <span className="el">Συνολικός αριθμός βαθμολογιών:</span>
-                    <span className="en">Total number of ratings:</span>
-                    <strong>215</strong>
-                  </p>
-                </div>
-
-                <div className="awardScoreRight">
-                  <p className="awardScoreLabel">
-                    <span className="el">
-                      Με βάση 215 αξιολογήσεις από πλατφόρμες:
-                    </span>
-                    <span className="en">
-                      Based on 215 reviews from platforms:
-                    </span>
-                  </p>
-
-                  <div className="awardPlatform">
-                    <div className="awardPlatformMeta">
-                      <span className="awardPlatformCount">209</span>
-                      <span className="awardPlatformStar">★</span>
-                      <span className="awardPlatformName">GoogleMaps</span>
-                    </div>
-                    <div className="awardBar">
-                      <div className="awardBarFill" style={{ width: "97%" }} />
-                    </div>
-                  </div>
-
-                  <div className="awardPlatform">
-                    <div className="awardPlatformMeta">
-                      <span className="awardPlatformCount">6</span>
-                      <span className="awardPlatformStar">★</span>
-                      <span className="awardPlatformName">
-                        restaurantguru.com
-                      </span>
-                    </div>
-                    <div className="awardBar">
-                      <div className="awardBarFill" style={{ width: "12%" }} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <a
-              className="awardMore"
-              href={listingUrl}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <span className="el">Δες περισσότερα</span>
-              <span className="en">View more</span>
-            </a>
+            <p className="awardEyebrow">
+              <span className="el">Χρυσή Εταιρεία 2026</span>
+              <span className="en">Gold Company 2026</span>
+            </p>
+            <h2>
+              <span className="el">Νικητής του βραβείου Χρυσή Εταιρεία</span>
+              <span className="en">Gold Company Award Winner</span>
+            </h2>
+            <p className="awardBusiness">ΡΙΖΟΣ ΒΑΣΙΛΕΙΟΣ ΕΛΕΥΘΕΡΙΟΣ · Αγ. Στέφανος</p>
           </div>
+
+          <div className="awardRating">
+            <strong>4.5</strong>
+            <span className="awardStars" aria-label="4.5 στα 5">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span className="awardStarHalf">★</span>
+            </span>
+            <span>
+              <span className="el">215 αξιολογήσεις</span>
+              <span className="en">215 reviews</span>
+            </span>
+          </div>
+
+          <a
+            className="awardMore"
+            href={listingUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span className="el">Δες περισσότερα</span>
+            <span className="en">View more</span>
+          </a>
         </div>
       </section>
 
       <section className="contact" id="contact">
-        <p className="eyebrow">
-          <span className="el">Επικοινωνία</span>
-          <span className="en">Contact</span>
-        </p>
-        <h2>
-          <span className="el">
-            Θες να ρωτήσεις τι μπουγάτσα
-            <br />
-            υπάρχει τώρα;
-          </span>
-          <span className="en">
-            Want to ask which bougatsa
-            <br />
-            is available now?
-          </span>
-        </h2>
-        <div className="actions centered">
-          <a
-            className="button primary contactCallButton"
-            href="tel:+302108141388"
-          >
-            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-              <path d="M6.6 3.8c1.3 5.7 4.9 10.6 10.2 13.4" />
-              <path d="M6.6 3.8 9.9 2l3.2 4.5-2.5 2.2" />
-              <path d="m16.8 17.2 2.7-2.1 2.5 3.8-2.5 3.1" />
-            </svg>
+        <div className="contactIntro">
+          <p className="eyebrow">
+            <span className="el">Επικοινωνία</span>
+            <span className="en">Contact</span>
+          </p>
+          <h2>
+            <span className="el">
+              Καθημερινά από τις 5 το πρωί.
+            </span>
+            <span className="en">
+              Daily from 5 in the morning.
+            </span>
+          </h2>
+          <a className="contactCallButton" href="tel:+302108141388">
             <span className="el">Κάλεσέ μας · 21 0814 1388</span>
             <span className="en">Call us · 21 0814 1388</span>
           </a>
+        </div>
+
+        <div className="contactMeta">
+          <span className="contactBrand">ΡΙΖΟΣ</span>
+          <span>
+            <span className="el">Λεωφ. Κρυονερίου 17, Άγιος Στέφανος 145 65</span>
+            <span className="en">17 Kryoneriou Avenue, Agios Stefanos 145 65</span>
+          </span>
+          <span>
+            <span className="el">Δευ-Παρ 05:00-20:00 · Σαβ-Κυρ 05:00-15:00</span>
+            <span className="en">Mon-Fri 05:00-20:00 · Sat-Sun 05:00-15:00</span>
+          </span>
         </div>
       </section>
     </main>
