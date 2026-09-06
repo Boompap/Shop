@@ -3457,7 +3457,18 @@ html[data-scrolled] .siteHeader {
   .mosaicCard h3 {
     min-width: 0;
     font-size: clamp(1.08rem, 5vw, 1.42rem);
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .productMosaic .mosaicCard:nth-child(3) h3 {
+    font-size: clamp(0.98rem, 4.45vw, 1.24rem);
+    line-height: 1.04;
+  }
+
+  .productMosaic .mosaicCard:nth-child(3) h3 .el {
+    white-space: nowrap;
   }
 
   .featuredProduct h3 {
