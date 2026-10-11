@@ -4,7 +4,7 @@ Advertising website for Μπουγατσοπωλείο ΡΙΖΟΣ in Άγιος 
 
 Live site:
 
-https://boompap.github.io/Shop/
+https://rizos-bougatsa-shop-site.mariosagora.workers.dev
 
 Highlights:
 
@@ -12,5 +12,5 @@ Highlights:
 - English language toggle
 - Google Maps location CTA
 - Facebook and business-listing links
-- 24-hour shop information
+- Opening hours and contact information
 - Product showcase with shop photos and bakery visuals
